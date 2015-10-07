@@ -28,13 +28,8 @@ public class InputController : MonoBehaviour {
         }
         else if (Input.touchCount > 0)
         {
-            if (Input.GetTouch(0).phase == TouchPhase.Began)
-            {
-                float _xTouchPos = Input.GetTouch(0).position.x - _xPlayerPos;
-                input = (2 * _xTouchPos) / Screen.width;
-                motor.Jump();
-                start = true;
-            }
+            motor.Jump();
+            start = true;
         }
 	}
 }

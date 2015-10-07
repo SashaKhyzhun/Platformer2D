@@ -16,11 +16,14 @@ public class InputController : MonoBehaviour {
 
 	void Update () {
         float _xPlayerPos = Camera.main.WorldToScreenPoint(gameObject.transform.position).x;
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
+
+            /*
             float _xMousePos = Input.mousePosition.x - _xPlayerPos;
             input = (2 * _xMousePos) / Screen.width;
-            motor.Jump(input);
+            */
+            motor.Jump();
             start = true;
         }
         else if (Input.touchCount > 0)
@@ -29,7 +32,7 @@ public class InputController : MonoBehaviour {
             {
                 float _xTouchPos = Input.GetTouch(0).position.x - _xPlayerPos;
                 input = (2 * _xTouchPos) / Screen.width;
-                motor.Jump(input);
+                motor.Jump();
                 start = true;
             }
         }

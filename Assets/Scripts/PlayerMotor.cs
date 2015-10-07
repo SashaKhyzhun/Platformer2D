@@ -15,10 +15,10 @@ public class PlayerMotor : MonoBehaviour {
         rb.freezeRotation = true;
     }
 
-    public void Jump(float input)
+    public void Jump()
     {
-        Vector2 _force = new Vector2(xForce * input, yForce);
-        rb.AddForce(_force, ForceMode2D.Impulse);
+        Vector2 _force = new Vector2(xForce , yForce);
+        rb.AddForce(_force, ForceMode2D.Force);
     }
 
 }

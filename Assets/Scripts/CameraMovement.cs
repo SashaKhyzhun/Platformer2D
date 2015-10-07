@@ -12,71 +12,65 @@ public class CameraMovement : MonoBehaviour {
     private float xPlayerDeltaPosition;
     private float xLastPosition;
     private float xCurrentPosition;
-    private float _targetSpeed;
-    private float speed = 0;
+    private float speed;
+    private float halfWidth;
+    private float currentSpeed;
     private bool canChange = true;
 
     void Awake ()
     {
         inputController = player.GetComponent<InputController>();
-        //rb = player.GetComponent<Rigidbody2D>();
     }
 
     void Start()
     {
-        _targetSpeed = targetSpeed;
+        halfWidth = Screen.width / 2;
     }
 
     void FixedUpdate()
     {
         if (inputController.start)
         {
-            /*if (speed != targetSpeed)
-            {
-                speed = Mathf.Lerp(0, targetSpeed, Time.time * accelerationTime);
-            }*/
-
-            speed = ChangeSpeed(speed, _targetSpeed);
+            //speed = ChangeSpeed(speed, _targetSpeed);
 
             xCurrentPosition = Camera.main.WorldToScreenPoint(player.transform.position).x;
-            xPlayerDeltaPosition = xCurrentPosition - xLastPosition;
-
-            //Debug.Log("Delta: " + xPlayerDeltaPosition);
-            //Debug.Log("Speed: " + speed);
-            //Debug.Log("TargetSpeed: " + targetSpeed);
-            //if ()
+            float xDeltaPosition = (xCurrentPosition - halfWidth) / halfWidth;
+            Debug.Log(xDeltaPosition);
             direction = Vector2.right * speed;
             
-            if (xCurrentPosition >= Screen.width / 2)
+
+            if (xCurrentPosition >= halfWidth)
             {
-                //direction += new Vector2(xCurrentPosition - (Screen.width / 2), direction.y);
-                _targetSpeed += 0.01f;
-                canChange = true;
+                speed += accelerationTime * xDeltaPosition;
             }
             else
             {
-                if (canChange)
+                if (speed > targetSpeed)
                 {
-                    if (_targetSpeed > targetSpeed)
-                    {
-                        _targetSpeed = targetSpeed;
-                        canChange = false;
-                    }
+                    speed -= accelerationTime * Mathf.Abs(xDeltaPosition);
+                    canChange = false;
+                }
+                else if (speed < targetSpeed)
+                {
+                    speed += accelerationTime; //* xDeltaPosition;
+                }
+                else
+                {
+                    speed = targetSpeed;
                 }
             }
             
             gameObject.transform.Translate(direction);
-
-            xLastPosition = xCurrentPosition;
         }  
     }
-
-    private float ChangeSpeed(float currenSpeed, float targetSpeed)
+    /*
+    private float ChangeSpeed(float speed, float targetSpeed)
     {
-        if (currenSpeed != targetSpeed)
+        if (speed != targetSpeed)
         {
-            currenSpeed = Mathf.Lerp(0, targetSpeed, Time.time * accelerationTime);
+            speed = Mathf.Lerp(currentSpeed, targetSpeed, Time.time * accelerationTime);
         }
-        return currenSpeed;
+        return speed;
     }
+    */
 }

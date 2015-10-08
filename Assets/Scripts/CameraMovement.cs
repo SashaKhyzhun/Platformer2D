@@ -5,17 +5,13 @@ public class CameraMovement : MonoBehaviour {
     public GameObject player;
     public float targetSpeed = 1;
     public float accelerationTime = 1;
+    public float offsetPerc;
   
     private InputController inputController;
-    //private Rigidbody2D rb;
     private Vector2 direction;
-    private float xPlayerDeltaPosition;
-    private float xLastPosition;
     private float xCurrentPosition;
     private float speed;
     private float halfWidth;
-    private float currentSpeed;
-    private bool canChange = true;
 
     void Awake ()
     {
@@ -27,50 +23,38 @@ public class CameraMovement : MonoBehaviour {
         halfWidth = Screen.width / 2;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (inputController.start)
         {
-            //speed = ChangeSpeed(speed, _targetSpeed);
-
             xCurrentPosition = Camera.main.WorldToScreenPoint(player.transform.position).x;
-            float xDeltaPosition = (xCurrentPosition - halfWidth) / halfWidth;
-            Debug.Log(xDeltaPosition);
+
             direction = Vector2.right * speed;
             
-
-            if (xCurrentPosition >= halfWidth)
-            {
-                speed += accelerationTime * xDeltaPosition;
+            if (xCurrentPosition >= halfWidth + ((offsetPerc/100) * halfWidth))
+            {                
+                speed = -(halfWidth + ((offsetPerc / 100) * halfWidth) - xCurrentPosition) / 100;
+                if (speed <= targetSpeed)
+                {
+                    speed = targetSpeed;
+                }
             }
             else
             {
                 if (speed > targetSpeed)
                 {
-                    speed -= accelerationTime * Mathf.Abs(xDeltaPosition);
-                    canChange = false;
+                    speed -= accelerationTime;
                 }
                 else if (speed < targetSpeed)
                 {
-                    speed += accelerationTime; //* xDeltaPosition;
+                    speed += accelerationTime;;
                 }
                 else
                 {
                     speed = targetSpeed;
                 }
-            }
-            
-            gameObject.transform.Translate(direction);
+            }            
+            gameObject.transform.Translate(direction * Time.deltaTime);
         }  
     }
-    /*
-    private float ChangeSpeed(float speed, float targetSpeed)
-    {
-        if (speed != targetSpeed)
-        {
-            speed = Mathf.Lerp(currentSpeed, targetSpeed, Time.time * accelerationTime);
-        }
-        return speed;
-    }
-    */
 }

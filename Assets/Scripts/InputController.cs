@@ -7,7 +7,6 @@ public class InputController : MonoBehaviour {
     public bool start { get; set; }
 
     private PlayerMotor motor;
-    private float input;
 
     void Awake ()
     {
@@ -18,17 +17,12 @@ public class InputController : MonoBehaviour {
         float _xPlayerPos = Camera.main.WorldToScreenPoint(gameObject.transform.position).x;
         if (Input.GetButton("Fire1"))
         {
-
-            /*
-            float _xMousePos = Input.mousePosition.x - _xPlayerPos;
-            input = (2 * _xMousePos) / Screen.width;
-            */
-            motor.Jump();
+            motor.MoveUp();
             start = true;
         }
         else if (Input.touchCount > 0)
         {
-            motor.Jump();
+            motor.MoveUp();
             start = true;
         }
 	}

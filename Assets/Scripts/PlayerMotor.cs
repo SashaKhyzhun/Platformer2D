@@ -16,14 +16,14 @@ public class PlayerMotor : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody2D>();
         ic = GetComponent<InputController>();
-        rb.freezeRotation = true;
+        //rb.freezeRotation = true;
     }
 
     void Update()
     {
         if (ic.start)
         {
-            rb.freezeRotation = false;
+            //rb.freezeRotation = false;
         }
     }
 

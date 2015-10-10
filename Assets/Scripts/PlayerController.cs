@@ -2,8 +2,9 @@
 
 [RequireComponent(typeof (PlayerMotor))]
 
-public class InputController : MonoBehaviour {
+public class PlayerController: MonoBehaviour {
 
+    public bool alive { get; set; } 
     public bool start { get; set; }
 
     private PlayerMotor motor;
@@ -11,6 +12,11 @@ public class InputController : MonoBehaviour {
     void Awake ()
     {
         motor = GetComponent<PlayerMotor>();
+    } 
+
+    void Start()
+    {
+        alive = true;
     }
 
 	void Update () {
@@ -24,5 +30,6 @@ public class InputController : MonoBehaviour {
             motor.MoveUp();
             start = true;
         }
+        Debug.Log("Alive: " + alive);
 	}
 }

@@ -7,7 +7,7 @@ public class CameraMovement : MonoBehaviour {
     public float accelerationTime = 1;
     public float offsetPerc;
   
-    private InputController inputController;
+    private PlayerController playerController;
     private Vector2 direction;
     private float xCurrentPosition;
     private float speed;
@@ -15,7 +15,7 @@ public class CameraMovement : MonoBehaviour {
 
     void Awake ()
     {
-        inputController = player.GetComponent<InputController>();
+        playerController = player.GetComponent<PlayerController>();
     }
 
     void Start()
@@ -25,7 +25,7 @@ public class CameraMovement : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (inputController.start)
+        if (playerController.start)
         {
             xCurrentPosition = Camera.main.WorldToScreenPoint(player.transform.position).x;
 

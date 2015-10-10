@@ -30,6 +30,6 @@ public class PlayerController: MonoBehaviour {
             motor.MoveUp();
             start = true;
         }
-        Debug.Log("Alive: " + alive);
+        //Debug.Log("Alive: " + alive);
 	}
 }

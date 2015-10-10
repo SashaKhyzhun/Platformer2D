@@ -14,7 +14,6 @@ public class InputController : MonoBehaviour {
     }
 
 	void Update () {
-        float _xPlayerPos = Camera.main.WorldToScreenPoint(gameObject.transform.position).x;
         if (Input.GetButton("Fire1"))
         {
             motor.MoveUp();

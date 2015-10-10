@@ -23,7 +23,7 @@ public class CameraMovement : MonoBehaviour {
         halfWidth = Screen.width / 2;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (inputController.start)
         {
@@ -33,7 +33,7 @@ public class CameraMovement : MonoBehaviour {
             
             if (xCurrentPosition >= halfWidth + ((offsetPerc/100) * halfWidth))
             {                
-                speed = -(halfWidth + ((offsetPerc / 100) * halfWidth) - xCurrentPosition) / 100;
+                speed = -(halfWidth + ((offsetPerc / 100) * halfWidth) - xCurrentPosition)  / 10;
                 if (speed <= targetSpeed)
                 {
                     speed = targetSpeed;

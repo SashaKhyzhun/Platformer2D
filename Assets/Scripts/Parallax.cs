@@ -4,9 +4,9 @@ using System.Collections;
 public class Parallax : MonoBehaviour {
 
     public Transform[] backgrounds;
-    private float[] parallaxScales;
     public float smoothing = 1f;
 
+    private float[] parallaxScales;
     private Transform cam;
     private Vector3 previousCamPos;
 

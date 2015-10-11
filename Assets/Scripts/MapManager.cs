@@ -55,7 +55,7 @@ public class MapManager : MonoBehaviour {
         for (int i = 0; i < backgroundSegments.Length; i++)
         {
             bgExtents[i] = backgroundSegments[i].GetComponent<Renderer>().bounds.extents.x;
-            Debug.Log(bgExtents[i]);
+            // Debug.Log(bgExtents[i]);
         }
         */
     }

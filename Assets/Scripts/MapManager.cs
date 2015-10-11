@@ -5,6 +5,7 @@ public class MapManager : MonoBehaviour {
 
     public GameObject[] mapSegments;
     public GameObject[] backgroundSegments;
+    public int bgCount = 2;
     public float offset;
 
     private Vector3 camPos;
@@ -57,26 +58,14 @@ public class MapManager : MonoBehaviour {
     }
 
     void ManageBackground()
-    {
-        /*
+    {  
         camPos = Camera.main.transform.position;
-        for (int i = 1; i < backgroundPrefab.Length; i++)
+        for (int i = 0; i < backgroundSegments.Length; i++)
         {
-            if (camPos.x + camExtent + offset >= mapSegments[i - 1].transform.position.x + mapExtents[i])
+            if (camPos.x - camExtent - offset >= backgroundSegments[i].transform.position.x + bgExtents[i])
             {
-                if (!mapSegments[i].activeInHierarchy)
-                {
-                    mapSegments[i].SetActive(true);
-                }
-            }
-            if (camPos.x - camExtent - offset >= mapSegments[i].transform.position.x - mapExtents[i])
-            {
-                if (mapSegments[i - 1].activeInHierarchy)
-                {
-                    mapSegments[i - 1].SetActive(false);
-                }
+                backgroundSegments[i].transform.position = backgroundSegments[i].transform.position + new Vector3(4 * bgExtents[i], 0);
             }
         }
-        */
     }
 }

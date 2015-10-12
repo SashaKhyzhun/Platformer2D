@@ -279,7 +279,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!60 &205831042
 PolygonCollider2D:
@@ -470,7 +470,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &505755840
 MonoBehaviour:
@@ -659,7 +659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!60 &821062703
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1271,7 +1271,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1051665627}
-  - 114: {fileID: 1051665628}
   m_Layer: 0
   m_Name: _map
   m_TagString: Untagged
@@ -1300,28 +1299,6 @@ Transform:
   - {fileID: 205831045}
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!114 &1051665628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1051665626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0f62d38dd0305e40a3c74579c899342, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mapSegments:
-  - {fileID: 1219670561}
-  - {fileID: 1255875910}
-  - {fileID: 821062702}
-  backgroundSegments:
-  - {fileID: 850101326}
-  - {fileID: 35226910}
-  - {fileID: 795858596}
-  - {fileID: 1528677991}
-  bgCount: 2
-  offset: 1
 --- !u!1 &1064704291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,6 +1387,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1187960943}
+  - 114: {fileID: 1187960944}
   m_Layer: 0
   m_Name: _gameManager
   m_TagString: Untagged
@@ -1429,6 +1407,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1187960944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1187960942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f62d38dd0305e40a3c74579c899342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapObject: {fileID: 1051665627}
+  backgroundObject: {fileID: 64238213}
+  bgCount: 2
+  offset: 1
 --- !u!1 &1219670561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,7 +1776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1255875911
 Transform:
   m_ObjectHideFlags: 0
@@ -2228,7 +2221,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1456280104
 Transform:
@@ -2421,7 +2414,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &1587082414
 MonoBehaviour:
@@ -2563,7 +2556,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &1672097700
 MonoBehaviour:

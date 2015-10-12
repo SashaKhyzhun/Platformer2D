@@ -3,68 +3,112 @@ using System.Collections;
 
 public class MapManager : MonoBehaviour {
 
-    public GameObject[] mapSegments;
-    public GameObject[] backgroundSegments;
+    public Transform mapObject;
+    public Transform backgroundObject;
     public int bgCount = 2;
     public float offset;
 
-    private Vector3 camPos;
+    private Transform[] mapSegments;
+    private Transform[] backgroundSegments;
     private float[] mapExtents;
     private float[] bgExtents;
+    private float camPosX;
     private float camExtent;
+    private float rightCameraBorder;
+    private float leftCameraBorder;
+    private float rightSpriteBorder;
+    private float leftSpriteBorder;
 
-	void Start () {
+    void Start () {
         offset = Mathf.Abs(offset);
+        mapSegments = new Transform[mapObject.childCount];
+        backgroundSegments = new Transform[backgroundObject.childCount];
         mapExtents = new float[mapSegments.Length];
         bgExtents = new float[backgroundSegments.Length];
         Camera _camera = Camera.main;
         camExtent = _camera.orthographicSize * _camera.aspect;
-        for (int i = 0; i < mapSegments.Length; i++)
+
+        int i = 0;
+        foreach (Transform child in mapObject)
         {
+            mapSegments[i] = child;
             mapExtents[i] = mapSegments[i].GetComponent<Renderer>().bounds.extents.x;
+            mapSegments[i].gameObject.SetActive(false);
+            i++;
         }
+
+        i = 0;
+
+        foreach(Transform child in backgroundObject)
+        {
+            backgroundSegments[i] = child;
+            bgExtents[i] = backgroundSegments[i].GetComponent<Renderer>().bounds.extents.x;
+            i++;
+        }
+        /*for (int i = 0; i < mapSegments.Length; i++)
+        {
+
+            mapExtents[i] = mapSegments[i].GetComponent<Renderer>().bounds.extents.x;
+            mapSegments[i].gameObject.SetActive(false);
+        }
+        
         for (int i = 0; i < backgroundSegments.Length; i++)
         {
             bgExtents[i] = backgroundSegments[i].GetComponent<Renderer>().bounds.extents.x;
             Debug.Log(bgExtents[i]);
         }
+        */
     }
-	
-	void Update () {
+
+    void Update () {
+        camPosX = Camera.main.transform.position.x;
+        rightCameraBorder = camPosX + camExtent + offset;
+        leftCameraBorder = camPosX - camExtent - offset;
+
         ManageMap();
         ManageBackground();
 	}
 
     void ManageMap()
     {
-        camPos = Camera.main.transform.position;
-        for (int i = 1; i < mapExtents.Length; i++)
+        for (int i = 0; i < mapExtents.Length; i++)
         {
-            if (camPos.x + camExtent + offset >= mapSegments[i - 1].transform.position.x + mapExtents[i])
+            rightSpriteBorder = mapSegments[i].position.x + mapExtents[i];
+            leftSpriteBorder = mapSegments[i].position.x - mapExtents[i];
+
+            if (leftCameraBorder >= leftSpriteBorder && rightCameraBorder <= rightSpriteBorder)
             {
-                if (!mapSegments[i].activeInHierarchy)
+                if (!mapSegments[i].gameObject.activeInHierarchy)
                 {
-                    mapSegments[i].SetActive(true);
+                    mapSegments[i].gameObject.SetActive(true);
                 }
             }
-            if (camPos.x - camExtent - offset >= mapSegments[i].transform.position.x - mapExtents[i])
+            if (rightCameraBorder >= leftSpriteBorder)
             {
-                if (mapSegments[i - 1].activeInHierarchy)
+                if (!mapSegments[i].gameObject.activeInHierarchy)
                 {
-                    mapSegments[i - 1].SetActive(false);
+                    mapSegments[i].gameObject.SetActive(true);
+                }
+            }
+            if (leftCameraBorder >= rightSpriteBorder)
+            {
+                if (mapSegments[i].gameObject.activeInHierarchy)
+                {
+                    mapSegments[i].gameObject.SetActive(false);
                 }
             }
         }
     }
 
     void ManageBackground()
-    {  
-        camPos = Camera.main.transform.position;
+    {
         for (int i = 0; i < backgroundSegments.Length; i++)
         {
-            if (camPos.x - camExtent - offset >= backgroundSegments[i].transform.position.x + bgExtents[i])
+            rightSpriteBorder = backgroundSegments[i].position.x + bgExtents[i];
+
+            if (leftCameraBorder >= rightSpriteBorder)
             {
-                backgroundSegments[i].transform.position = backgroundSegments[i].transform.position + new Vector3(4 * bgExtents[i], 0);
+                backgroundSegments[i].position = backgroundSegments[i].position + new Vector3(4 * bgExtents[i], 0);
             }
         }
     }

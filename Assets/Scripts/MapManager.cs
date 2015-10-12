@@ -45,19 +45,6 @@ public class MapManager : MonoBehaviour {
             bgExtents[i] = backgroundSegments[i].GetComponent<Renderer>().bounds.extents.x;
             i++;
         }
-        /*for (int i = 0; i < mapSegments.Length; i++)
-        {
-
-            mapExtents[i] = mapSegments[i].GetComponent<Renderer>().bounds.extents.x;
-            mapSegments[i].gameObject.SetActive(false);
-        }
-        
-        for (int i = 0; i < backgroundSegments.Length; i++)
-        {
-            bgExtents[i] = backgroundSegments[i].GetComponent<Renderer>().bounds.extents.x;
-            // Debug.Log(bgExtents[i]);
-        }
-        */
     }
 
     void Update () {
@@ -83,18 +70,18 @@ public class MapManager : MonoBehaviour {
                     mapSegments[i].gameObject.SetActive(true);
                 }
             }
-            if (rightCameraBorder >= leftSpriteBorder)
-            {
-                if (!mapSegments[i].gameObject.activeInHierarchy)
-                {
-                    mapSegments[i].gameObject.SetActive(true);
-                }
-            }
             if (leftCameraBorder >= rightSpriteBorder)
             {
                 if (mapSegments[i].gameObject.activeInHierarchy)
                 {
                     mapSegments[i].gameObject.SetActive(false);
+                }
+            }
+            else if (rightCameraBorder >= leftSpriteBorder)
+            {
+                if (!mapSegments[i].gameObject.activeInHierarchy)
+                {
+                    mapSegments[i].gameObject.SetActive(true);
                 }
             }
         }

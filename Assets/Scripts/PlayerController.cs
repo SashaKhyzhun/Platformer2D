@@ -4,8 +4,10 @@
 
 public class PlayerController: MonoBehaviour {
 
-    public bool alive { get; set; } 
+    public bool alive { get; set; }
     public bool start { get; set; }
+
+    public Vector3 respawnPosition { get; set; }
 
     private PlayerMotor motor;
 
@@ -30,6 +32,19 @@ public class PlayerController: MonoBehaviour {
             motor.MoveUp();
             start = true;
         }
-        //Debug.Log("Alive: " + alive);
+        
+        /**if (!alive)
+        {
+            Respawn(respawnPosition);
+        } **/
+
 	}
+
+    public void Respawn(Vector3 position)
+    {
+        transform.position = position;
+        start = false;
+        alive = true;
+    }
+   
 }

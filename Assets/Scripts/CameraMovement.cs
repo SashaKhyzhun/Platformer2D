@@ -55,6 +55,14 @@ public class CameraMovement : MonoBehaviour {
                 }
             }            
             gameObject.transform.Translate(direction * Time.deltaTime);
-        }  
+        }
+        else
+        {
+            Vector3 respawnPosition = new Vector3(playerController.gameObject.transform.position.x - ((offsetPerc / 100) * halfWidth),
+                                                                              transform.position.y, transform.position.z);
+            if (transform.position != respawnPosition) {
+                transform.position = respawnPosition;
+            }
+        }
     }
 }

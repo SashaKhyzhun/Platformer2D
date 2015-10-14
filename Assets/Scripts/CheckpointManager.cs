@@ -23,15 +23,16 @@ public class CheckpointManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float camPositionX = Camera.main.transform.position.x;
+        float playerPositionX = playerController.gameObject.transform.position.x;
 
         if (!playerController.alive)
         {
             for (int i = 1; i < checkpoints.Length; i++)
             {
-                if (camPositionX >= checkpoints[i - 1].position.x && camPositionX <= checkpoints[i].position.x)
+                if (playerPositionX >= checkpoints[i - 1].position.x && playerPositionX <= checkpoints[i].position.x)
                 {
-                    playerController.Respawn(checkpoints[i - 1].position);
+                    //StartCoroutine(playerController.Respawn(checkpoints[i - 1].position));
+                    playerController.respawnPosition = checkpoints[i - 1].position;
                 }
 
             }

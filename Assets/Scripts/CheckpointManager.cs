@@ -18,6 +18,8 @@ public class CheckpointManager : MonoBehaviour {
             checkpoints[i] = child;
             i++;
         }
+        playerController.checkpoints = checkpoints;
+
     }
 
 	
@@ -25,19 +27,24 @@ public class CheckpointManager : MonoBehaviour {
 	void Update () {
         float playerPositionX = playerController.gameObject.transform.position.x;
 
-        if (!playerController.alive)
-        {
-            for (int i = 1; i < checkpoints.Length; i++)
+        //if (!playerController.alive)
+        //{
+            for (int i = 0; i < checkpoints.Length - 1; i++)
             {
-                if (playerPositionX >= checkpoints[i - 1].position.x && playerPositionX <= checkpoints[i].position.x)
+                if (playerPositionX >= checkpoints[i].position.x)// && playerPositionX <= checkpoints[i + 1].position.x)
                 {
-                    //StartCoroutine(playerController.Respawn(checkpoints[i - 1].position));
-                    playerController.respawnPosition = checkpoints[i - 1].position;
+                //StartCoroutine(playerController.Respawn(checkpoints[i - 1].position));
+                    if (playerController.checkpointNumber < i)
+                    {
+                        playerController.checkpointNumber = i;
+                    }
+                    
                 }
 
             }
-        }
-	}
+        //}
+        //Debug.Log(playerController.checkpointNumber);
+    }
 
 
 

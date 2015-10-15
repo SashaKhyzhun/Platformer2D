@@ -6,7 +6,8 @@ public class CameraMovement : MonoBehaviour {
     public float targetSpeed = 1;
     public float accelerationTime = 1;
     public float offsetPerc;
-  
+
+    private Renderer playerRenderer;
     private PlayerController playerController;
     private Vector2 direction;
     private float xCurrentPosition;
@@ -16,6 +17,7 @@ public class CameraMovement : MonoBehaviour {
     void Awake ()
     {
         playerController = player.gameObject.GetComponent<PlayerController>();
+        playerRenderer = player.gameObject.GetComponent<Renderer>();
     }
 
     void Start()
@@ -30,51 +32,49 @@ public class CameraMovement : MonoBehaviour {
 
         if (playerController.start)
         {
-            if (!playerController.wait)
+            xCurrentPosition = player.position.x;
+
+            if (xCurrentPosition >= camPosX + ((offsetPerc / 100) * camExtent))
             {
-                xCurrentPosition = player.position.x;//Camera.main.WorldToScreenPoint(player.transform.position).x;
-
-                direction = Vector2.right * speed;
-
-                if (xCurrentPosition >= camPosX + ((offsetPerc / 100) * camExtent))
+                speed = xCurrentPosition - (camPosX + ((offsetPerc / 100) * camExtent));
+                if (speed <= targetSpeed)
                 {
-                    speed = xCurrentPosition - (camPosX + ((offsetPerc / 100) * camExtent));
-                    if (speed <= targetSpeed)
-                    {
-                        speed = targetSpeed;
-                    }
+                    speed = targetSpeed;
+                }
+            }
+            else
+            {
+                if (speed > targetSpeed)
+                {
+                    speed -= accelerationTime * speed;
+                }
+                else if (speed < targetSpeed)
+                {
+                    //speed += accelerationTime; ;
                 }
                 else
                 {
-                    if (speed > targetSpeed)
-                    {
-                        speed -= accelerationTime;
-                    }
-                    else if (speed < targetSpeed)
-                    {
-                        speed += accelerationTime; ;
-                    }
-                    else
-                    {
-                        speed = targetSpeed;
-                    }
+                    speed = targetSpeed;
                 }
-                gameObject.transform.Translate(direction * Time.deltaTime);
             }
-        }
-        else
-        {
-            Vector3 respawnPosition = new Vector3(player.transform.position.x - ((offsetPerc / 100) * camExtent),
-                                                                              transform.position.y, transform.position.z);
-            if (transform.position != respawnPosition && speed != 0) {
-                transform.position = respawnPosition;
+            if (player.position.x < camPosX - camExtent || player.position.x > camPosX + camExtent)
+            {
+                if (speed >= 0)
+                {
+                    speed -= accelerationTime * speed;
+                }
+                playerController.alive = false;
+            }
+            if (playerController.startReturn)
+            {
                 speed = 0;
+                transform.position = Vector3.Lerp(transform.position,
+                    new Vector3(playerController.checkpointPosition.x - ((offsetPerc / 100) * camExtent), transform.position.y, transform.position.z),
+                    Time.deltaTime / playerController.cameraTime);
             }
-        }
 
-        if (player.position.x < camPosX - camExtent || player.position.x > camPosX + camExtent)
-        {
-            playerController.alive = false;
+            direction = Vector2.right * speed;
+            gameObject.transform.Translate(direction * Time.deltaTime);
         }
     }
 }

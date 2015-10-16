@@ -7,9 +7,14 @@ public class CameraMovement : MonoBehaviour {
     public float accelerationTime = 1;
     public float offsetPerc;
 
-    private Renderer playerRenderer;
+    //private Renderer playerRenderer;
     private PlayerController playerController;
     private Vector2 direction;
+    //private Vector3 startPosition;
+    private Vector3 endPosition;
+    private bool begin = true;
+    //private float startTime;
+    //private float distance;
     private float xCurrentPosition;
     private float speed;
     private float camExtent;
@@ -17,7 +22,7 @@ public class CameraMovement : MonoBehaviour {
     void Awake ()
     {
         playerController = player.gameObject.GetComponent<PlayerController>();
-        playerRenderer = player.gameObject.GetComponent<Renderer>();
+        //playerRenderer = player.gameObject.GetComponent<Renderer>();
     }
 
     void Start()
@@ -57,24 +62,46 @@ public class CameraMovement : MonoBehaviour {
                     speed = targetSpeed;
                 }
             }
+            
             if (player.position.x < camPosX - camExtent || player.position.x > camPosX + camExtent)
+            {
+                //speed = 0;
+
+                playerController.alive = false;
+            }
+            if (!playerController.alive)
             {
                 if (speed >= 0)
                 {
                     speed -= accelerationTime * speed;
                 }
-                playerController.alive = false;
             }
             if (playerController.startReturn)
             {
                 speed = 0;
-                transform.position = Vector3.Lerp(transform.position,
-                    new Vector3(playerController.checkpointPosition.x - ((offsetPerc / 100) * camExtent), transform.position.y, transform.position.z),
-                    Time.deltaTime / playerController.cameraTime);
+
+                if (begin)
+                {
+                    //startTime = Time.time;
+                    //startPosition = transform.position;
+                    endPosition = new Vector3(playerController.checkpointPosition.x - ((offsetPerc / 100) * camExtent), transform.position.y, transform.position.z);
+                    //distance = Vector3.Distance(startPosition, endPosition);
+                    begin = false;
+                }
+
+                //transform.position = Vector3.Lerp(startPosition, endPosition, (Time.time - startTime) / playerController.cameraTime);
+                transform.position = Vector3.Lerp(transform.position, endPosition, Time.deltaTime * playerController.cameraTime); // (playerController.cameraTime / 3));
+                //Debug.Log(Time.time - startTime);
+            }
+            else
+            {
+                if (!begin) { begin = true; }
             }
 
             direction = Vector2.right * speed;
             gameObject.transform.Translate(direction * Time.deltaTime);
         }
+
+        //Debug.DrawRay(new Vector3(camPosX + ((offsetPerc / 100) * camExtent), -10,0), Vector3.up * 100);
     }
 }

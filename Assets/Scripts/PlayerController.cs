@@ -77,16 +77,16 @@ public class PlayerController: MonoBehaviour {
         IEnumerator Respawn(Vector3 position)
     {
         wait = true;
-        transform.position = new Vector3(-10, -10, 0);
-        //rb.isKinematic = true;
-        yield return new WaitForSeconds(cameraStayTime);
-        startReturn = true;
-        yield return new WaitForSeconds(cameraBackToPositionTime);
-        //rb.isKinematic = false;
+        //transform.position = new Vector3(-10, -10, 0);
         transform.position = position;
         transform.rotation = new Quaternion();
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0;
+        rb.isKinematic = true;
+        yield return new WaitForSeconds(cameraStayTime);
+        startReturn = true;
+        yield return new WaitForSeconds(cameraBackToPositionTime);
+        rb.isKinematic = false;
         start = false;
         startReturn = false;
         alive = true;

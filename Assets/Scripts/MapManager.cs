@@ -17,13 +17,13 @@ public class MapManager : MonoBehaviour {
     private float leftCameraBorder;
     private float rightSpriteBorder;
     private float leftSpriteBorder;
-    private int bgCount;
+    //private int bgCount;
 
     void Start () {
         offset = Mathf.Abs(offset);
         mapSegments = new Transform[mapObject.childCount];
         backgroundSegments = new Transform[backgroundObject.childCount];
-        bgCount = backgroundSegments.Length / 2;
+        //bgCount = backgroundSegments.Length / 2;
         mapExtents = new float[mapSegments.Length];
         bgExtents = new float[backgroundSegments.Length];
         Camera _camera = Camera.main;

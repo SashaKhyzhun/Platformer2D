@@ -7,14 +7,11 @@ public class CameraMovement : MonoBehaviour {
     public float accelerationTime = 1;
     public float offsetPerc;
 
-    //private Renderer playerRenderer;
     private PlayerController playerController;
+    private Transform camTransform;
     private Vector2 direction;
-    //private Vector3 startPosition;
     private Vector3 endPosition;
     private bool begin = true;
-    //private float startTime;
-    //private float distance;
     private float xCurrentPosition;
     private float speed;
     private float camExtent;
@@ -22,18 +19,13 @@ public class CameraMovement : MonoBehaviour {
     void Awake ()
     {
         playerController = player.gameObject.GetComponent<PlayerController>();
-        //playerRenderer = player.gameObject.GetComponent<Renderer>();
-    }
-
-    void Start()
-    {
-        //camExtent = Screen.width / 2;
         camExtent = Camera.main.orthographicSize * Camera.main.aspect;
+        camTransform = transform;
     }
 
     void FixedUpdate()
     {
-        float camPosX = Camera.main.transform.position.x;
+        float camPosX = camTransform.position.x;
 
         if (playerController.start)
         {
@@ -53,10 +45,10 @@ public class CameraMovement : MonoBehaviour {
                 {
                     speed -= accelerationTime * speed;
                 }
-                else if (speed < targetSpeed)
-                {
-                    //speed += accelerationTime; ;
-                }
+                //else if (speed < targetSpeed)
+                //{
+                //    //speed += accelerationTime; ;
+                //}
                 else
                 {
                     speed = targetSpeed;
@@ -65,8 +57,6 @@ public class CameraMovement : MonoBehaviour {
             
             if (player.position.x < camPosX - camExtent || player.position.x > camPosX + camExtent)
             {
-                //speed = 0;
-
                 playerController.alive = false;
             }
             if (!playerController.alive)
@@ -82,16 +72,10 @@ public class CameraMovement : MonoBehaviour {
 
                 if (begin)
                 {
-                    //startTime = Time.time;
-                    //startPosition = transform.position;
-                    endPosition = new Vector3(playerController.checkpointPosition.x - ((offsetPerc / 100) * camExtent), transform.position.y, transform.position.z);
-                    //distance = Vector3.Distance(startPosition, endPosition);
+                    endPosition = new Vector3(playerController.checkpointPosition.x - ((offsetPerc / 100) * camExtent), camTransform.position.y, camTransform.position.z);
                     begin = false;
                 }
-
-                //transform.position = Vector3.Lerp(startPosition, endPosition, (Time.time - startTime) / playerController.cameraTime);
-                transform.position = Vector3.Lerp(transform.position, endPosition, Time.deltaTime * playerController.cameraTime); // (playerController.cameraTime / 3));
-                //Debug.Log(Time.time - startTime);
+                transform.position = Vector3.Lerp(camTransform.position, endPosition, Time.deltaTime * playerController.cameraTime);
             }
             else
             {
@@ -99,9 +83,7 @@ public class CameraMovement : MonoBehaviour {
             }
 
             direction = Vector2.right * speed;
-            gameObject.transform.Translate(direction * Time.deltaTime);
+            transform.Translate(direction * Time.fixedDeltaTime);
         }
-
-        //Debug.DrawRay(new Vector3(camPosX + ((offsetPerc / 100) * camExtent), -10,0), Vector3.up * 100);
     }
 }

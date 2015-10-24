@@ -7,6 +7,7 @@ public class MapManager : MonoBehaviour {
     public Transform backgroundObject;
     public float offset;
 
+    private Transform camTransform;
     private Transform[] mapSegments;
     private Transform[] backgroundSegments;
     private float[] mapExtents;
@@ -17,17 +18,16 @@ public class MapManager : MonoBehaviour {
     private float leftCameraBorder;
     private float rightSpriteBorder;
     private float leftSpriteBorder;
-    //private int bgCount;
 
     void Start () {
         offset = Mathf.Abs(offset);
         mapSegments = new Transform[mapObject.childCount];
         backgroundSegments = new Transform[backgroundObject.childCount];
-        //bgCount = backgroundSegments.Length / 2;
         mapExtents = new float[mapSegments.Length];
         bgExtents = new float[backgroundSegments.Length];
         Camera _camera = Camera.main;
         camExtent = _camera.orthographicSize * _camera.aspect;
+        camTransform = _camera.transform;
 
         int i = 0;
         foreach (Transform child in mapObject)
@@ -49,7 +49,7 @@ public class MapManager : MonoBehaviour {
     }
 
     void Update () {
-        camPosX = Camera.main.transform.position.x;
+        camPosX = camTransform.position.x;
         rightCameraBorder = camPosX + camExtent + offset;
         leftCameraBorder = camPosX - camExtent - offset;
 

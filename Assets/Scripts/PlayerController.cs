@@ -26,10 +26,6 @@ public class PlayerController: MonoBehaviour {
     {
         rb = GetComponent<Rigidbody2D>();
         motor = GetComponent<PlayerMotor>();
-    } 
-
-    void Start()
-    {
         wait = false;
         alive = true;
         cameraTime = cameraBackToPositionTime;
@@ -77,7 +73,6 @@ public class PlayerController: MonoBehaviour {
         IEnumerator Respawn(Vector3 position)
     {
         wait = true;
-        //transform.position = new Vector3(-10, -10, 0);
         transform.position = position;
         transform.rotation = new Quaternion();
         rb.velocity = Vector2.zero;

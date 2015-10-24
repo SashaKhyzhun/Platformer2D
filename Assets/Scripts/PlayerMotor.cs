@@ -17,14 +17,6 @@ public class PlayerMotor : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    /*void Update()
-    {
-        if (ic.start)
-        {
-            rb.freezeRotation = false;
-        }
-    }*/
-
     public void MoveUp()
     {
 

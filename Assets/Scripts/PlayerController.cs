@@ -48,6 +48,7 @@ public class PlayerController: MonoBehaviour {
                     start = true;
 
                 }
+                motor.HoldRotation();
             }
             if (Input.GetButtonDown("Fire1"))
             {
@@ -66,8 +67,6 @@ public class PlayerController: MonoBehaviour {
                 StartCoroutine(Respawn(checkpointPosition));
             }
         }
-
-        
     }
 
         IEnumerator Respawn(Vector3 position)

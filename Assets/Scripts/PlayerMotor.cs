@@ -15,6 +15,7 @@ public class PlayerMotor : MonoBehaviour {
     private Rigidbody2D rb;
     private Transform myTransform;
     private float zCurrRotation;
+    private float torque;
     private bool hold = false;
 
     void Awake ()
@@ -45,21 +46,22 @@ public class PlayerMotor : MonoBehaviour {
         {
             zCurrRotation = myTransform.rotation.eulerAngles.z;
 
+            if (zCurrRotation > 180) { zCurrRotation -= 360; }
+            if (zCurrRotation < -180) { zCurrRotation += 360; }
+
+            
+
             if (zCurrRotation <= zRotationToHold - rotationTreshold || zCurrRotation >= zRotationToHold + rotationTreshold)
             {
-                if (zCurrRotation > 180)
-                {
-                    zCurrRotation -= 360;
-                }
-                if (zCurrRotation < -180)
-                {
-                    zCurrRotation += 360;
-                }
-
-                float torque = (zRotationToHold - zCurrRotation) * rotationHoldForce * Time.deltaTime;
-                rb.AddTorque(torque, ForceMode2D.Force);
-                //Debug.Log(torque);
+                torque = (zRotationToHold - zCurrRotation) * rotationHoldForce * Time.deltaTime;
             }
+            else if (zCurrRotation > zRotationToHold - rotationTreshold && zCurrRotation < zRotationToHold + rotationTreshold)
+            {
+                if (torque != 0) { torque = 0; }
+                //torque = -rb.angularVelocity * 0.0005f;
+            }
+
+            rb.AddTorque(torque, ForceMode2D.Force);
         }
     }
 

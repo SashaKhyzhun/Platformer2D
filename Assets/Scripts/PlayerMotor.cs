@@ -11,6 +11,7 @@ public class PlayerMotor : MonoBehaviour {
     public float zRotationToHold;
     public float rotationHoldForce;
     public float rotationTreshold;
+    public float rotationBreakForce;
 
     private Rigidbody2D rb;
     private Transform myTransform;
@@ -57,8 +58,8 @@ public class PlayerMotor : MonoBehaviour {
             }
             else if (zCurrRotation > zRotationToHold - rotationTreshold && zCurrRotation < zRotationToHold + rotationTreshold)
             {
-                if (torque != 0) { torque = 0; }
-                //torque = -rb.angularVelocity * 0.0005f;
+                //if (torque != 0) { torque = 0; }
+                torque = -rb.angularVelocity * rotationBreakForce;
             }
 
             rb.AddTorque(torque, ForceMode2D.Force);

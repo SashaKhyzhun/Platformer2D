@@ -1911,7 +1911,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 848524179}
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .699999988
+  m_AngularDrag: .0500000007
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1949,6 +1949,7 @@ MonoBehaviour:
   zRotationToHold: 0
   rotationHoldForce: 1
   rotationTreshold: 15
+  rotationBreakForce: .00520000001
 --- !u!95 &848524186
 Animator:
   serializedVersion: 3
@@ -2323,6 +2324,7 @@ GameObject:
   - 4: {fileID: 1187960943}
   - 114: {fileID: 1187960944}
   - 114: {fileID: 1187960945}
+  - 114: {fileID: 1187960946}
   m_Layer: 0
   m_Name: _gameManager
   m_TagString: Untagged
@@ -2368,6 +2370,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointObject: {fileID: 321158109}
+--- !u!114 &1187960946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1187960942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57798eb023127154aa30e945db3f2b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenHeight: 720
 --- !u!1 &1219670561
 GameObject:
   m_ObjectHideFlags: 0

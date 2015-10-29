@@ -15,12 +15,14 @@ public class CameraMovement : MonoBehaviour {
     private float xCurrentPosition;
     private float speed;
     private float camExtent;
+    private float playerSpriteExtent;
 
     void Awake ()
     {
         playerController = player.gameObject.GetComponent<PlayerController>();
         camExtent = Camera.main.orthographicSize * Camera.main.aspect;
         camTransform = transform;
+        playerSpriteExtent = player.GetComponent<Renderer>().bounds.extents.x;
     }
 
     void FixedUpdate()
@@ -45,17 +47,13 @@ public class CameraMovement : MonoBehaviour {
                 {
                     speed -= accelerationTime * speed;
                 }
-                //else if (speed < targetSpeed)
-                //{
-                //    //speed += accelerationTime; ;
-                //}
                 else
                 {
                     speed = targetSpeed;
                 }
             }
             
-            if (player.position.x < camPosX - camExtent || player.position.x > camPosX + camExtent)
+            if (player.position.x + playerSpriteExtent < camPosX - camExtent || player.position.x - playerSpriteExtent > camPosX + camExtent)
             {
                 playerController.alive = false;
             }

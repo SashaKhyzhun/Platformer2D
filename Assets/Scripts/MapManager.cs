@@ -11,6 +11,7 @@ public class MapManager : MonoBehaviour {
     private Transform[] mapSegments;
     private Transform[] backgroundSegments;
     private float[] mapExtents;
+    private float[] mapCenters;
     private float[] bgExtents;
     private float camPosX;
     private float camExtent;
@@ -24,6 +25,7 @@ public class MapManager : MonoBehaviour {
         mapSegments = new Transform[mapObject.childCount];
         backgroundSegments = new Transform[backgroundObject.childCount];
         mapExtents = new float[mapSegments.Length];
+        mapCenters = new float[mapSegments.Length];
         bgExtents = new float[backgroundSegments.Length];
         Camera _camera = Camera.main;
         camExtent = _camera.orthographicSize * _camera.aspect;
@@ -34,6 +36,7 @@ public class MapManager : MonoBehaviour {
         {
             mapSegments[i] = child;
             mapExtents[i] = mapSegments[i].GetComponent<Renderer>().bounds.extents.x;
+            mapCenters[i] = mapSegments[i].GetComponent<Renderer>().bounds.center.x;
             mapSegments[i].gameObject.SetActive(false);
             i++;
         }
@@ -61,8 +64,8 @@ public class MapManager : MonoBehaviour {
     {
         for (int i = 0; i < mapExtents.Length; i++)
         {
-            rightSpriteBorder = mapSegments[i].position.x + mapExtents[i];
-            leftSpriteBorder = mapSegments[i].position.x - mapExtents[i];
+            rightSpriteBorder = mapCenters[i] + mapExtents[i];
+            leftSpriteBorder = mapCenters[i] - mapExtents[i];
 
             if (leftCameraBorder >= leftSpriteBorder && rightCameraBorder <= rightSpriteBorder)
             {

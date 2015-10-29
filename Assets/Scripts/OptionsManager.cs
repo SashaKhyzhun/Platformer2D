@@ -7,7 +7,7 @@ public class OptionsManager : MonoBehaviour {
     private float screenWidth;
     
 	void Start () {
-        screenWidth = screenHeight * (Screen.width / Screen.height);
-        Screen.SetResolution((int)screenHeight, (int)screenWidth, true, 60);
+        screenWidth = screenHeight * ((float)Screen.width / Screen.height);
+        Screen.SetResolution((int)screenWidth, (int)screenHeight, true, 60);
 	}
 }

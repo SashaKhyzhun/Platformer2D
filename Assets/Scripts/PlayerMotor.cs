@@ -59,10 +59,13 @@ public class PlayerMotor : MonoBehaviour {
             else if (zCurrRotation > zRotationToHold - rotationTreshold && zCurrRotation < zRotationToHold + rotationTreshold)
             {
                 //if (torque != 0) { torque = 0; }
-                torque = -rb.angularVelocity * rotationBreakForce;
+                torque = -rb.angularVelocity * rotationBreakForce * Time.deltaTime;
             }
 
-            rb.AddTorque(torque, ForceMode2D.Force);
+            if (torque > 0.001 || torque < -0.001)
+            {
+                rb.AddTorque(torque, ForceMode2D.Force);
+            }
         }
     }
 

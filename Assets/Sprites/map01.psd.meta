@@ -1,12 +1,25 @@
 fileFormatVersion: 2
 guid: 6e3415f12b942784f888dff72677de59
-timeCreated: 1444243409
+timeCreated: 1446151424
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: map01_0
-    21300002: map01_1
-    21300004: map01_2
+    21300000: map01_0top0
+    21300002: map01_0top1
+    21300004: map01_2bottom1
+    21300006: map01_0bottom1
+    21300008: map01_0bottom0
+    21300010: map01_1bottom2
+    21300012: map01_1bottom0
+    21300014: map01_1bottom1
+    21300016: map01_1bottom3
+    21300018: map01_1top0
+    21300020: map01_1top1
+    21300022: map01_2top1
+    21300024: map01_2bottom2
+    21300026: map01_2bottom0
+    21300028: map01_2top0
+    21300030: map01_2top2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -53,35 +66,165 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: map01_0
+    - name: map01_0top0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2668
+        width: 2353
+        height: 336
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map01_0top1
+      rect:
+        serializedVersion: 2
+        x: 2353
+        y: 2565
+        width: 647
+        height: 439
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map01_0bottom1
+      rect:
+        serializedVersion: 2
+        x: 2516
+        y: 2004
+        width: 484
+        height: 523
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map01_0bottom0
       rect:
         serializedVersion: 2
         x: 0
         y: 2004
-        width: 3000
-        height: 1000
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        width: 2516
+        height: 113
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: map01_1
+    - name: map01_1bottom2
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 1004
+        width: 358
+        height: 647
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map01_1bottom0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1002
-        width: 3000
-        height: 1000
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        y: 1004
+        width: 471
+        height: 649
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: map01_2
+    - name: map01_1bottom1
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 1004
+        width: 452
+        height: 126
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map01_1bottom3
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 1004
+        width: 1719
+        height: 146
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map01_1top0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1687
+        width: 912
+        height: 313
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map01_1top1
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 1813
+        width: 2088
+        height: 187
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map01_2bottom1
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 0
+        width: 481
+        height: 752
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map01_2top1
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 646
+        width: 469
+        height: 354
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map01_2bottom2
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 0
+        width: 1498
+        height: 245
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map01_2bottom0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 3000
-        height: 1000
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        width: 1021
+        height: 203
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map01_2top0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 844
+        width: 1530
+        height: 156
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map01_2top2
+      rect:
+        serializedVersion: 2
+        x: 1999
+        y: 817
+        width: 1001
+        height: 183
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

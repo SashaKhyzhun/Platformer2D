@@ -1695,7 +1695,7 @@ MonoBehaviour:
   zRotationToHold: 0
   rotationHoldForce: 1
   rotationTreshold: 15
-  rotationBreakForce: .75
+  rotationBreakForce: .699999988
 --- !u!95 &848524186
 Animator:
   serializedVersion: 3
@@ -2849,6 +2849,10 @@ Prefab:
     - target: {fileID: 19950156, guid: 0ca7c893155ab6441afbacc178445592, type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 121548, guid: 0ca7c893155ab6441afbacc178445592, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 19950156, guid: 0ca7c893155ab6441afbacc178445592, type: 2}

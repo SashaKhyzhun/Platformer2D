@@ -1266,8 +1266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0326ad72aa6d8994291759e47eea44ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraStayTime: 1
-  cameraBackToPositionTime: 2
+  cameraStayTime: .300000012
+  cameraBackToPositionTime: 1.5
 --- !u!114 &848524185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1330,6 +1330,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 848524182}
+    - target: {fileID: 21260100, guid: 2c2ced65004923f41ae6c62b381271af, type: 2}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c2ced65004923f41ae6c62b381271af, type: 2}
   m_IsPrefabParent: 0

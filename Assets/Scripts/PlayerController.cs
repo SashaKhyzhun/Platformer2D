@@ -11,6 +11,7 @@ public class PlayerController: MonoBehaviour {
     public bool alive { get; set; }
     public bool start { get; set; }
     public bool wait { get; set; }
+    public bool startFade { get; set; }
     public bool startReturn { get; set; }
     public Transform[] checkpoints { get; set; }
     public Vector3 checkpointPosition { get; set; }
@@ -72,16 +73,20 @@ public class PlayerController: MonoBehaviour {
         IEnumerator Respawn(Vector3 position)
     {
         wait = true;
-        transform.position = position;
+        transform.position = new Vector3(0, -10, 0);
         transform.rotation = new Quaternion();
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0;
         rb.isKinematic = true;
         yield return new WaitForSeconds(cameraStayTime);
+        startFade = true;
+        yield return new WaitForSeconds(cameraBackToPositionTime / 2);
         startReturn = true;
-        yield return new WaitForSeconds(cameraBackToPositionTime);
+        transform.position = position;
+        yield return new WaitForSeconds(cameraBackToPositionTime / 2);
         rb.isKinematic = false;
         start = false;
+        startFade = false;
         startReturn = false;
         alive = true;
         died = true;

@@ -13,4 +13,10 @@ public class OptionsManager : MonoBehaviour {
         Screen.SetResolution((int)screenWidth, (int)screenHeight, true, 60);
         if (doCap) { Application.targetFrameRate = frameRate; }
 	}
+
+    public void RestartButton()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
 }

@@ -29,9 +29,12 @@ public class PlayerMotor : MonoBehaviour {
 
     public void MoveRight()
     {
-        if (rb.velocity.x <= constSpeed)
+        if (hold)
         {
-            rb.AddForce(Vector2.right * constForce * Time.deltaTime);
+            if (rb.velocity.x <= constSpeed)
+            {
+                rb.AddForce(Vector2.right * constForce * Time.deltaTime);
+            }
         }
     }
 

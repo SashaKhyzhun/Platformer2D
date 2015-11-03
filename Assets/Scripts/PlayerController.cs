@@ -20,6 +20,7 @@ public class PlayerController: MonoBehaviour {
 
     private Rigidbody2D rb;  
     private PlayerMotor motor;
+    private bool canPlay = false;
     private bool died = false;
     
 
@@ -32,47 +33,56 @@ public class PlayerController: MonoBehaviour {
         cameraTime = cameraBackToPositionTime;
     }
 
+    void Start()
+    {
+        StartCoroutine(WaitAtStart());
+    }
+
 	void Update () {
-        if (!wait)
+        if (canPlay)
         {
-            if (!died)
+            if (!wait)
             {
-                if (Input.GetButton("Fire1"))
+                if (!died)
                 {
-                    motor.MoveUp();
-                    start = true;
+                    if (Input.GetButton("Fire1"))
+                    {
+                        motor.MoveUp();
+                        start = true;
 
-                }
-                else if (Input.touchCount > 0)
-                {
-                    motor.MoveUp();
-                    start = true;
+                    }
+                    else if (Input.touchCount > 0)
+                    {
+                        motor.MoveUp();
+                        start = true;
 
+                    }
+                    motor.HoldRotation();
+                    motor.MoveRight();
                 }
-                motor.HoldRotation();
-                motor.MoveRight();
-            }
-            if (Input.GetButtonDown("Fire1"))
-            {
-                died = false;
-            }
-            else if (Input.touchCount > 0)
-            {
-                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                if (Input.GetButtonDown("Fire1"))
                 {
                     died = false;
                 }
-            }
-            if (!alive)
-            {
-                checkpointPosition = checkpoints[checkpointNumber].position;
-                StartCoroutine(Respawn(checkpointPosition));
+                else if (Input.touchCount > 0)
+                {
+                    if (Input.GetTouch(0).phase == TouchPhase.Began)
+                    {
+                        died = false;
+                    }
+                }
+                if (!alive)
+                {
+                    checkpointPosition = checkpoints[checkpointNumber].position;
+                    StartCoroutine(Respawn(checkpointPosition));
+                }
             }
         }
     }
 
-        IEnumerator Respawn(Vector3 position)
+    IEnumerator Respawn(Vector3 position)
     {
+        WaitForSeconds halfBacktime = new WaitForSeconds(cameraBackToPositionTime / 2);
         wait = true;
         transform.position = new Vector3(0, -10, 0);
         transform.rotation = new Quaternion();
@@ -81,10 +91,10 @@ public class PlayerController: MonoBehaviour {
         rb.isKinematic = true;
         yield return new WaitForSeconds(cameraStayTime);
         startFade = true;
-        yield return new WaitForSeconds(cameraBackToPositionTime / 2);
+        yield return halfBacktime;
         startReturn = true;
         transform.position = position;
-        yield return new WaitForSeconds(cameraBackToPositionTime / 2);
+        yield return halfBacktime;
         rb.isKinematic = false;
         start = false;
         startFade = false;
@@ -93,5 +103,11 @@ public class PlayerController: MonoBehaviour {
         died = true;
         wait = false;
     }
-   
+
+    IEnumerator WaitAtStart()
+    {
+        yield return new WaitForSeconds(cameraBackToPositionTime);
+        canPlay = true;
+    }
+
 }

@@ -7,14 +7,14 @@ public class Throwable : Dangerous {
     public float throwForce;
 
     private Rigidbody2D bodyRb;
-    private Collider2D bodyColl;
+    //private Collider2D bodyColl;
 
 
     void Awake()
     {
-        bodyColl = body.GetComponent<Collider2D>();
+        //bodyColl = body.GetComponent<Collider2D>();
         bodyRb = body.GetComponent<Rigidbody2D>();
-        bodyRb.centerOfMass = transform.localPosition;
+        //bodyRb.centerOfMass = transform.localPosition;
     }
 
     void OnTriggerEnter2D(Collider2D coll)

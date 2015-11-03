@@ -50,6 +50,7 @@ public class PlayerController: MonoBehaviour {
 
                 }
                 motor.HoldRotation();
+                if (start) { motor.MoveRight(); }
             }
             if (Input.GetButtonDown("Fire1"))
             {

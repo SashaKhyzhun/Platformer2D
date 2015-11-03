@@ -4,8 +4,10 @@
 
 public class PlayerMotor : MonoBehaviour {
 
+    public float constForce;
     public float xForce;
     public float yForce;
+    public float constSpeed;
     public float xMaxSpeed;
     public float yMaxSpeed;
     public float zRotationToHold;
@@ -25,17 +27,22 @@ public class PlayerMotor : MonoBehaviour {
         myTransform = transform;
     }
 
+    public void MoveRight()
+    {
+        if (rb.velocity.x <= constSpeed)
+        {
+            rb.AddForce(Vector2.right * constForce * Time.deltaTime);
+        }
+    }
+
     public void MoveUp()
     {
-
-        Vector2 _velocity = rb.velocity;
-
-        if (_velocity.y <= yMaxSpeed)
+        if (rb.velocity.y <= yMaxSpeed)
         {
             rb.AddForce(Vector2.up * yForce * Time.deltaTime);
         }
 
-        if (_velocity.x <= xMaxSpeed)
+        if (rb.velocity.x <= xMaxSpeed)
         {
             rb.AddForce(Vector2.right * xForce * Time.deltaTime);
         }

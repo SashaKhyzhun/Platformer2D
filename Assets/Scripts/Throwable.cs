@@ -7,28 +7,33 @@ public class Throwable : Dangerous {
     public float throwForce;
 
     private Rigidbody2D bodyRb;
-    //private Collider2D bodyColl;
-
+    private bool used = false;
 
     void Awake()
     {
-        //bodyColl = body.GetComponent<Collider2D>();
         bodyRb = body.GetComponent<Rigidbody2D>();
-        //bodyRb.centerOfMass = transform.localPosition;
     }
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "Player") {
-            //bodyColl.enabled = false;
-            bodyRb.isKinematic = false;
-            bodyRb.AddForce(transform.up * throwForce * Time.deltaTime, ForceMode2D.Impulse);
-            //bodyColl.enabled = true;
+        if (!used)
+        {
+            if (coll.gameObject.tag == "Player")
+            {
+                used = true;
+                bodyRb.isKinematic = false;
+                bodyRb.AddForce(transform.up * throwForce * Time.deltaTime, ForceMode2D.Impulse);
+            }
         }
-        
     }
 
-
+    void  OnCollisionExit2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Map")
+        {
+            bodyRb.isKinematic = true;
+        }
+    }
         
 
 }

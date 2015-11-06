@@ -17,16 +17,6 @@ public class Wind : MonoBehaviour {
         if (rb != null)
         {
             rb.AddForce(transform.right * windForce * Time.deltaTime);
-        }    
-
-        //Debug.Log(collider.name);
-
+        }
     }
-
-
-    
-
-    
-
-
 }

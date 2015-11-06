@@ -17,11 +17,13 @@ public class PlayerMotor : MonoBehaviour {
 
     private Rigidbody2D rb;
     private Transform myTransform;
+    private Vector2 vector2Up = Vector2.up;
+    private Vector2 vector2Right = Vector2.right;
     private float zCurrRotation;
     private float torque;
     private bool hold = false;
 
-    void Awake ()
+    void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
         myTransform = transform;
@@ -33,21 +35,22 @@ public class PlayerMotor : MonoBehaviour {
         {
             if (rb.velocity.x <= constSpeed)
             {
-                rb.AddForce(Vector2.right * constForce * Time.deltaTime);
+                rb.AddForce(vector2Right * constForce * Time.deltaTime);
             }
         }
     }
 
     public void MoveUp()
     {
-        if (rb.velocity.y <= yMaxSpeed)
+        Vector3 velocity = rb.velocity;
+        if (velocity.y <= yMaxSpeed)
         {
-            rb.AddForce(Vector2.up * yForce * Time.deltaTime);
+            rb.AddForce(vector2Up * yForce * Time.deltaTime);
         }
 
-        if (rb.velocity.x <= xMaxSpeed)
+        if (velocity.x <= xMaxSpeed)
         {
-            rb.AddForce(Vector2.right * xForce * Time.deltaTime);
+            rb.AddForce(vector2Right * xForce * Time.deltaTime);
         }
     }
 

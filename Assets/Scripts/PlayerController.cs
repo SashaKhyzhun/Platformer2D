@@ -22,19 +22,14 @@ public class PlayerController: MonoBehaviour {
     private PlayerMotor motor;
     private bool canPlay = false;
     private bool died = false;
-    
 
-    void Awake ()
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         motor = GetComponent<PlayerMotor>();
         wait = false;
         alive = true;
         cameraTime = cameraBackToPositionTime;
-    }
-
-    void Start()
-    {
         StartCoroutine(WaitAtStart());
     }
 
@@ -92,6 +87,8 @@ public class PlayerController: MonoBehaviour {
         yield return new WaitForSeconds(cameraStayTime);
         startFade = true;
         yield return halfBacktime;
+        System.GC.Collect();
+        Resources.UnloadUnusedAssets();
         startReturn = true;
         transform.position = position;
         yield return halfBacktime;

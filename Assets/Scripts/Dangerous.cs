@@ -4,7 +4,7 @@ public class Dangerous : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Player")
+        if (coll.gameObject.CompareTag("Player"))
         {
             Kill(coll.gameObject);
         }

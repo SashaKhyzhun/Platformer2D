@@ -6,13 +6,9 @@ public class Circular : Dangerous {
     private Transform myTransform;
     private HingeJoint2D hinge;
 
-	void Awake () {
+	void Start () {
         hinge = GetComponent<HingeJoint2D>();
         myTransform = transform;
-	}
-	
-	void Update () {
         hinge.connectedAnchor = myTransform.position;
-	}
-
+    }
 }

@@ -9,7 +9,7 @@ public class Throwable : Dangerous {
     private Rigidbody2D bodyRb;
     private bool used = false;
 
-    void Awake()
+    void Start()
     {
         bodyRb = body.GetComponent<Rigidbody2D>();
     }
@@ -18,7 +18,7 @@ public class Throwable : Dangerous {
     {
         if (!used)
         {
-            if (coll.gameObject.tag == "Player")
+            if (coll.gameObject.CompareTag("Player"))
             {
                 used = true;
                 bodyRb.isKinematic = false;
@@ -29,7 +29,7 @@ public class Throwable : Dangerous {
 
     void  OnCollisionExit2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Map")
+        if (coll.gameObject.CompareTag("Map"))
         {
             bodyRb.isKinematic = true;
         }

@@ -30,10 +30,8 @@ public class CheckpointManager : MonoBehaviour {
                 if (playerController.checkpointNumber < i)
                 {
                     playerController.checkpointNumber = i;
-                }
-                    
+                }                    
             }
-
         }
     }
 

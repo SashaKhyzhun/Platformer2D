@@ -8,14 +8,14 @@ public class Bomb : MonoBehaviour {
     private Transform myTransform;
     private Rigidbody2D playerRb;
 
-    void Awake()
+    void Start()
     {
         myTransform = transform;
     }
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Player")
+        if (coll.gameObject.CompareTag("Player"))
         {
             Vector3 direction = (coll.transform.position - myTransform.position).normalized;
             playerRb = coll.gameObject.GetComponent<Rigidbody2D>();

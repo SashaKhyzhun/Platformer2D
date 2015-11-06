@@ -19,7 +19,7 @@ public class CameraMovement : MonoBehaviour {
     private float camExtent;
     private float playerSpriteExtent;
 
-    void Awake ()
+    void Start ()
     {
         playerController = player.gameObject.GetComponent<PlayerController>();
         fadeAnimator = fadePlane.GetComponent<Animator>();

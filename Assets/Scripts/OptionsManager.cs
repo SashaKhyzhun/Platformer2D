@@ -5,6 +5,7 @@ public class OptionsManager : MonoBehaviour {
 
     public float screenHeight;
     public bool doCap;
+    public bool doChangeResolution;
     public int frameRate;
     public GameObject FadePlane;
 
@@ -13,8 +14,11 @@ public class OptionsManager : MonoBehaviour {
     
 	void Start () {
         anim = FadePlane.GetComponent<Animator>();
-        screenWidth = screenHeight * ((float)Screen.width / Screen.height);
-        Screen.SetResolution((int)screenWidth, (int)screenHeight, true, 60);
+        if (doChangeResolution)
+        {
+            screenWidth = screenHeight * ((float)Screen.width / Screen.height);
+            Screen.SetResolution((int)screenWidth, (int)screenHeight, true, 60);
+        }
         if (doCap) { Application.targetFrameRate = frameRate; }
 	}
 

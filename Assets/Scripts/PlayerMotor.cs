@@ -15,6 +15,10 @@ public class PlayerMotor : MonoBehaviour {
     public float rotationTreshold;
     public float rotationBreakForce;
 
+    public bool moveRight { get; set; }
+    public bool moveUp { get; set; }
+    public bool holdRotation { get; set; }
+
     private Rigidbody2D rb;
     private Transform myTransform;
     private Vector2 vector2Up = Vector2.up;
@@ -27,6 +31,13 @@ public class PlayerMotor : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody2D>();
         myTransform = transform;
+    }
+
+    void FixedUpdate()
+    {
+        if (moveRight) { MoveRight(); moveRight = false; }
+        if (moveUp) { MoveUp(); moveUp = false; }
+        if (holdRotation) { HoldRotation(); holdRotation = false; }
     }
 
     public void MoveRight()

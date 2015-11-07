@@ -42,18 +42,18 @@ public class PlayerController: MonoBehaviour {
                 {
                     if (Input.GetButton("Fire1"))
                     {
-                        motor.MoveUp();
+                        motor.moveUp = true;
                         start = true;
 
                     }
                     else if (Input.touchCount > 0)
                     {
-                        motor.MoveUp();
+                        motor.moveUp = true;
                         start = true;
 
                     }
-                    motor.HoldRotation();
-                    motor.MoveRight();
+                    motor.holdRotation = true;
+                    motor.moveRight = true;
                 }
                 if (Input.GetButtonDown("Fire1"))
                 {

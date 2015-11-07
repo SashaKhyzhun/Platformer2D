@@ -34,7 +34,7 @@ public class Parallax : MonoBehaviour {
         }
     }
     
-    void FixedUpdate()
+    void Update()
     {
         camPosX = cam.position.x;
 
@@ -49,21 +49,24 @@ public class Parallax : MonoBehaviour {
             Vector3 backgroundTargetPos = new Vector3(backgroundTargetPosX, backgrounds[i].position.y, backgrounds[i].position.z);
             
             backgrounds[i].position = Vector3.Lerp(backgrounds[i].position, backgroundTargetPos, smoothing);
+
+            // Manage Background
+            rightSpriteBorder = backgrounds[i].position.x + bgExtents[i];
+
+            if (leftCameraBorder >= rightSpriteBorder)
+            {
+                backgrounds[i].position = backgrounds[i].position + new Vector3(4 * bgExtents[i] - 0.05f, 0);
+            }
         }
         previousCamPos = cam.position;
-        ManageBackground(); 
+        //ManageBackground(); 
     }
 
     void ManageBackground()
     {
         for (int i = 0; i < backgrounds.Length; i++)
         {
-            rightSpriteBorder = backgrounds[i].position.x + bgExtents[i];
-
-            if (leftCameraBorder >= rightSpriteBorder)
-            {
-                backgrounds[i].position = backgrounds[i].position + new Vector3(4 * bgExtents[i], 0);
-            }
+            
         }
     }
 }

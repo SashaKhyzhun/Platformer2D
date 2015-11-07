@@ -29,7 +29,7 @@ public class CameraMovement : MonoBehaviour {
         fadeAnimator.SetFloat("speedMultiplier", 1 / playerController.cameraBackToPositionTime);
     }
 
-    void FixedUpdate()
+    void Update()
     {
         float camPosX = camTransform.position.x;
 
@@ -58,13 +58,10 @@ public class CameraMovement : MonoBehaviour {
             {
                 if (speed > 0) { speed -= accelerationTime * speed; }
             }
-            if (playerController.startFade)
-            {
-                speed = 0;
-            }
+            if (playerController.startFade) { speed = 0; }
 
-                direction = Vector2.right * speed;
-            transform.Translate(direction * Time.fixedDeltaTime);
+            direction = Vector2.right * speed;
+            //transform.Translate(direction * Time.deltaTime);
         }
 
         if (playerController.startFade)
@@ -93,5 +90,10 @@ public class CameraMovement : MonoBehaviour {
             fadeAnimator.SetBool("Fade", false);
             transform.position = endPosition;
         }
+    }
+
+    void FixedUpdate()
+    {
+        transform.Translate(direction * Time.deltaTime);
     }
 }

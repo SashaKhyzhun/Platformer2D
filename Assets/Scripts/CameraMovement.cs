@@ -92,7 +92,7 @@ public class CameraMovement : MonoBehaviour {
         }
     }
 
-    void FixedUpdate()
+    void LateUpdate()
     {
         transform.Translate(direction * Time.deltaTime);
     }

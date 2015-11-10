@@ -33,7 +33,7 @@ public class PlayerMotor : MonoBehaviour {
         myTransform = transform;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (moveRight) { MoveRight(); moveRight = false; }
         if (moveUp) { MoveUp(); moveUp = false; }

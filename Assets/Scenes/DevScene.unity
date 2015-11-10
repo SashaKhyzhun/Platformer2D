@@ -754,14 +754,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 11411738, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11427206, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
   m_IsPrefabParent: 0
@@ -2697,7 +2689,7 @@ MonoBehaviour:
   screenHeight: 720
   doCap: 1
   doChangeResolution: 1
-  frameRate: 1000
+  frameRate: 50
   FadePlane: {fileID: 188139615}
 --- !u!1001 &1315571570
 Prefab:
@@ -3384,7 +3376,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1456280103}
   m_LocalRotation: {x: 0, y: 0, z: .962336004, w: .271863014}
-  m_LocalPosition: {x: 10.9200001, y: 1.66999996, z: 0}
+  m_LocalPosition: {x: 10.7200003, y: 1.36000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1051665627}
@@ -3424,7 +3416,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 70689981
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 31f712e42823e214ca89f22d1995d790, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 290bfdb6c330fba4188fcf2331c09c32, type: 3}
   m_Color: {r: 1, g: .826612949, b: 0, a: 1}
 --- !u!95 &1456280108
 Animator:
@@ -3453,7 +3445,7 @@ EdgeCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 1.90999997}
+  m_Offset: {x: 0, y: 1.47000003}
   m_Points:
   - {x: -.300763011, y: -2.03685832}
   - {x: -.29751575, y: .604287803}

@@ -38,15 +38,5 @@ public class CheckpointManager : MonoBehaviour {
         }
 
         if (revert != playerController.startReturn) { revert = playerController.startReturn; }
-        /*for (int i = 0; i < checkpoints.Length - 1; i++)
-        {
-            if (playerPositionX >= checkpoints[i].position.x)
-            {
-                if (playerController.checkpointNumber < i)
-                {
-                    playerController.checkpointNumber = i;
-                }                    
-            }
-        }*/
     }
 }

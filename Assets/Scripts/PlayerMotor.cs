@@ -93,9 +93,11 @@ public class PlayerMotor : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter2D()
+    void OnCollisionStay2D()
     {
-        hold = false;
+        if (hold) {
+            hold = false;
+        }
     }
 
     void OnCollisionExit2D()

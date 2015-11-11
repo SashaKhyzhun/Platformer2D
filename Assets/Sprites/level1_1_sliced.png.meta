@@ -1,13 +1,41 @@
 fileFormatVersion: 2
 guid: 11933892020172743841cfd79a255353
-timeCreated: 1447266553
+timeCreated: 1447274825
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: level1_1_top1
+    21300002: level1_1_bot0
+    21300004: level1_1_bot1
+    21300006: level1_1_bot2
+    21300008: level1_1_top2
+    21300010: level1_1_bot3
+    21300012: level1_1_bot4
+    21300014: level1_1_top3
+    21300016: level1_1_bot5
+    21300018: level1_1_top4
+    21300020: level1_1_top5
+    21300022: level1_1_top6
+    21300024: level1_1_top7
+    21300026: level1_1_bot6
+    21300028: level1_1_bot7
+    21300030: level1_1_bot8
+    21300032: level1_1_top8
+    21300034: level1_1_top9
+    21300036: level1_1_top10
+    21300038: level1_1_top11
+    21300040: level1_1_top12
+    21300042: level1_1_bot9
+    21300044: level1_1_bot10
+    21300046: level1_1_bot11
+    21300048: level1_1_bot12
+    21300050: level1_1_top13
+    21300052: level1_1_top14
+    21300054: level1_1_bot13
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -29,8 +57,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +66,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -47,9 +75,294 @@ TextureImporter:
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings: []
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 4096
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: level1_1_top1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4766
+        width: 5000
+        height: 242
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_bot0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4008
+        width: 2002
+        height: 144
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_bot1
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 4008
+        width: 1389
+        height: 516
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_bot2
+      rect:
+        serializedVersion: 2
+        x: 3391
+        y: 4008
+        width: 1609
+        height: 718
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_top2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3850
+        width: 1284
+        height: 156
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_bot3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3005
+        width: 628
+        height: 98
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_bot4
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 3005
+        width: 542
+        height: 677
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_top3
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 3270
+        width: 1019
+        height: 736
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_bot5
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 3005
+        width: 3830
+        height: 116
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_top4
+      rect:
+        serializedVersion: 2
+        x: 2303
+        y: 3778
+        width: 2697
+        height: 228
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_top5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2902
+        width: 2510
+        height: 102
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_top6
+      rect:
+        serializedVersion: 2
+        x: 2510
+        y: 2498
+        width: 722
+        height: 506
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_top7
+      rect:
+        serializedVersion: 2
+        x: 3232
+        y: 2849
+        width: 1768
+        height: 155
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_bot6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2004
+        width: 3783
+        height: 93
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_bot7
+      rect:
+        serializedVersion: 2
+        x: 3783
+        y: 2004
+        width: 675
+        height: 513
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_bot8
+      rect:
+        serializedVersion: 2
+        x: 4458
+        y: 2004
+        width: 542
+        height: 148
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_top8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1777
+        width: 620
+        height: 225
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_top9
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 1541
+        width: 844
+        height: 461
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_top10
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 1733
+        width: 677
+        height: 269
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_top11
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 1363
+        width: 318
+        height: 639
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_top12
+      rect:
+        serializedVersion: 2
+        x: 2459
+        y: 1801
+        width: 2541
+        height: 201
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_bot9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1002
+        width: 969
+        height: 312
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_bot10
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 1002
+        width: 884
+        height: 177
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_bot11
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 1002
+        width: 332
+        height: 468
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_bot12
+      rect:
+        serializedVersion: 2
+        x: 2185
+        y: 1002
+        width: 2815
+        height: 209
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_top13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 891
+        width: 4368
+        height: 109
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_top14
+      rect:
+        serializedVersion: 2
+        x: 4368
+        y: 605
+        width: 632
+        height: 395
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: level1_1_bot13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 5000
+        height: 225
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

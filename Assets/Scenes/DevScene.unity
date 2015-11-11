@@ -85,64 +85,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &22283043
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1051665627}
-    m_Modifications:
-    - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 36.4199982
-      objectReference: {fileID: 0}
-    - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 4.42000008
-      objectReference: {fileID: 0}
-    - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
-      propertyPath: m_RootOrder
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 21299886, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 132408, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
-      propertyPath: m_Name
-      value: fan (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 23329622, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
-      propertyPath: m_ConnectedAnchor.x
-      value: 42.4199982
-      objectReference: {fileID: 0}
-    - target: {fileID: 23329622, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
-      propertyPath: m_ConnectedAnchor.y
-      value: 4.42000008
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
-  m_IsPrefabParent: 0
 --- !u!4 &64238213 stripped
 Transform:
   m_PrefabParentObject: {fileID: 484332, guid: 2c2ced65004923f41ae6c62b381271af, type: 2}
@@ -262,10 +204,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 321158109}
   m_RootOrder: 1
---- !u!4 &177126286 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
-  m_PrefabInternal: {fileID: 22283043}
 --- !u!1 &182318412
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +280,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!58 &182318417
@@ -438,6 +376,14 @@ Prefab:
     - target: {fileID: 23329622, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_ConnectedAnchor.y
       value: 4.42000008
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055328, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055328, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
+      propertyPath: m_SleepingMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
@@ -675,7 +621,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!1 &321158108
@@ -753,6 +699,10 @@ Prefab:
     - target: {fileID: 484100, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086262, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
+      propertyPath: m_Interpolate
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
@@ -963,7 +913,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 465122, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
       propertyPath: m_RootOrder
-      value: 26
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 128880, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
       propertyPath: m_Name
@@ -1123,7 +1073,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!1 &681098008
@@ -1371,7 +1321,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!1 &752386617
@@ -2058,6 +2008,14 @@ Prefab:
       propertyPath: m_ConnectedAnchor.y
       value: 4.42000008
       objectReference: {fileID: 0}
+    - target: {fileID: 5055328, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055328, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
+      propertyPath: m_SleepingMode
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
   m_IsPrefabParent: 0
@@ -2110,13 +2068,12 @@ Transform:
   - {fileID: 740165399}
   - {fileID: 1515242973}
   - {fileID: 382262249}
+  - {fileID: 1080085966}
   - {fileID: 763780314}
   - {fileID: 1686366381}
   - {fileID: 1319780508}
-  - {fileID: 1080085966}
   - {fileID: 1794253685}
   - {fileID: 1529614834}
-  - {fileID: 177126286}
   - {fileID: 333271027}
   - {fileID: 842080141}
   - {fileID: 612473803}
@@ -2177,7 +2134,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!68 &1080085964
@@ -2270,7 +2227,7 @@ Transform:
   m_LocalScale: {x: 1.12504709, y: 1.12504709, z: 1.12504709}
   m_Children: []
   m_Father: {fileID: 1051665627}
-  m_RootOrder: 27
+  m_RootOrder: 24
 --- !u!1001 &1087446285
 Prefab:
   m_ObjectHideFlags: 0
@@ -2308,7 +2265,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_RootOrder
-      value: 29
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 21299886, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_Enabled
@@ -2325,6 +2282,14 @@ Prefab:
     - target: {fileID: 23329622, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_ConnectedAnchor.y
       value: 4.42000008
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055328, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055328, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
+      propertyPath: m_SleepingMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
@@ -2432,7 +2397,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!68 &1141766222
@@ -2816,6 +2781,14 @@ Prefab:
       propertyPath: m_ConnectedAnchor.y
       value: 4.42000008
       objectReference: {fileID: 0}
+    - target: {fileID: 5055328, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055328, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
+      propertyPath: m_SleepingMode
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
   m_IsPrefabParent: 0
@@ -2872,7 +2845,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 447150, guid: 0ca7c893155ab6441afbacc178445592, type: 2}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 19812250, guid: 0ca7c893155ab6441afbacc178445592, type: 2}
       propertyPath: lengthInSec
@@ -3661,7 +3634,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!1 &1519265615
@@ -4051,11 +4024,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_RootOrder
-      value: 28
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 21299886, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055328, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055328, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
+      propertyPath: m_SleepingMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
@@ -4772,7 +4753,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 465122, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
       propertyPath: m_RootOrder
-      value: 25
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 11416378, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
       propertyPath: checkpoints

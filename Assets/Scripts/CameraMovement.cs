@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class CameraMovement : MonoBehaviour {
+public class CameraMovement : MonoBehaviour
+{
 
     public Transform player;
     public GameObject fadePlane;
@@ -17,14 +18,18 @@ public class CameraMovement : MonoBehaviour {
     private float xCurrentPosition;
     private float speed;
     private float camExtent;
+    private float camExtentY;
+    private float camLowerEdge;
     private float playerSpriteExtent;
 
-    void Start ()
+    void Start()
     {
         playerController = player.gameObject.GetComponent<PlayerController>();
         fadeAnimator = fadePlane.GetComponent<Animator>();
-        camExtent = Camera.main.orthographicSize * Camera.main.aspect;
+        camExtentY = Camera.main.orthographicSize;
+        camExtent = camExtentY * Camera.main.aspect;
         camTransform = transform;
+        camLowerEdge = camTransform.position.y - camExtentY - 1;
         playerSpriteExtent = player.GetComponent<Renderer>().bounds.extents.x;
         fadeAnimator.SetFloat("speedMultiplier", 1 / playerController.cameraBackToPositionTime);
     }
@@ -49,7 +54,9 @@ public class CameraMovement : MonoBehaviour {
             }
 
             //Check if player within camera sight
-            if (player.position.x + playerSpriteExtent < camPosX - camExtent || player.position.x - playerSpriteExtent > camPosX + camExtent)
+            if (player.position.x + playerSpriteExtent < camPosX - camExtent
+                || player.position.x - playerSpriteExtent > camPosX + camExtent
+                || player.position.y  < camLowerEdge)
             {
                 playerController.alive = false;
             }
@@ -79,7 +86,7 @@ public class CameraMovement : MonoBehaviour {
             //transform.position = Vector3.Lerp(camTransform.position, endPosition, Time.deltaTime * playerController.cameraTime);
         }
         else
-        {        
+        {
             if (!begin)
             {
                 begin = true;

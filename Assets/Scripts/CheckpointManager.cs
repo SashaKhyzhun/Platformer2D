@@ -8,9 +8,13 @@ public class CheckpointManager : MonoBehaviour {
     private Transform playerTransform;
     private PlayerController playerController;
 
+    public  int currentIndex { get; set; }
+    public bool revert { get; set; }
+
 	void Start () {
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         checkpoints = new Transform[checkpointObject.childCount];
+        currentIndex = 0;
         int i = 0;
         foreach (Transform child in checkpointObject)
         {
@@ -23,7 +27,18 @@ public class CheckpointManager : MonoBehaviour {
     
 	void Update () {
         float playerPositionX = playerTransform.position.x;
-        for (int i = 0; i < checkpoints.Length - 1; i++)
+
+        if (playerPositionX >= checkpoints[currentIndex].position.x)
+        {
+            if (currentIndex < checkpoints.Length - 1)
+            {
+                playerController.checkpointNumber = currentIndex;
+                currentIndex++;
+            }
+        }
+
+        if (revert != playerController.startReturn) { revert = playerController.startReturn; }
+        /*for (int i = 0; i < checkpoints.Length - 1; i++)
         {
             if (playerPositionX >= checkpoints[i].position.x)
             {
@@ -32,6 +47,6 @@ public class CheckpointManager : MonoBehaviour {
                     playerController.checkpointNumber = i;
                 }                    
             }
-        }
+        }*/
     }
 }

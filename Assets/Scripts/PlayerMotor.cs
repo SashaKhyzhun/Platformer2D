@@ -35,7 +35,7 @@ public class PlayerMotor : MonoBehaviour {
 
     void Update()
     {
-        //if (moveRight) { MoveRight(); moveRight = false; }
+        if (moveRight) { MoveRight(); moveRight = false; }
         if (moveUp) { MoveUp(); moveUp = false; }
         if (holdRotation) { HoldRotation(); holdRotation = false; }
     }

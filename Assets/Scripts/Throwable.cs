@@ -1,17 +1,35 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class Throwable : Dangerous {
-
+public class Throwable : Dangerous, IRevertable
+{
     public Transform body;
+    public Transform checkpoints;
     public float throwForce;
+    public int ownIndex;
 
     private Rigidbody2D bodyRb;
+    private CheckpointManager chManager;
     private bool used = false;
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
+    private bool initialUsed;
+    private bool initialKinematic;
 
     void Start()
     {
         bodyRb = body.GetComponent<Rigidbody2D>();
+        chManager = checkpoints.GetComponent<CheckpointManager>();
+        SaveParams();
+    }
+
+    void Update()
+    {
+        if (chManager != null)
+        {
+            if (chManager.revert) {
+                if (chManager.currentIndex <= ownIndex) { LoadParams(); }
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D coll)
@@ -34,6 +52,20 @@ public class Throwable : Dangerous {
             bodyRb.isKinematic = true;
         }
     }
-        
 
+    public void SaveParams()
+    {
+        initialPosition = body.position;
+        initialRotation = body.rotation;
+        initialUsed = used;
+        initialKinematic = true;
+    }
+
+    public void LoadParams()
+    {
+        body.position = initialPosition;
+        body.rotation = initialRotation;
+        used = initialUsed;
+        bodyRb.isKinematic = initialKinematic;
+    }
 }

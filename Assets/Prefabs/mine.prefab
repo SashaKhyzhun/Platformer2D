@@ -11,12 +11,12 @@ GameObject:
   - 212: {fileID: 21244338}
   - 58: {fileID: 5856314}
   - 114: {fileID: 11420958}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &411310
 Transform:
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.8699999, y: -3.29999995, z: 0}
+  m_LocalPosition: {x: 13.9230003, y: -3.46799994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,7 +54,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a4e3c4f5ac39e84f9ac682294500b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpoints: {fileID: 0}
   boomForce: 1000
+  ownIndex: 2
 --- !u!212 &21244338
 SpriteRenderer:
   m_ObjectHideFlags: 1

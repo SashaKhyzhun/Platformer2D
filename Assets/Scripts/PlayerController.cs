@@ -6,7 +6,6 @@ using System.Collections;
 public class PlayerController: MonoBehaviour {
 
     public float cameraStayTime;
-    public float cameraBackToPositionTime;
 
     public bool alive { get; set; }
     public bool start { get; set; }
@@ -15,21 +14,22 @@ public class PlayerController: MonoBehaviour {
     public bool startReturn { get; set; }
     public Transform[] checkpoints { get; set; }
     public Vector3 checkpointPosition { get; set; }
-    public float cameraTime { get; set; }
+    public float cameraBackToPositionTime { get; set; }
     public int checkpointNumber { get; set; }
 
     private Rigidbody2D rb;  
     private PlayerMotor motor;
     private bool canPlay = false;
     private bool died = false;
+    
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         motor = GetComponent<PlayerMotor>();
+        cameraBackToPositionTime = GameObject.FindGameObjectWithTag("globalGM").GetComponent<UIManager>().fadeTime;
         wait = false;
         alive = true;
-        cameraTime = cameraBackToPositionTime;
         StartCoroutine(WaitAtStart());
     }
 

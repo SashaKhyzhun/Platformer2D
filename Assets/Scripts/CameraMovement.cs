@@ -3,12 +3,12 @@
 public class CameraMovement : MonoBehaviour
 {
 
-    public Transform player;
-    public GameObject fadePlane;
+    public Transform target;
+    
     public float targetSpeed = 1;
     public float accelerationTime = 1;
     public float offsetPerc;
-
+    
     private PlayerController playerController;
     private Animator fadeAnimator;
     private Transform camTransform;
@@ -24,14 +24,14 @@ public class CameraMovement : MonoBehaviour
 
     void Start()
     {
-        playerController = player.gameObject.GetComponent<PlayerController>();
-        fadeAnimator = fadePlane.GetComponent<Animator>();
+        playerController = target.gameObject.GetComponent<PlayerController>();
+        fadeAnimator = GameObject.FindGameObjectWithTag("Fade").GetComponent<Animator>();
         camExtentY = Camera.main.orthographicSize;
         camExtent = camExtentY * Camera.main.aspect;
         camTransform = transform;
         camLowerEdge = camTransform.position.y - camExtentY - 1;
-        playerSpriteExtent = player.GetComponent<Renderer>().bounds.extents.x;
-        fadeAnimator.SetFloat("speedMultiplier", 1 / playerController.cameraBackToPositionTime);
+        playerSpriteExtent = target.GetComponent<Renderer>().bounds.extents.x;
+        //fadeAnimator.SetFloat("speedMultiplier", 1 / playerController.cameraBackToPositionTime);
     }
 
     void Update()
@@ -40,7 +40,7 @@ public class CameraMovement : MonoBehaviour
 
         if (playerController.start)
         {
-            xCurrentPosition = player.position.x;
+            xCurrentPosition = target.position.x;
 
             if (xCurrentPosition >= camPosX + ((offsetPerc / 100) * camExtent))
             {
@@ -54,9 +54,9 @@ public class CameraMovement : MonoBehaviour
             }
 
             //Check if player within camera sight
-            if (player.position.x + playerSpriteExtent < camPosX - camExtent
-                || player.position.x - playerSpriteExtent > camPosX + camExtent
-                || player.position.y  < camLowerEdge)
+            if (target.position.x + playerSpriteExtent < camPosX - camExtent
+                || target.position.x - playerSpriteExtent > camPosX + camExtent
+                || target.position.y  < camLowerEdge)
             {
                 playerController.alive = false;
             }
@@ -82,8 +82,6 @@ public class CameraMovement : MonoBehaviour
                 endPosition = new Vector3(playerController.checkpointPosition.x - ((offsetPerc / 100) * camExtent), camTransform.position.y, camTransform.position.z);
                 begin = false;
             }
-            //fadeAnimator.GetCurrentAnimatorStateInfo(0).fullPathHash;
-            //transform.position = Vector3.Lerp(camTransform.position, endPosition, Time.deltaTime * playerController.cameraTime);
         }
         else
         {

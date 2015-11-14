@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Throwable : Dangerous, IRevertable
+public class Throwable : MonoBehaviour, IRevertable
 {
     public Transform body;
     public Transform checkpoints;

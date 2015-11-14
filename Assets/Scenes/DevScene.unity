@@ -757,6 +757,21 @@ EdgeCollider2D:
   - {x: 6.35066509, y: -.393268108}
   - {x: 6.76519108, y: -.166544914}
   - {x: 7.08786297, y: -.165739536}
+--- !u!1 &511892525 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 130690, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
+  m_PrefabInternal: {fileID: 581430814}
+--- !u!114 &511892527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511892525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cfeda0f853db54c84546a579daba8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &581430814
 Prefab:
   m_ObjectHideFlags: 0
@@ -823,6 +838,10 @@ Prefab:
     - target: {fileID: 5005008, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188174, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
+      propertyPath: m_Size.x
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
@@ -2332,6 +2351,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1367219749 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 130690, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
+  m_PrefabInternal: {fileID: 2105966443}
+--- !u!114 &1367219751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367219749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cfeda0f853db54c84546a579daba8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1368527367
 Prefab:
   m_ObjectHideFlags: 0
@@ -4261,6 +4295,14 @@ Prefab:
     - target: {fileID: 5005008, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188174, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188174, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
+      propertyPath: m_Size.x
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}

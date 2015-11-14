@@ -4,6 +4,7 @@ public class Throwable : MonoBehaviour, IRevertable
 {
     public Transform body;
     public Transform checkpoints;
+    public bool freeze = true;
     public float throwForce;
     public int ownIndex;
 
@@ -45,11 +46,14 @@ public class Throwable : MonoBehaviour, IRevertable
         }
     }
 
-    void  OnCollisionExit2D(Collision2D coll)
+    void  OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.CompareTag("Map"))
+        if (freeze)
         {
-            bodyRb.isKinematic = true;
+            if (!bodyRb.isKinematic)
+            {
+                if (coll.gameObject.CompareTag("Map")) { bodyRb.isKinematic = true; }
+            }
         }
     }
 

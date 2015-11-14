@@ -27,7 +27,8 @@ public class PlayerController: MonoBehaviour {
     {
         rb = GetComponent<Rigidbody2D>();
         motor = GetComponent<PlayerMotor>();
-        cameraBackToPositionTime = GameObject.FindGameObjectWithTag("globalGM").GetComponent<UIManager>().fadeTime;
+        GameObject globalGM = GameObject.FindGameObjectWithTag("globalGM");
+        if (globalGM != null) { cameraBackToPositionTime = globalGM.GetComponent<UIManager>().fadeTime; }
         wait = false;
         alive = true;
         StartCoroutine(WaitAtStart());

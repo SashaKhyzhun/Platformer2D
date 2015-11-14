@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour {
     {
         anim.SetBool("Fade", true);
         yield return new WaitForSeconds(fadeTime / 2);
-        Application.LoadLevel(level);
+        Application.LoadLevelAsync(level);
         anim.SetBool("Fade", false);
     }
 

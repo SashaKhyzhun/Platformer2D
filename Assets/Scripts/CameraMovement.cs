@@ -7,6 +7,7 @@ public class CameraMovement : MonoBehaviour
     
     public float targetSpeed = 1;
     public float accelerationTime = 1;
+    public float followTemp = 1;
     public float offsetPerc;
     
     private PlayerController playerController;
@@ -25,7 +26,8 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         playerController = target.gameObject.GetComponent<PlayerController>();
-        fadeAnimator = GameObject.FindGameObjectWithTag("Fade").GetComponent<Animator>();
+        GameObject fade = GameObject.FindGameObjectWithTag("Fade");
+        if (fade != null) { fadeAnimator = fade.GetComponent<Animator>(); }
         camExtentY = Camera.main.orthographicSize;
         camExtent = camExtentY * Camera.main.aspect;
         camTransform = transform;
@@ -44,7 +46,7 @@ public class CameraMovement : MonoBehaviour
 
             if (xCurrentPosition >= camPosX + ((offsetPerc / 100) * camExtent))
             {
-                speed = xCurrentPosition - (camPosX + ((offsetPerc / 100) * camExtent));
+                speed = (xCurrentPosition - (camPosX + ((offsetPerc / 100) * camExtent))) * followTemp;
                 if (speed < targetSpeed) { speed = targetSpeed; }
             }
             else

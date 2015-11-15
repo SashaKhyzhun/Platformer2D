@@ -1,101 +1,101 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &186472
+--- !u!1 &181292
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 466092}
-  - 212: {fileID: 21296496}
-  - 58: {fileID: 5820900}
-  - 50: {fileID: 5053666}
-  - 61: {fileID: 6180370}
-  - 114: {fileID: 11433480}
-  m_Layer: 10
-  m_Name: rock1
+  - 4: {fileID: 495680}
+  - 212: {fileID: 21230042}
+  - 58: {fileID: 5820656}
+  - 50: {fileID: 5014122}
+  - 61: {fileID: 6104124}
+  - 114: {fileID: 11448432}
+  m_Layer: 0
+  m_Name: rock2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &466092
+--- !u!4 &495680
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186472}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.3400002, y: 4.13999987, z: 0}
-  m_LocalScale: {x: 3.43560243, y: 3.43560243, z: 3.43560243}
+  m_GameObject: {fileID: 181292}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: -1.95205189e-06}
+  m_LocalPosition: {x: 128.919998, y: 4.28999996, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5053666
+--- !u!50 &5014122
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186472}
+  m_GameObject: {fileID: 181292}
   m_Mass: 25
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &5820900
+--- !u!58 &5820656
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186472}
+  m_GameObject: {fileID: 181292}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: .0399999991}
+  m_Offset: {x: 0, y: -.330000013}
   serializedVersion: 2
-  m_Radius: .510507405
---- !u!61 &6180370
+  m_Radius: 1.36000001
+--- !u!61 &6104124
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186472}
+  m_GameObject: {fileID: 181292}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -.825278819}
+  m_Offset: {x: 0, y: 3.5}
   serializedVersion: 2
-  m_Size: {x: 1.10571432, y: 2.93867683}
---- !u!114 &11433480
+  m_Size: {x: 2.6400001, y: 10.4225082}
+--- !u!114 &11448432
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186472}
+  m_GameObject: {fileID: 181292}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bab6908a6f236dd428d58e46ad921c63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 466092}
+  body: {fileID: 0}
   checkpoints: {fileID: 0}
-  freeze: 0
+  freeze: 1
   throwForce: 0
-  ownIndex: 1
---- !u!212 &21296496
+  ownIndex: 0
+--- !u!212 &21230042
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186472}
+  m_GameObject: {fileID: 181292}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -114,7 +114,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 70689981
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 64a468e97a87b77429f43476557b8adc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e7af9dfe73ec744f9a37e66ba8b99f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -125,5 +125,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 186472}
+  m_RootGameObject: {fileID: 181292}
   m_IsPrefabParent: 1

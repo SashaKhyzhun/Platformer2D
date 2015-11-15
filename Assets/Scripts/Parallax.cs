@@ -13,7 +13,9 @@ public class Parallax : MonoBehaviour {
     private float camPosX;
     private float camExtent;
     private float leftCameraBorder;
+    private float rightCameraBorder;
     private float rightSpriteBorder;
+    private float leftNextSpriteBorder;
 
     void Start()
     {
@@ -39,6 +41,7 @@ public class Parallax : MonoBehaviour {
         camPosX = cam.position.x;
 
         leftCameraBorder = camPosX - camExtent - offset;
+        rightCameraBorder = camPosX + camExtent + offset;
         for (int i = 0; i < backgrounds.Length; i++)
         {
             
@@ -52,21 +55,26 @@ public class Parallax : MonoBehaviour {
 
             // Manage Background
             rightSpriteBorder = backgrounds[i].position.x + bgExtents[i];
+            leftNextSpriteBorder = rightSpriteBorder - 0.05f;
 
             if (leftCameraBorder >= rightSpriteBorder)
             {
                 backgrounds[i].position = backgrounds[i].position + new Vector3(4 * bgExtents[i] - 0.05f, 0);
             }
+            //if (rightCameraBorder <= leftNextSpriteBorder)
+            //{
+            //    backgrounds[i].position = backgrounds[i].position - new Vector3(4 * bgExtents[i] + 0.05f, 0);
+            //}
         }
         previousCamPos = cam.position;
         //ManageBackground(); 
     }
 
-    void ManageBackground()
-    {
-        for (int i = 0; i < backgrounds.Length; i++)
-        {
+    //void ManageBackground()
+    //{
+    //    for (int i = 0; i < backgrounds.Length; i++)
+    //    {
             
-        }
-    }
+    //    }
+    //}
 }

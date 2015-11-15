@@ -12,10 +12,11 @@ public class Parallax : MonoBehaviour {
     private float[] bgExtents;
     private float camPosX;
     private float camExtent;
-    private float leftCameraBorder;
-    private float rightCameraBorder;
     private float rightSpriteBorder;
-    private float leftNextSpriteBorder;
+    //private float leftNextSpriteBorder;
+
+    public float leftCameraBorder { get; set; }
+    public float rightCameraBorder{ get; set; }
 
     void Start()
     {
@@ -55,7 +56,7 @@ public class Parallax : MonoBehaviour {
 
             // Manage Background
             rightSpriteBorder = backgrounds[i].position.x + bgExtents[i];
-            leftNextSpriteBorder = rightSpriteBorder - 0.05f;
+            //leftNextSpriteBorder = rightSpriteBorder - 0.05f;
 
             if (leftCameraBorder >= rightSpriteBorder)
             {

@@ -18,15 +18,27 @@ public class UIManager : MonoBehaviour {
 
     public void Restart()
     {
-        StartCoroutine(WaitForRestart(Application.loadedLevel));
+        StartCoroutine(WaitForLoad(Application.loadedLevel));
     }
 
     public void StartGame()
     {
-        StartCoroutine(WaitForRestart(Application.loadedLevel + 1));
+        StartCoroutine(WaitForLoad(Application.loadedLevel + 1));
     }
 
-    IEnumerator WaitForRestart(int level)
+    public void ExitGame()
+    {
+        StartCoroutine(WaitForExit());
+    }
+
+    IEnumerator WaitForExit()
+    {
+        anim.SetBool("Fade", true);
+        yield return new WaitForSeconds(fadeTime / 2);
+        Application.Quit();
+    }
+
+    IEnumerator WaitForLoad(int level)
     {
         anim.SetBool("Fade", true);
         yield return new WaitForSeconds(fadeTime / 2);

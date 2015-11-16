@@ -1,12 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class RotateObject : MonoBehaviour
 {
-   
+    public float speed;
+
+    private Rigidbody2D rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+      
     void FixedUpdate()
     {
-        GetComponent<Rigidbody>().rotation = Quaternion.identity;
+        rb.MoveRotation(rb.rotation + speed * Time.deltaTime);
     }
 
 }

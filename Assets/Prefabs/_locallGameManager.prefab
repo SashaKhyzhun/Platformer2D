@@ -8,7 +8,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 459328}
-  - 114: {fileID: 11445902}
   - 114: {fileID: 11473246}
   m_Layer: 0
   m_Name: _locallGameManager
@@ -29,20 +28,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11445902
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174720}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0f62d38dd0305e40a3c74579c899342, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mapObject: {fileID: 0}
-  backgroundObject: {fileID: 0}
-  offset: 1
 --- !u!114 &11473246
 MonoBehaviour:
   m_ObjectHideFlags: 1

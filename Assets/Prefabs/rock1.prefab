@@ -9,10 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 466092}
   - 212: {fileID: 21296496}
-  - 58: {fileID: 5820900}
   - 50: {fileID: 5053666}
   - 61: {fileID: 6180370}
   - 114: {fileID: 11433480}
+  - 114: {fileID: 11495294}
+  - 61: {fileID: 6182110}
   m_Layer: 10
   m_Name: rock1
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.3400002, y: 4.13999987, z: 0}
+  m_LocalPosition: {x: 19.7999992, y: 3.27999997, z: 0}
   m_LocalScale: {x: 3.43560243, y: 3.43560243, z: 3.43560243}
   m_Children: []
   m_Father: {fileID: 0}
@@ -48,19 +49,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &5820900
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186472}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: .0399999991}
-  serializedVersion: 2
-  m_Radius: .510507405
 --- !u!61 &6180370
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -74,6 +62,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -.825278819}
   serializedVersion: 2
   m_Size: {x: 1.10571432, y: 2.93867683}
+--- !u!61 &6182110
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186472}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -.0392622873, y: -.00257807784}
+  serializedVersion: 2
+  m_Size: {x: .967619359, y: .722816288}
 --- !u!114 &11433480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,6 +91,17 @@ MonoBehaviour:
   freeze: 0
   throwForce: 0
   ownIndex: 1
+--- !u!114 &11495294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68b9c62690e6c1449d8542a405b74ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21296496
 SpriteRenderer:
   m_ObjectHideFlags: 1

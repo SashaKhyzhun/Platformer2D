@@ -62,7 +62,7 @@ public class Throwable : MonoBehaviour, IRevertable
         initialPosition = body.position;
         initialRotation = body.rotation;
         initialUsed = used;
-        initialKinematic = true;
+        initialKinematic = bodyRb.isKinematic;
     }
 
     public void LoadParams()

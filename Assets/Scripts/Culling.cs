@@ -9,7 +9,6 @@ public class Culling : MonoBehaviour {
     private Collider2D coll;
     private Rigidbody2D rb;
     private Joint2D joint;
-    //private Transform myTransform;
     private float leftCamBorder;
     private float rightCamBorder;
     private float spriteCenterX;
@@ -17,7 +16,6 @@ public class Culling : MonoBehaviour {
 
     void Start()
     {
-        //myTransform = transform;
         parallax = Camera.main.GetComponent<Parallax>();
         rend = GetComponent<Renderer>();
         anim = GetComponent<Animator>();

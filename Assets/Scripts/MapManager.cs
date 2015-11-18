@@ -1,106 +1,80 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class MapManager : MonoBehaviour {
 
     public Transform mapObject;
-    public Transform backgroundObject;
-    public float offset;
 
-    private Transform camTransform;
-    private Transform[] mapSegments;
-    private Transform[] backgroundSegments;
-    private float[] mapExtents;
-    private float[] mapCenters;
-    private float[] bgExtents;
-    private float camPosX;
-    private float camExtent;
-    private float rightCameraBorder;
-    private float leftCameraBorder;
-    private float rightSpriteBorder;
-    private float leftSpriteBorder;
+    private Parallax parallax;
+    private Transform[] segments;
+    private Renderer[] renderers;
+    private float[] extents;
+    private float leftCamBorder;
+    private float rightCamBorder;
+    private float spriteCenterX;
 
-    void Start () {
-        offset = Mathf.Abs(offset);
-        mapSegments = new Transform[mapObject.childCount];
-        backgroundSegments = new Transform[backgroundObject.childCount];
-        mapExtents = new float[mapSegments.Length];
-        mapCenters = new float[mapSegments.Length];
-        bgExtents = new float[backgroundSegments.Length];
-        Camera _camera = Camera.main;
-        camExtent = _camera.orthographicSize * _camera.aspect;
-        camTransform = _camera.transform;
+    void Start()
+    {
+        int childCount = mapObject.childCount;
+        segments = new Transform[childCount];
+        extents = new float[childCount];
+        renderers = new Renderer[childCount];
 
         int i = 0;
-        foreach (Transform child in mapObject)
+        foreach(Transform child in mapObject)
         {
-            mapSegments[i] = child;
-            mapExtents[i] = mapSegments[i].GetComponent<Renderer>().bounds.extents.x;
-            mapCenters[i] = mapSegments[i].GetComponent<Renderer>().bounds.center.x;
-            mapSegments[i].gameObject.SetActive(false);
+            segments[i] = child;
+            renderers[i] = child.GetComponent<Renderer>();
+            if (renderers[i] != null) { extents[i] = renderers[i].bounds.extents.x; }
+            else { extents[i] = 2; }
             i++;
         }
+        parallax = Camera.main.GetComponent<Parallax>();
 
-        i = 0;
-
-        foreach(Transform child in backgroundObject)
+        foreach (Transform t in segments)
         {
-            backgroundSegments[i] = child;
-            bgExtents[i] = backgroundSegments[i].GetComponent<Renderer>().bounds.extents.x;
-            i++;
+            TurnOff(t);
         }
     }
 
-    void Update () {
-        camPosX = camTransform.position.x;
-        rightCameraBorder = camPosX + camExtent + offset;
-        leftCameraBorder = camPosX - camExtent - offset;
-
-        ManageMap();
-        ManageBackground();
-	}
-
-    void ManageMap()
+    void Update()
     {
-        for (int i = 0; i < mapExtents.Length; i++)
+        if (parallax != null)
         {
-            rightSpriteBorder = mapCenters[i] + mapExtents[i];
-            leftSpriteBorder = mapCenters[i] - mapExtents[i];
+            leftCamBorder = parallax.leftCameraBorder;
+            rightCamBorder = parallax.rightCameraBorder;
+        }
+        else { Debug.Log("There is no Parallax script on the camera"); }
 
-            if (leftCameraBorder >= leftSpriteBorder && rightCameraBorder <= rightSpriteBorder)
+        for (int i = 0; i < segments.Length; i++)
+        {
+            if (renderers[i] != null) { spriteCenterX = renderers[i].bounds.center.x; }
+            else { spriteCenterX = segments[i].position.x; }
+
+            if (segments[i].gameObject.activeInHierarchy)
             {
-                if (!mapSegments[i].gameObject.activeInHierarchy)
+                if (leftCamBorder >= spriteCenterX + extents[i] || rightCamBorder <= spriteCenterX - extents[i])
                 {
-                    mapSegments[i].gameObject.SetActive(true);
+                    TurnOff(segments[i]);
                 }
             }
-            if (leftCameraBorder >= rightSpriteBorder)
+            else
             {
-                if (mapSegments[i].gameObject.activeInHierarchy)
+                if (leftCamBorder <= spriteCenterX + extents[i] && rightCamBorder >= spriteCenterX - extents[i])
                 {
-                    mapSegments[i].gameObject.SetActive(false);
-                }
-            }
-            else if (rightCameraBorder >= leftSpriteBorder)
-            {
-                if (!mapSegments[i].gameObject.activeInHierarchy)
-                {
-                    mapSegments[i].gameObject.SetActive(true);
+                    TurnOn(segments[i]);
                 }
             }
         }
     }
 
-    void ManageBackground()
+    private void TurnOn(Transform obj)
     {
-        for (int i = 0; i < backgroundSegments.Length; i++)
-        {
-            rightSpriteBorder = backgroundSegments[i].position.x + bgExtents[i];
-
-            if (leftCameraBorder >= rightSpriteBorder)
-            {
-                backgroundSegments[i].position = backgroundSegments[i].position + new Vector3(4 * bgExtents[i], 0);
-            }
-        }
+        if (!obj.gameObject.activeInHierarchy) { obj.gameObject.SetActive(true); }
     }
+
+    private void TurnOff(Transform obj)
+    { 
+        if (obj.gameObject.activeInHierarchy) { obj.gameObject.SetActive(false); }
+    }
+
 }

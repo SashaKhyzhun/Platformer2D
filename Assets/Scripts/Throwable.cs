@@ -3,7 +3,7 @@
 public class Throwable : MonoBehaviour, IRevertable
 {
     public Transform body;
-    public Transform checkpoints;
+    public Transform localGM;
     public bool freeze = true;
     public float throwForce;
     public int ownIndex;
@@ -19,7 +19,7 @@ public class Throwable : MonoBehaviour, IRevertable
     void Start()
     {
         bodyRb = body.GetComponent<Rigidbody2D>();
-        chManager = checkpoints.GetComponent<CheckpointManager>();
+        chManager = localGM.GetComponent<CheckpointManager>();
         SaveParams();
     }
 

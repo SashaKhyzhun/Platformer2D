@@ -11,7 +11,8 @@ GameObject:
   - 50: {fileID: 5005008}
   - 61: {fileID: 6132448}
   - 212: {fileID: 21270074}
-  m_Layer: 8
+  - 114: {fileID: 11458288}
+  m_Layer: 10
   m_Name: lance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +30,8 @@ GameObject:
   - 61: {fileID: 6136184}
   - 61: {fileID: 6188174}
   - 114: {fileID: 11416378}
-  m_Layer: 8
+  - 114: {fileID: 11410544}
+  m_Layer: 10
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +77,7 @@ Rigidbody2D:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &6132448
 BoxCollider2D:
@@ -115,7 +117,18 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 11.1800003}
   serializedVersion: 2
-  m_Size: {x: 5.48000002, y: 26.6822929}
+  m_Size: {x: 6, y: 26.6822929}
+--- !u!114 &11410544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cfeda0f853db54c84546a579daba8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11416378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,9 +141,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 465122}
-  checkpoints: {fileID: 0}
+  localGM: {fileID: 0}
+  freeze: 1
   throwForce: 900
-  ownIndex: 3
+  ownIndex: 4
+--- !u!114 &11458288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68b9c62690e6c1449d8542a405b74ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21270074
 SpriteRenderer:
   m_ObjectHideFlags: 1

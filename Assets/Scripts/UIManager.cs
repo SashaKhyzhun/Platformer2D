@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UIManager : MonoBehaviour {
-
-    public bool allowSceneActivation = false;
-
+public class UIManager : MonoBehaviour
+{    
     public GameObject FadePlane;
     public GameObject MenuLayout;
     public GameObject GameLayout;
@@ -54,7 +52,6 @@ public class UIManager : MonoBehaviour {
         if (!LoadingScreen.activeInHierarchy) { LoadingScreen.SetActive(true); }
         anim.SetBool("Fade", false);
         yield return time;
-        //yield return halfOfTime;
 
         AsyncOperation async = Application.LoadLevelAsync(level);
         async.allowSceneActivation = false;

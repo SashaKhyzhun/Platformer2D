@@ -11,8 +11,9 @@ GameObject:
   - 212: {fileID: 21299886}
   - 68: {fileID: 6869344}
   - 50: {fileID: 5055328}
-  - 233: {fileID: 23329622}
-  m_Layer: 0
+  - 114: {fileID: 11412950}
+  - 114: {fileID: 11494278}
+  m_Layer: 9
   m_Name: fan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,9 +43,9 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!68 &6869344
@@ -89,6 +90,29 @@ EdgeCollider2D:
   - {x: -.808199942, y: 1.82714462}
   - {x: -.604755878, y: .953822136}
   - {x: -1.11344314, y: .522932649}
+--- !u!114 &11412950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c037f1e52732d4680b853a8576e566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 450
+--- !u!114 &11494278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68b9c62690e6c1449d8542a405b74ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21299886
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -115,26 +139,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 728eabcc8ff724040aa31a1e030acee8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!233 &23329622
-HingeJoint2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 132408}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 38.5200005, y: 4.42000008}
-  m_UseMotor: 1
-  m_Motor:
-    m_MotorSpeed: -500
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

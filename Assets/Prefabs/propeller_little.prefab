@@ -28,7 +28,8 @@ GameObject:
   - 4: {fileID: 405698}
   - 212: {fileID: 21278064}
   - 50: {fileID: 5039000}
-  - 233: {fileID: 23309474}
+  - 114: {fileID: 11470234}
+  - 114: {fileID: 11419090}
   m_Layer: 9
   m_Name: propeller_little
   m_TagString: Untagged
@@ -72,9 +73,9 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!58 &5878196
@@ -116,6 +117,29 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 5, y: .1100979}
+--- !u!114 &11419090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68b9c62690e6c1449d8542a405b74ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11470234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c037f1e52732d4680b853a8576e566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -110
 --- !u!212 &21278064
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -142,26 +166,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9f5a4436ed860a34fa53ac40320862ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!233 &23309474
-HingeJoint2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177940}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 74.6100006, y: -5.46000004}
-  m_UseMotor: 1
-  m_Motor:
-    m_MotorSpeed: 150
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -60,6 +60,7 @@ public class UIManager : MonoBehaviour
         anim.SetBool("Fade", true);
         yield return halfOfTime;
         async.allowSceneActivation = true;
+        Resources.UnloadUnusedAssets();
         anim.SetBool("Fade", false);
     }
 

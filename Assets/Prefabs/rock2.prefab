@@ -26,8 +26,8 @@ GameObject:
   - 4: {fileID: 495680}
   - 50: {fileID: 5014122}
   - 61: {fileID: 6104124}
+  - 60: {fileID: 6053740}
   - 114: {fileID: 11448432}
-  - 58: {fileID: 5836892}
   - 114: {fileID: 11457042}
   m_Layer: 10
   m_Name: rock2
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 203.067123, y: 4.50536633, z: -.48046875}
+  m_LocalPosition: {x: 22.0314064, y: .0651896968, z: -.48046875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 416920}
@@ -77,8 +77,8 @@ Rigidbody2D:
   m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &5836892
-CircleCollider2D:
+--- !u!60 &6053740
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -87,9 +87,15 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -.0399999991, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.19000006
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -.0517425537, y: 1.59503901}
+      - {x: 1.02867317, y: .309016973}
+      - {x: 1.0534687, y: -1.1194725}
+      - {x: .136610031, y: -1.58515489}
+      - {x: -1.13593674, y: -1.0703603}
+      - {x: -1.1062851, y: .360760421}
 --- !u!61 &6104124
 BoxCollider2D:
   m_ObjectHideFlags: 1

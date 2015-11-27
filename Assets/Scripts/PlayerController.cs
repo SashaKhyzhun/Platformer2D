@@ -17,8 +17,11 @@ public class PlayerController: MonoBehaviour {
     public float cameraBackToPositionTime { get; set; }
     public int checkpointNumber { get; set; }
 
+    private WaitForSeconds halfBackTime;
+    private WaitForSeconds fullBackTime;
     private Rigidbody2D rb;  
     private PlayerMotor motor;
+    private Throwable throwable;
     private bool canPlay = false;
     private bool died = false;
     
@@ -27,8 +30,11 @@ public class PlayerController: MonoBehaviour {
     {
         rb = GetComponent<Rigidbody2D>();
         motor = GetComponent<PlayerMotor>();
+        throwable = GetComponent<Throwable>();
         GameObject globalGM = GameObject.FindGameObjectWithTag("globalGM");
         if (globalGM != null) { cameraBackToPositionTime = globalGM.GetComponent<UIManager>().fadeTime; }
+        halfBackTime = new WaitForSeconds(cameraBackToPositionTime / 2);
+        fullBackTime = new WaitForSeconds(cameraBackToPositionTime);
         wait = false;
         alive = true;
         StartCoroutine(WaitAtStart());
@@ -78,21 +84,21 @@ public class PlayerController: MonoBehaviour {
 
     IEnumerator Respawn(Vector3 position)
     {
-        WaitForSeconds halfBacktime = new WaitForSeconds(cameraBackToPositionTime / 2);
+        
         wait = true;
         transform.position = new Vector3(0, -10, 0);
         transform.rotation = new Quaternion();
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0;
         rb.isKinematic = true;
-        yield return new WaitForSeconds(cameraStayTime);
+        yield return fullBackTime;
         startFade = true;
-        yield return halfBacktime;
+        yield return halfBackTime;
         System.GC.Collect();
         Resources.UnloadUnusedAssets();
         startReturn = true;
         transform.position = position;
-        yield return halfBacktime;
+        yield return halfBackTime;
         rb.isKinematic = false;
         start = false;
         startFade = false;
@@ -104,7 +110,14 @@ public class PlayerController: MonoBehaviour {
 
     IEnumerator WaitAtStart()
     {
-        yield return new WaitForSeconds(cameraBackToPositionTime);
+        yield return halfBackTime;
+        if (throwable != null)
+        {
+            throwable.Launch(motor.throwDirection);
+            throwable.enabled = false;
+        }
+        yield return fullBackTime;
+        yield return fullBackTime;
         canPlay = true;
     }
 

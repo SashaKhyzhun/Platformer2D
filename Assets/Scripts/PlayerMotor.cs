@@ -14,6 +14,7 @@ public class PlayerMotor : MonoBehaviour {
     public float rotationHoldForce;
     public float rotationTreshold;
     public float rotationBreakForce;
+    public Vector3 throwDirection;
 
     public bool moveRight { get; set; }
     public bool moveUp { get; set; }
@@ -95,9 +96,7 @@ public class PlayerMotor : MonoBehaviour {
 
     void OnCollisionStay2D()
     {
-        if (hold) {
-            hold = false;
-        }
+        if (hold) { hold = false; }
     }
 
     void OnCollisionExit2D()

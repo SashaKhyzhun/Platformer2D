@@ -5,7 +5,9 @@ public class Throwable : MonoBehaviour, IRevertable
     public Transform body;
     public Transform localGM;
     public bool freeze = true;
+    public bool addTorque = false;
     public float throwForce;
+    public float torque;
     public int ownIndex;
 
     private Rigidbody2D bodyRb;
@@ -20,7 +22,7 @@ public class Throwable : MonoBehaviour, IRevertable
     {
         bodyRb = body.GetComponent<Rigidbody2D>();
         chManager = localGM.GetComponent<CheckpointManager>();
-        SaveParams();
+        SaveParams();        
     }
 
     void Update()
@@ -39,9 +41,7 @@ public class Throwable : MonoBehaviour, IRevertable
         {
             if (coll.gameObject.CompareTag("Player"))
             {
-                used = true;
-                bodyRb.isKinematic = false;
-                bodyRb.AddForce(transform.up * throwForce * Time.deltaTime, ForceMode2D.Impulse);
+                Launch(body.up);
             }
         }
     }
@@ -55,6 +55,14 @@ public class Throwable : MonoBehaviour, IRevertable
                 if (coll.gameObject.CompareTag("Map")) { bodyRb.isKinematic = true; }
             }
         }
+    }
+
+    public void Launch(Vector3 direction)
+    {
+        used = true;
+        bodyRb.isKinematic = false;
+        bodyRb.AddForce(direction.normalized * throwForce, ForceMode2D.Impulse);
+        if (addTorque) { bodyRb.AddTorque(torque); }
     }
 
     public void SaveParams()

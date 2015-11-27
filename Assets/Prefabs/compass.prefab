@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11420222}
   - 114: {fileID: 11493836}
   - 114: {fileID: 11415146}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: compass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,6 +142,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 4245eb4435243d747a7c331584bdfd45,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 196030}

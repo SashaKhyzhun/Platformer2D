@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11410586}
   - 114: {fileID: 11481988}
   - 114: {fileID: 11437416}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,6 +168,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 7275d305dd103184c9da6e1427086142,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 137070}

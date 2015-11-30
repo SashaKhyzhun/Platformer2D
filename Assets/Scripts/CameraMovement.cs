@@ -74,7 +74,7 @@ public class CameraMovement : MonoBehaviour
         {
             speed = 0;
 
-            fadeAnimator.SetBool("Fade", true);
+            //fadeAnimator.SetBool("Fade", true);
 
             if (returnToPos)
             {
@@ -91,7 +91,7 @@ public class CameraMovement : MonoBehaviour
         }
         if (playerController.startReturn)
         {
-            fadeAnimator.SetBool("Fade", false);
+            //fadeAnimator.SetBool("Fade", false);
             transform.position = endPosition;
         }
 

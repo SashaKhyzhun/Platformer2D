@@ -4,6 +4,7 @@ public class CameraMovement : MonoBehaviour
 {
 
     public Transform target;
+    public Transform finish;
     
     public float targetSpeed = 1;
     public float accelerationTime = 1;
@@ -15,7 +16,7 @@ public class CameraMovement : MonoBehaviour
     private Transform camTransform;
     private Vector2 direction;
     private Vector3 endPosition;
-    private bool begin = true;
+    private bool returnToPos = true;
     private float xCurrentPosition;
     private float speed;
     private float camExtent;
@@ -44,17 +45,19 @@ public class CameraMovement : MonoBehaviour
         {
             xCurrentPosition = target.position.x;
 
-            if (xCurrentPosition >= camPosX + ((offsetPerc / 100) * camExtent))
+            if (playerController.alive)
             {
-                speed = (xCurrentPosition - (camPosX + ((offsetPerc / 100) * camExtent))) * followTemp;
-                if (speed < targetSpeed) { speed = targetSpeed; }
+                if (xCurrentPosition >= camPosX + ((offsetPerc / 100) * camExtent))
+                {
+                    speed = (xCurrentPosition - (camPosX + ((offsetPerc / 100) * camExtent))) * followTemp;
+                    if (speed < targetSpeed) { speed = targetSpeed; }
+                }
+                else
+                {
+                    if (speed >= targetSpeed) { speed -= accelerationTime * speed; }
+                    else { speed = targetSpeed; }
+                }
             }
-            else
-            {
-                if (speed >= targetSpeed) { speed -= accelerationTime * speed; }
-                else { speed = targetSpeed; }
-            }
-
             //Check if player within camera sight
             if (target.position.x + playerSpriteExtent < camPosX - camExtent
                 || target.position.x - playerSpriteExtent > camPosX + camExtent
@@ -63,14 +66,8 @@ public class CameraMovement : MonoBehaviour
                 playerController.alive = false;
             }
             //Start breaking
-            if (!playerController.alive)
-            {
-                if (speed > 0) { speed -= accelerationTime * speed; }
-            }
+            if (!playerController.alive) { if (speed > 0) { speed -= accelerationTime * speed; } }
             if (playerController.startFade) { speed = 0; }
-
-            direction = Vector2.right * speed;
-            //transform.Translate(direction * Time.deltaTime);
         }
 
         if (playerController.startFade)
@@ -79,17 +76,17 @@ public class CameraMovement : MonoBehaviour
 
             fadeAnimator.SetBool("Fade", true);
 
-            if (begin)
+            if (returnToPos)
             {
                 endPosition = new Vector3(playerController.checkpointPosition.x - ((offsetPerc / 100) * camExtent), camTransform.position.y, camTransform.position.z);
-                begin = false;
+                returnToPos = false;
             }
         }
         else
         {
-            if (!begin)
+            if (!returnToPos)
             {
-                begin = true;
+                returnToPos = true;
             }
         }
         if (playerController.startReturn)
@@ -97,6 +94,8 @@ public class CameraMovement : MonoBehaviour
             fadeAnimator.SetBool("Fade", false);
             transform.position = endPosition;
         }
+
+        direction = Vector2.right * speed;
     }
 
     void LateUpdate()

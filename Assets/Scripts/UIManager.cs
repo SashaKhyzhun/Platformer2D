@@ -8,7 +8,8 @@ public class UIManager : MonoBehaviour
     public GameObject GameLayout;
     public GameObject LoadingScreen;
     public float fadeTime;
-    
+
+    private PlayerController pc;
     private Animator anim;
     private WaitForSeconds halfOfTime;
     private WaitForSeconds time;
@@ -21,7 +22,17 @@ public class UIManager : MonoBehaviour
         wfeof = new WaitForEndOfFrame();
         anim = FadePlane.GetComponent<Animator>();
         anim.SetFloat("speedMultiplier", 1 / fadeTime);
-    } 
+    }
+
+    void Update()
+    {
+        if(pc != null)
+        {
+            if (pc.finished) { if (pc.canLoad) { StartGame(); pc.canLoad = false; } }
+            if (pc.startFade) { anim.SetBool("Fade", true); }
+            if (pc.startReturn) { anim.SetBool("Fade", false); }
+        }
+    }
 
     public void Restart()
     {
@@ -77,6 +88,7 @@ public class UIManager : MonoBehaviour
                 if (!GameLayout.activeInHierarchy) { GameLayout.SetActive(true); }
                 if (MenuLayout.activeInHierarchy) { MenuLayout.SetActive(false); }
                 if (LoadingScreen.activeInHierarchy) { LoadingScreen.SetActive(false); }
+                pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
                 break;
         }
     }

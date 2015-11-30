@@ -8,6 +8,8 @@ public class PlayerController: MonoBehaviour {
     public float cameraStayTime;
 
     public bool alive { get; set; }
+    public bool finished { get; set; }
+    public bool canLoad { get; set; }
     public bool start { get; set; }
     public bool wait { get; set; }
     public bool startFade { get; set; }
@@ -37,6 +39,7 @@ public class PlayerController: MonoBehaviour {
         fullBackTime = new WaitForSeconds(cameraBackToPositionTime);
         wait = false;
         alive = true;
+        canLoad = true;
         StartCoroutine(WaitAtStart());
     }
 
@@ -76,7 +79,7 @@ public class PlayerController: MonoBehaviour {
                 if (!alive)
                 {
                     checkpointPosition = checkpoints[checkpointNumber].position;
-                    StartCoroutine(Respawn(checkpointPosition));
+                    if (!finished) { StartCoroutine(Respawn(checkpointPosition)); }
                 }
             }
         }
@@ -120,5 +123,4 @@ public class PlayerController: MonoBehaviour {
         yield return fullBackTime;
         canPlay = true;
     }
-
 }

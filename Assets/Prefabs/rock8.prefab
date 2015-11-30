@@ -125,7 +125,9 @@ MonoBehaviour:
   body: {fileID: 433276}
   localGM: {fileID: 0}
   freeze: 0
+  addTorque: 0
   throwForce: 0
+  torque: 0
   ownIndex: 0
 --- !u!114 &11481074
 MonoBehaviour:
@@ -156,7 +158,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}

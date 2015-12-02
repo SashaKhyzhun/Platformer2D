@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.2200012, y: -4.57000017, z: 0}
+  m_LocalPosition: {x: 45.693512, y: -4.22684574, z: 0}
   m_LocalScale: {x: .375, y: .375, z: .375}
   m_Children:
   - {fileID: 437058}
@@ -89,9 +89,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -.689999998}
+  m_Offset: {x: 0, y: -.517173767}
   serializedVersion: 2
-  m_Size: {x: .401355594, y: 9.03999996}
+  m_Size: {x: .401355594, y: 8.69434643}
 --- !u!61 &6136184
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -115,7 +115,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 11.1800003}
+  m_Offset: {x: 0, y: 6.75}
   serializedVersion: 2
   m_Size: {x: 6, y: 26.6822929}
 --- !u!114 &11410544
@@ -143,8 +143,10 @@ MonoBehaviour:
   body: {fileID: 465122}
   localGM: {fileID: 0}
   freeze: 1
-  throwForce: 900
-  ownIndex: 4
+  addTorque: 0
+  throwForce: 50
+  torque: 0
+  ownIndex: 2
 --- !u!114 &11458288
 MonoBehaviour:
   m_ObjectHideFlags: 1

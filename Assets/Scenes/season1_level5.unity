@@ -98,7 +98,7 @@ GameObject:
   - 60: {fileID: 40496152}
   m_Layer: 9
   m_Name: level1_5_sliced_40
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -248,7 +248,7 @@ GameObject:
   - 60: {fileID: 101873451}
   m_Layer: 9
   m_Name: level1_5_sliced_2
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -458,7 +458,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411310, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_RootOrder
-      value: 72
+      value: 71
       objectReference: {fileID: 0}
     - target: {fileID: 195560, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_Name
@@ -504,7 +504,7 @@ GameObject:
   - 60: {fileID: 119276519}
   m_Layer: 9
   m_Name: level1_5_sliced_50
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -624,7 +624,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411310, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_RootOrder
-      value: 68
+      value: 67
       objectReference: {fileID: 0}
     - target: {fileID: 11420958, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: ownIndex
@@ -670,7 +670,7 @@ GameObject:
   - 60: {fileID: 135981439}
   m_Layer: 9
   m_Name: level1_5_sliced_3
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -905,7 +905,7 @@ GameObject:
   - 60: {fileID: 222490654}
   m_Layer: 9
   m_Name: level1_5_sliced_42
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1123,7 +1123,7 @@ GameObject:
   - 60: {fileID: 258655963}
   m_Layer: 9
   m_Name: level1_5_sliced_33
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1269,7 +1269,7 @@ GameObject:
   - 60: {fileID: 266518540}
   m_Layer: 9
   m_Name: level1_5_sliced_22
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1489,7 +1489,7 @@ GameObject:
   - 60: {fileID: 352361951}
   m_Layer: 9
   m_Name: level1_5_sliced_45
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1631,7 +1631,7 @@ GameObject:
   - 60: {fileID: 384014631}
   m_Layer: 9
   m_Name: level1_5_sliced_20
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1730,130 +1730,6 @@ PolygonCollider2D:
       - {x: .925946712, y: -5.06548691}
       - {x: .984640777, y: -4.74266958}
       - {x: .999314308, y: -4.65462875}
---- !u!1 &388780757
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 388780763}
-  - 212: {fileID: 388780762}
-  - 50: {fileID: 388780761}
-  - 58: {fileID: 388780760}
-  - 114: {fileID: 388780759}
-  - 114: {fileID: 388780758}
-  - 114: {fileID: 388780764}
-  m_Layer: 8
-  m_Name: saw
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &388780758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 388780757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5c037f1e52732d4680b853a8576e566, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
---- !u!114 &388780759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 388780757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34cfeda0f853db54c84546a579daba8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!58 &388780760
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 388780757}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2.5
---- !u!50 &388780761
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 388780757}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
-  m_GravityScale: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!212 &388780762
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 388780757}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 70689981
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e89b708530cacdd49899119381237899, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &388780763
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 388780757}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 141.559998, y: -4.48000002, z: 0}
-  m_LocalScale: {x: .494290262, y: .494290262, z: .494290262}
-  m_Children: []
-  m_Father: {fileID: 602263921}
-  m_RootOrder: 61
---- !u!114 &388780764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 388780757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a68b9c62690e6c1449d8542a405b74ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &482434023 stripped
 Transform:
   m_PrefabParentObject: {fileID: 491166, guid: ded241ff7af9a6d4c9384098682648e9, type: 2}
@@ -1883,7 +1759,7 @@ GameObject:
   - 60: {fileID: 579538657}
   m_Layer: 9
   m_Name: level1_5_sliced_13
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2101,7 +1977,6 @@ Transform:
   - {fileID: 222573835}
   - {fileID: 1471106870}
   - {fileID: 1086922229}
-  - {fileID: 388780763}
   - {fileID: 531114887}
   - {fileID: 2134509727}
   - {fileID: 210746937}
@@ -2122,6 +1997,7 @@ Transform:
   - {fileID: 1436443416}
   - {fileID: 1886000949}
   - {fileID: 816632393}
+  - {fileID: 1071041564}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!1 &610261771
@@ -2137,7 +2013,7 @@ GameObject:
   - 60: {fileID: 610261775}
   m_Layer: 9
   m_Name: level1_5_sliced_46
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2311,7 +2187,7 @@ GameObject:
   - 60: {fileID: 656377570}
   m_Layer: 9
   m_Name: level1_5_sliced_38
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2533,7 +2409,7 @@ GameObject:
   - 60: {fileID: 662537997}
   m_Layer: 9
   m_Name: level1_5_sliced_36
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2717,7 +2593,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411310, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_RootOrder
-      value: 74
+      value: 73
       objectReference: {fileID: 0}
     - target: {fileID: 195560, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_Name
@@ -2767,7 +2643,7 @@ GameObject:
   - 60: {fileID: 696000808}
   m_Layer: 9
   m_Name: level1_5_sliced_32
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2885,7 +2761,7 @@ GameObject:
   - 60: {fileID: 784384684}
   m_Layer: 9
   m_Name: level1_5_sliced_37
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3153,7 +3029,7 @@ GameObject:
   - 60: {fileID: 784429953}
   m_Layer: 9
   m_Name: level1_5_sliced_29
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3275,7 +3151,7 @@ GameObject:
   - 60: {fileID: 813648438}
   m_Layer: 9
   m_Name: level1_5_sliced_10
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3396,7 +3272,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 454704, guid: e5877872dbd1a274cbfd3b472be69ecd, type: 2}
       propertyPath: m_RootOrder
-      value: 81
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5877872dbd1a274cbfd3b472be69ecd, type: 2}
@@ -3418,7 +3294,7 @@ GameObject:
   - 60: {fileID: 824838046}
   m_Layer: 9
   m_Name: level1_5_sliced_31
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3625,7 +3501,7 @@ GameObject:
   - 60: {fileID: 866962586}
   m_Layer: 9
   m_Name: level1_5_sliced_11
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3767,7 +3643,7 @@ GameObject:
   - 60: {fileID: 891319330}
   m_Layer: 9
   m_Name: level1_5_sliced_19
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3961,7 +3837,7 @@ GameObject:
   - 60: {fileID: 895686118}
   m_Layer: 9
   m_Name: level1_5_sliced_7
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4090,7 +3966,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_RootOrder
-      value: 63
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_LocalScale.x
@@ -4152,7 +4028,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411310, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_RootOrder
-      value: 71
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 195560, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_Name
@@ -4292,7 +4168,7 @@ GameObject:
   - 60: {fileID: 970037231}
   m_Layer: 9
   m_Name: level1_5_sliced_47
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4402,7 +4278,7 @@ GameObject:
   - 60: {fileID: 984664524}
   m_Layer: 9
   m_Name: level1_5_sliced_28
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4504,7 +4380,7 @@ GameObject:
   - 60: {fileID: 988452151}
   m_Layer: 9
   m_Name: level1_5_sliced_8
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4646,7 +4522,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_RootOrder
-      value: 62
+      value: 61
       objectReference: {fileID: 0}
     - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_LocalScale.x
@@ -4667,6 +4543,68 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1071041563
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 602263921}
+    m_Modifications:
+    - target: {fileID: 469150, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 140.684006
+      objectReference: {fileID: 0}
+    - target: {fileID: 469150, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -4.31521559
+      objectReference: {fileID: 0}
+    - target: {fileID: 469150, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469150, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469150, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469150, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469150, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 469150, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
+      propertyPath: m_RootOrder
+      value: 81
+      objectReference: {fileID: 0}
+    - target: {fileID: 469150, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .489364147
+      objectReference: {fileID: 0}
+    - target: {fileID: 469150, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .489364147
+      objectReference: {fileID: 0}
+    - target: {fileID: 469150, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .489364147
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413094, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1071041564 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 469150, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
+  m_PrefabInternal: {fileID: 1071041563}
 --- !u!1001 &1079178009
 Prefab:
   m_ObjectHideFlags: 0
@@ -4704,7 +4642,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411310, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_RootOrder
-      value: 70
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 195560, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_Name
@@ -4782,7 +4720,7 @@ GameObject:
   - 251: {fileID: 1099275079}
   m_Layer: 9
   m_Name: level1_5_sliced_16
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5020,7 +4958,7 @@ GameObject:
   - 60: {fileID: 1163830412}
   m_Layer: 9
   m_Name: level1_5_sliced_21
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5109,7 +5047,7 @@ GameObject:
   - 60: {fileID: 1255446656}
   m_Layer: 9
   m_Name: level1_5_sliced_44
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5326,7 +5264,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411310, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_RootOrder
-      value: 75
+      value: 74
       objectReference: {fileID: 0}
     - target: {fileID: 195560, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_Name
@@ -5372,7 +5310,7 @@ GameObject:
   - 60: {fileID: 1392580411}
   m_Layer: 9
   m_Name: level1_5_sliced_1
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5515,7 +5453,7 @@ GameObject:
   - 60: {fileID: 1424181698}
   m_Layer: 9
   m_Name: level1_5_sliced_12
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5632,7 +5570,7 @@ GameObject:
   - 60: {fileID: 1424923655}
   m_Layer: 9
   m_Name: level1_5_sliced_25
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5936,7 +5874,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 479538, guid: b38cef47237a4bb408996d808aa1b657, type: 2}
       propertyPath: m_RootOrder
-      value: 79
+      value: 78
       objectReference: {fileID: 0}
     - target: {fileID: 6187138, guid: b38cef47237a4bb408996d808aa1b657, type: 2}
       propertyPath: m_Offset.y
@@ -6085,7 +6023,7 @@ GameObject:
   - 60: {fileID: 1541445760}
   m_Layer: 9
   m_Name: level1_5_sliced_23
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6260,7 +6198,7 @@ GameObject:
   - 60: {fileID: 1558821435}
   m_Layer: 9
   m_Name: level1_5_sliced_0
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6521,7 +6459,7 @@ GameObject:
   - 60: {fileID: 1560380641}
   m_Layer: 9
   m_Name: level1_5_sliced_39
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6656,7 +6594,7 @@ GameObject:
   - 60: {fileID: 1564548295}
   m_Layer: 9
   m_Name: level1_5_sliced_14
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6824,7 +6762,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_RootOrder
-      value: 66
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_LocalScale.x
@@ -6862,7 +6800,7 @@ GameObject:
   - 60: {fileID: 1636354343}
   m_Layer: 9
   m_Name: level1_5_sliced_41
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7015,7 +6953,7 @@ GameObject:
   - 60: {fileID: 1641478117}
   m_Layer: 9
   m_Name: level1_5_sliced_9
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7276,7 +7214,7 @@ GameObject:
   - 60: {fileID: 1702144266}
   m_Layer: 9
   m_Name: level1_5_sliced_4
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7399,7 +7337,7 @@ GameObject:
   - 60: {fileID: 1717798784}
   m_Layer: 9
   m_Name: level1_5_sliced_24
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7667,7 +7605,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411310, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_RootOrder
-      value: 76
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 195560, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_Name
@@ -7740,7 +7678,7 @@ GameObject:
   - 60: {fileID: 1792817602}
   m_Layer: 9
   m_Name: level1_5_sliced_34
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7859,7 +7797,7 @@ GameObject:
   - 60: {fileID: 1849369128}
   m_Layer: 9
   m_Name: level1_5_sliced_49
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8026,7 +7964,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_RootOrder
-      value: 65
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_LocalScale.x
@@ -8088,7 +8026,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_RootOrder
-      value: 67
+      value: 66
       objectReference: {fileID: 0}
     - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_LocalScale.x
@@ -8150,7 +8088,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 405698, guid: fd99286222df83c43a367bffc805f28d, type: 2}
       propertyPath: m_RootOrder
-      value: 80
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 405698, guid: fd99286222df83c43a367bffc805f28d, type: 2}
       propertyPath: m_LocalScale.x
@@ -8212,7 +8150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411310, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_RootOrder
-      value: 77
+      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 195560, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_Name
@@ -8262,7 +8200,7 @@ GameObject:
   - 60: {fileID: 1901006114}
   m_Layer: 9
   m_Name: level1_5_sliced_6
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8397,7 +8335,7 @@ GameObject:
   - 60: {fileID: 1915411213}
   m_Layer: 9
   m_Name: level1_5_sliced_27
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8529,7 +8467,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_RootOrder
-      value: 64
+      value: 63
       objectReference: {fileID: 0}
     - target: {fileID: 423752, guid: 31b701e6325a38b45b1d71f9c0152e80, type: 2}
       propertyPath: m_LocalScale.x
@@ -8591,7 +8529,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411310, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_RootOrder
-      value: 73
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 195560, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_Name
@@ -8637,7 +8575,7 @@ GameObject:
   - 60: {fileID: 2009458141}
   m_Layer: 9
   m_Name: level1_5_sliced_43
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8768,7 +8706,7 @@ GameObject:
   - 60: {fileID: 2015517016}
   m_Layer: 9
   m_Name: level1_5_sliced_26
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8876,7 +8814,7 @@ GameObject:
   - 60: {fileID: 2022338494}
   m_Layer: 9
   m_Name: level1_5_sliced_5
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9041,7 +8979,7 @@ GameObject:
   - 251: {fileID: 2030001070}
   m_Layer: 9
   m_Name: level1_5_sliced_18
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9253,7 +9191,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411310, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_RootOrder
-      value: 69
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: 195560, guid: 3fbbf69642e31324682e92086224c162, type: 2}
       propertyPath: m_Name
@@ -9299,7 +9237,7 @@ GameObject:
   - 60: {fileID: 2056660981}
   m_Layer: 9
   m_Name: level1_5_sliced_17
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9395,7 +9333,7 @@ GameObject:
   - 60: {fileID: 2081412900}
   m_Layer: 9
   m_Name: level1_5_sliced_48
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9513,7 +9451,7 @@ GameObject:
   - 60: {fileID: 2095159894}
   m_Layer: 9
   m_Name: level1_5_sliced_30
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9714,7 +9652,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 474984, guid: 804366973bbfc1243967b46fb2dadffa, type: 2}
       propertyPath: m_RootOrder
-      value: 78
+      value: 77
       objectReference: {fileID: 0}
     - target: {fileID: 11429716, guid: 804366973bbfc1243967b46fb2dadffa, type: 2}
       propertyPath: localGM
@@ -9752,7 +9690,7 @@ GameObject:
   - 60: {fileID: 2136256350}
   m_Layer: 9
   m_Name: level1_5_sliced_15
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9875,7 +9813,7 @@ GameObject:
   - 60: {fileID: 2142000333}
   m_Layer: 9
   m_Name: level1_5_sliced_35
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

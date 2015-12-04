@@ -27,8 +27,8 @@ GameObject:
   - 50: {fileID: 5047308}
   - 61: {fileID: 6148384}
   - 114: {fileID: 11400100}
+  - 61: {fileID: 6123194}
   - 114: {fileID: 11479806}
-  - 60: {fileID: 6019706}
   m_Layer: 10
   m_Name: rock3
   m_TagString: Untagged
@@ -43,8 +43,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 175486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 328.540009, y: -.200000003, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 212.469116, y: 3.3900001, z: 0}
+  m_LocalScale: {x: .518727601, y: .503446102, z: 1}
   m_Children:
   - {fileID: 489388}
   m_Father: {fileID: 0}
@@ -77,8 +77,8 @@ Rigidbody2D:
   m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &6019706
-PolygonCollider2D:
+--- !u!61 &6123194
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -87,24 +87,9 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -.977107286, y: .29824993}
-      - {x: -.815999329, y: 1.07022178}
-      - {x: -.511960924, y: 1.40366828}
-      - {x: -.230139136, y: 1.88235462}
-      - {x: .0133079886, y: 2.10689735}
-      - {x: .309525013, y: 1.72778678}
-      - {x: .701199055, y: .715631127}
-      - {x: .764012456, y: .669101059}
-      - {x: .967298329, y: .498084426}
-      - {x: 1.13904202, y: -.168124974}
-      - {x: .598003983, y: -1.77226067}
-      - {x: .13087666, y: -2.23739839}
-      - {x: -.474350929, y: -1.58826482}
-      - {x: -.807696044, y: -.890937567}
-      - {x: -1.06095922, y: -.109508932}
+  m_Offset: {x: .00999999978, y: -.0273754001}
+  serializedVersion: 2
+  m_Size: {x: 1.78173006, y: 3.50323057}
 --- !u!61 &6148384
 BoxCollider2D:
   m_ObjectHideFlags: 1

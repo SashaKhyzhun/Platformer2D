@@ -8,12 +8,13 @@ public class Parallax : MonoBehaviour {
 
     private Transform cam;
     private Vector3 previousCamPos;
+    private Vector3 backgroundTargetPos;
     private float[] parallaxScales;
     private float[] bgExtents;
     private float camPosX;
     private float camExtent;
     private float rightSpriteBorder;
-    //private float leftNextSpriteBorder;
+    private float leftSpriteBorder;
 
     public float leftCameraBorder { get; set; }
     public float rightCameraBorder{ get; set; }
@@ -49,33 +50,25 @@ public class Parallax : MonoBehaviour {
             float parallax = (previousCamPos.x - cam.position.x) * parallaxScales[i];
 
             float backgroundTargetPosX = backgrounds[i].position.x + parallax;
-            
-            Vector3 backgroundTargetPos = new Vector3(backgroundTargetPosX, backgrounds[i].position.y, backgrounds[i].position.z);
+
+            backgroundTargetPos = new Vector3(backgroundTargetPosX, backgrounds[i].position.y, backgrounds[i].position.z);
             
             backgrounds[i].position = Vector3.Lerp(backgrounds[i].position, backgroundTargetPos, smoothing);
 
             // Manage Background
             rightSpriteBorder = backgrounds[i].position.x + bgExtents[i];
-            //leftNextSpriteBorder = rightSpriteBorder - 0.05f;
+            leftSpriteBorder = backgrounds[i].position.x - bgExtents[i];
+
 
             if (leftCameraBorder >= rightSpriteBorder)
             {
                 backgrounds[i].position = backgrounds[i].position + new Vector3(4 * bgExtents[i] - 0.05f, 0);
             }
-            //if (rightCameraBorder <= leftNextSpriteBorder)
-            //{
-            //    backgrounds[i].position = backgrounds[i].position - new Vector3(4 * bgExtents[i] + 0.05f, 0);
-            //}
+            else if (rightCameraBorder <= leftSpriteBorder && rightCameraBorder <= rightSpriteBorder)
+            {
+                backgrounds[i].position = backgrounds[i].position - new Vector3(4 * bgExtents[i] - 0.05f, 0);
+            }
         }
         previousCamPos = cam.position;
-        //ManageBackground(); 
     }
-
-    //void ManageBackground()
-    //{
-    //    for (int i = 0; i < backgrounds.Length; i++)
-    //    {
-            
-    //    }
-    //}
 }

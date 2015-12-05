@@ -158,7 +158,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .53827858, g: .891842604, b: .963235319, a: 1}
+  m_BackGroundColor: {r: .416035891, g: .84735924, b: .992647052, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -209,6 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  finish: {fileID: 0}
   targetSpeed: .5
   accelerationTime: .0199999996
   followTemp: 4
@@ -256,14 +257,16 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2084215165
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: ee8846b2d11f1144aaddd736ecacd54d, type: 3}
-  m_Color: {r: .315852106, g: .829291105, b: .933823526, a: 1}
+  m_Color: {r: .302227527, g: .820643604, b: .95588237, a: 1}
 --- !u!212 &21232366
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -282,7 +285,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -308,7 +313,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -334,14 +341,16 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2084215165
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: ee8846b2d11f1144aaddd736ecacd54d, type: 3}
-  m_Color: {r: .315852106, g: .829291105, b: .933823526, a: 1}
+  m_Color: {r: .302227527, g: .820643604, b: .95588237, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

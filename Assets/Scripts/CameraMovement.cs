@@ -12,7 +12,6 @@ public class CameraMovement : MonoBehaviour
     public float offsetPerc;
     
     private PlayerController playerController;
-    private Animator fadeAnimator;
     private Transform camTransform;
     private Vector2 direction;
     private Vector3 endPosition;
@@ -27,8 +26,6 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         playerController = target.gameObject.GetComponent<PlayerController>();
-        GameObject fade = GameObject.FindGameObjectWithTag("Fade");
-        if (fade != null) { fadeAnimator = fade.GetComponent<Animator>(); }
         camExtentY = Camera.main.orthographicSize;
         camExtent = camExtentY * Camera.main.aspect;
         camTransform = transform;

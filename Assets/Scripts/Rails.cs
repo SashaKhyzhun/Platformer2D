@@ -6,7 +6,7 @@ public class Rails : MonoBehaviour {
 
     private Transform myTransform;
     private Transform[] nodes;
-    private Vector3 endPosition;
+    private Vector3 translation;
     private float fraction;
     private float distance;
     private float distanceCovered;
@@ -25,25 +25,31 @@ public class Rails : MonoBehaviour {
         }
     }
 
-    void Update()
+    void LateUpdate()
     {
-        if (currentNode < nodesCount - 1)
+        if (currentNode < nodesCount)
         {
             if (myTransform.position.x > nodes[currentNode].position.x)
             {
                 currentNode++;
-                distance = nodes[currentNode].position.x - nodes[currentNode - 1].position.x;
             }
+        }
+        if (currentNode > 0)
+        {
+            if (myTransform.position.x < nodes[currentNode - 1].position.x)
+            {
+                currentNode--;
+            }
+        }
+        if (currentNode < nodesCount && currentNode > 0)
+        {
+            distance = nodes[currentNode].position.x - nodes[currentNode - 1].position.x;
             distanceCovered = myTransform.position.x - nodes[currentNode - 1].position.x;
             fraction = distanceCovered / distance;
-            Debug.Log(fraction);
-            posY = Mathf.Lerp(nodes[currentNode - 1].position.y, nodes[currentNode].position.y, fraction);
-        }        
-        endPosition = new Vector3(myTransform.position.x, posY, myTransform.position.z);
-    }
-
-    void LateUpdate()
-    {
-        transform.position = endPosition;
+            posY = Mathf.Lerp(nodes[currentNode - 1].position.y, nodes[currentNode].position.y, fraction) - myTransform.position.y;
+            Debug.Log(currentNode);
+            translation = new Vector3(0, posY, 0);
+            transform.Translate(translation);
+        }
     }
 }

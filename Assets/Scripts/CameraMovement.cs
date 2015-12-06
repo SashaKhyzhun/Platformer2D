@@ -31,7 +31,6 @@ public class CameraMovement : MonoBehaviour
         camTransform = transform;
         camLowerEdge = camTransform.position.y - camExtentY - 1;
         playerSpriteExtent = target.GetComponent<Renderer>().bounds.extents.x;
-        //fadeAnimator.SetFloat("speedMultiplier", 1 / playerController.cameraBackToPositionTime);
     }
 
     void Update()
@@ -71,8 +70,6 @@ public class CameraMovement : MonoBehaviour
         {
             speed = 0;
 
-            //fadeAnimator.SetBool("Fade", true);
-
             if (returnToPos)
             {
                 endPosition = new Vector3(playerController.checkpointPosition.x - ((offsetPerc / 100) * camExtent), camTransform.position.y, camTransform.position.z);
@@ -88,7 +85,6 @@ public class CameraMovement : MonoBehaviour
         }
         if (playerController.startReturn)
         {
-            //fadeAnimator.SetBool("Fade", false);
             transform.position = endPosition;
         }
 

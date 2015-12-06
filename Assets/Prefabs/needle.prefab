@@ -12,9 +12,10 @@ GameObject:
   - 50: {fileID: 5031458}
   - 68: {fileID: 6801176}
   - 114: {fileID: 11403752}
-  m_Layer: 0
+  - 114: {fileID: 11486108}
+  m_Layer: 9
   m_Name: needle
-  m_TagString: Untagged
+  m_TagString: Press
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 217.610001, y: -.0900000036, z: 0}
+  m_LocalPosition: {x: 5, y: 2.32999992, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,6 +80,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68b9c62690e6c1449d8542a405b74ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11486108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3cab43976d11e42ad4cbdc55a4089f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restTime: .5
 --- !u!212 &21262254
 SpriteRenderer:
   m_ObjectHideFlags: 1

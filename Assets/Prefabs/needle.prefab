@@ -12,7 +12,7 @@ GameObject:
   - 50: {fileID: 5031458}
   - 68: {fileID: 6801176}
   - 114: {fileID: 11403752}
-  - 114: {fileID: 11486108}
+  - 234: {fileID: 23408958}
   m_Layer: 9
   m_Name: needle
   m_TagString: Press
@@ -26,9 +26,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131270}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 2.32999992, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: -1.62920685e-07}
+  m_LocalPosition: {x: 2.82999992, y: -5.86999989, z: 0}
+  m_LocalScale: {x: -1, y: -1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,11 +43,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 5
 --- !u!68 &6801176
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -80,18 +80,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68b9c62690e6c1449d8542a405b74ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11486108
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 131270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de3cab43976d11e42ad4cbdc55a4089f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  restTime: .5
 --- !u!212 &21262254
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -120,6 +108,27 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 67218b06e3ddc4b4d8a99d6107ba42d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!234 &23408958
+SliderJoint2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131270}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 221.130005, y: 0}
+  m_Angle: 90
+  m_UseMotor: 1
+  m_Motor:
+    m_MotorSpeed: -9
+    m_MaximumMotorForce: 20000
+  m_UseLimits: 1
+  m_TranslationLimits:
+    m_LowerTranslation: -3.25999999
+    m_UpperTranslation: .579999983
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

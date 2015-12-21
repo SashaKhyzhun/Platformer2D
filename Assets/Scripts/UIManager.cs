@@ -6,8 +6,10 @@ public class UIManager : MonoBehaviour
     public GameObject FadePlane;
     public GameObject MenuLayout;
     public GameObject GameLayout;
+    public GameObject PauseLayout;
     public GameObject LoadingScreen;
     public float fadeTime;
+    public float timeScaleOnPause;
 
     private PlayerController pc;
     private Animator anim;
@@ -44,6 +46,26 @@ public class UIManager : MonoBehaviour
         StartCoroutine(WaitForLoad(Application.loadedLevel + 1));
     }
 
+    public void Pause()
+    {
+        if (GameLayout.activeInHierarchy) { GameLayout.SetActive(false); }
+        if (!PauseLayout.activeInHierarchy) { PauseLayout.SetActive(true); }
+        Time.timeScale = timeScaleOnPause;
+    }
+
+    public void Unpause()
+    {
+        if (!GameLayout.activeInHierarchy) { GameLayout.SetActive(true); }
+        if (PauseLayout.activeInHierarchy) { PauseLayout.SetActive(false); }
+        Time.timeScale = 1;
+    }
+
+    public void BackToMenu()
+    {
+        StartCoroutine(WaitForLoad(0));
+
+    }
+
     public void ExitGame()
     {
         StartCoroutine(WaitForExit());
@@ -51,6 +73,7 @@ public class UIManager : MonoBehaviour
 
     IEnumerator WaitForExit()
     {
+        Time.timeScale = 1;
         anim.SetBool("Fade", true);
         yield return halfOfTime;
         Application.Quit();
@@ -58,6 +81,7 @@ public class UIManager : MonoBehaviour
 
     IEnumerator WaitForLoad(int level)
     {
+        Time.timeScale = 1;
         anim.SetBool("Fade", true);
         yield return halfOfTime;
         if (!LoadingScreen.activeInHierarchy) { LoadingScreen.SetActive(true); }
@@ -83,11 +107,13 @@ public class UIManager : MonoBehaviour
                 if (GameLayout.activeInHierarchy) { GameLayout.SetActive(false); }
                 if (LoadingScreen.activeInHierarchy) { LoadingScreen.SetActive(false); }
                 if (!MenuLayout.activeInHierarchy) { MenuLayout.SetActive(true); }
+                if (PauseLayout.activeInHierarchy) { PauseLayout.SetActive(false); }
                 break;
             default:
                 if (!GameLayout.activeInHierarchy) { GameLayout.SetActive(true); }
                 if (MenuLayout.activeInHierarchy) { MenuLayout.SetActive(false); }
                 if (LoadingScreen.activeInHierarchy) { LoadingScreen.SetActive(false); }
+                if (PauseLayout.activeInHierarchy) { PauseLayout.SetActive(false); }
                 pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
                 break;
         }

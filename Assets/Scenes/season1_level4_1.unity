@@ -756,7 +756,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300022, guid: 2df04700d4c1ad8468e24bca371937a5, type: 3}
-  m_Color: {r: 1, g: .968627453, b: 0, a: 1}
+  m_Color: {r: .0666666701, g: .592156887, b: .698039234, a: 1}
 --- !u!4 &195735770
 Transform:
   m_ObjectHideFlags: 0
@@ -1384,6 +1384,10 @@ Prefab:
     - target: {fileID: 11449100, guid: 2c2ced65004923f41ae6c62b381271af, type: 2}
       propertyPath: finish
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449100, guid: 2c2ced65004923f41ae6c62b381271af, type: 2}
+      propertyPath: targetSpeed
+      value: .699999988
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c2ced65004923f41ae6c62b381271af, type: 2}
@@ -5842,6 +5846,10 @@ Prefab:
     - target: {fileID: 11438352, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
       propertyPath: throwForce
       value: 7.69999981
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411738, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
+      propertyPath: xForce
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}

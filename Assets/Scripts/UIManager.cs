@@ -2,11 +2,14 @@
 using System.Collections;
 
 public class UIManager : MonoBehaviour
-{    
+{
+    public GameObject UI;
     public GameObject FadePlane;
     public GameObject MenuLayout;
     public GameObject GameLayout;
     public GameObject PauseLayout;
+    public GameObject SeasonsMenuLayout;
+    public GameObject[] LevelsMenuLayout;
     public GameObject LoadingScreen;
     public float fadeTime;
     public float timeScaleOnPause;
@@ -24,13 +27,16 @@ public class UIManager : MonoBehaviour
         wfeof = new WaitForEndOfFrame();
         anim = FadePlane.GetComponent<Animator>();
         anim.SetFloat("speedMultiplier", 1 / fadeTime);
+        if (GameObject.FindGameObjectsWithTag(UI.tag).Length > 1) { Destroy(GameObject.FindGameObjectsWithTag(UI.tag)[1]); }
+        if (GameObject.FindGameObjectsWithTag("es").Length > 1) { Destroy(GameObject.FindGameObjectsWithTag("es")[1]); }
+        if (GameObject.FindGameObjectsWithTag(gameObject.tag).Length > 1) { Destroy(gameObject); }
     }
 
     void Update()
     {
         if(pc != null)
         {
-            if (pc.finished) { if (pc.canLoad) { StartGame(); pc.canLoad = false; } }
+            if (pc.finished) { if (pc.canLoad) { LoadLevel(Application.loadedLevel + 1); pc.canLoad = false; } }
             if (pc.startFade) { anim.SetBool("Fade", true); }
             if (pc.startReturn) { anim.SetBool("Fade", false); }
         }
@@ -41,29 +47,38 @@ public class UIManager : MonoBehaviour
         StartCoroutine(WaitForLoad(Application.loadedLevel));
     }
 
-    public void StartGame()
+    public void LoadLevel(int index)
     {
-        StartCoroutine(WaitForLoad(Application.loadedLevel + 1));
+        StartCoroutine(WaitForLoad(index));
     }
 
     public void Pause()
     {
-        if (GameLayout.activeInHierarchy) { GameLayout.SetActive(false); }
-        if (!PauseLayout.activeInHierarchy) { PauseLayout.SetActive(true); }
+        TurnLayoutOn(PauseLayout);
+        TurnLayoutOff(GameLayout);
         Time.timeScale = timeScaleOnPause;
     }
 
     public void Unpause()
     {
-        if (!GameLayout.activeInHierarchy) { GameLayout.SetActive(true); }
-        if (PauseLayout.activeInHierarchy) { PauseLayout.SetActive(false); }
+        TurnLayoutOn(GameLayout);
+        TurnLayoutOff(PauseLayout);
         Time.timeScale = 1;
+    }
+
+    public void TurnLayoutOn(GameObject layout)
+    {
+        if (!layout.activeInHierarchy) { layout.SetActive(true); }
+    }
+
+    public void TurnLayoutOff(GameObject layout)
+    {
+        if (layout.activeInHierarchy) { layout.SetActive(false); }
     }
 
     public void BackToMenu()
     {
-        StartCoroutine(WaitForLoad(0));
-
+        LoadLevel(0);
     }
 
     public void ExitGame()
@@ -104,16 +119,18 @@ public class UIManager : MonoBehaviour
         switch (level)
         {
             case 0:
-                if (GameLayout.activeInHierarchy) { GameLayout.SetActive(false); }
-                if (LoadingScreen.activeInHierarchy) { LoadingScreen.SetActive(false); }
-                if (!MenuLayout.activeInHierarchy) { MenuLayout.SetActive(true); }
-                if (PauseLayout.activeInHierarchy) { PauseLayout.SetActive(false); }
+                TurnLayoutOff(GameLayout);
+                TurnLayoutOff(LoadingScreen);
+                TurnLayoutOn(MenuLayout);
+                TurnLayoutOff(PauseLayout);
+                TurnLayoutOff(SeasonsMenuLayout);
                 break;
             default:
-                if (!GameLayout.activeInHierarchy) { GameLayout.SetActive(true); }
-                if (MenuLayout.activeInHierarchy) { MenuLayout.SetActive(false); }
-                if (LoadingScreen.activeInHierarchy) { LoadingScreen.SetActive(false); }
-                if (PauseLayout.activeInHierarchy) { PauseLayout.SetActive(false); }
+                TurnLayoutOn(GameLayout);
+                TurnLayoutOff(MenuLayout);
+                TurnLayoutOff(LoadingScreen);
+                TurnLayoutOff(PauseLayout);
+                TurnLayoutOff(SeasonsMenuLayout);
                 pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
                 break;
         }

@@ -21,6 +21,7 @@ public class CameraMovement : MonoBehaviour
     private float camExtent;
     private float camExtentY;
     private float camLowerEdge;
+    private float camUpperEdge;
     private float playerSpriteExtent;
 
     void Start()
@@ -30,6 +31,7 @@ public class CameraMovement : MonoBehaviour
         camExtent = camExtentY * Camera.main.aspect;
         camTransform = transform;
         camLowerEdge = camTransform.position.y - camExtentY - 1;
+        camUpperEdge = camTransform.position.y + camExtentY + 1;
         playerSpriteExtent = target.GetComponent<Renderer>().bounds.extents.x;
     }
 
@@ -57,7 +59,8 @@ public class CameraMovement : MonoBehaviour
             //Check if player within camera sight
             if (target.position.x + playerSpriteExtent < camPosX - camExtent
                 || target.position.x - playerSpriteExtent > camPosX + camExtent
-                || target.position.y  < camLowerEdge)
+                || target.position.y < camLowerEdge
+                || target.position.y > camUpperEdge)
             {
                 playerController.alive = false;
             }

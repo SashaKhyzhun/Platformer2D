@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &183602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 444954}
+  - 212: {fileID: 21276852}
+  - 50: {fileID: 5068308}
+  - 68: {fileID: 6865400}
+  - 114: {fileID: 11402766}
+  m_Layer: 9
+  m_Name: bob
+  m_TagString: Throwable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &444954
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 75.5899963, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!50 &5068308
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183602}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!68 &6865400
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183602}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -.967094421, y: -.630719543}
+  - {x: -1.01805878, y: -.365617454}
+  - {x: -1.01735687, y: -.0833263397}
+  - {x: -.974952698, y: .243028075}
+  - {x: -.806594849, y: .532385111}
+  - {x: -.556945801, y: .805902898}
+  - {x: -.178604126, y: 1.03116083}
+  - {x: .218734741, y: 1.12530613}
+  - {x: .468643188, y: 1.12755227}
+  - {x: .713813782, y: 1.06927109}
+  - {x: .905647278, y: .93230927}
+  - {x: 1.01528931, y: .728559434}
+  - {x: 1.03594208, y: .595356524}
+  - {x: 1.02975464, y: .450928986}
+  - {x: .945220947, y: .233118802}
+  - {x: .819152832, y: .105259001}
+  - {x: .564346313, y: -.0425076485}
+  - {x: .386833191, y: -.129580021}
+  - {x: .266120911, y: -.255396903}
+  - {x: .175056458, y: -.4373191}
+  - {x: .114784241, y: -.660631537}
+  - {x: .0463638306, y: -.7912606}
+  - {x: -.07056427, y: -.910817981}
+  - {x: -.234085083, y: -.999391079}
+  - {x: -.400306702, y: -1.02775991}
+  - {x: -.569145203, y: -1.01322937}
+  - {x: -.708274841, y: -.953987718}
+  - {x: -.821060181, y: -.870655656}
+  - {x: -.910873413, y: -.763982058}
+  - {x: -.969703674, y: -.620237112}
+--- !u!114 &11402766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68b9c62690e6c1449d8542a405b74ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &21276852
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183602}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d9a45a96df961c446a6acf4b6db58cd3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 183602}
+  m_IsPrefabParent: 1

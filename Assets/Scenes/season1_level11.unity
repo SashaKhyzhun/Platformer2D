@@ -1876,28 +1876,15 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: -.274478912, y: .0904331207}
-      - {x: -.408588409, y: .249575853}
-      - {x: -.191268921, y: .191431284}
-      - {x: -.265487671, y: .489377499}
-      - {x: -.0299453735, y: .223152161}
-      - {x: .242023468, y: .444764376}
-      - {x: .0780258179, y: .145825863}
-      - {x: .451942444, y: .246783018}
-      - {x: .168426514, y: .0488536358}
-      - {x: .504970551, y: -.0753769875}
-      - {x: .166099548, y: -.0666151047}
-      - {x: .332969666, y: -.253001213}
-      - {x: .109584808, y: -.194972038}
-      - {x: .201778412, y: -.435726881}
-      - {x: -.0271224976, y: -.228269935}
-      - {x: -.085735321, y: -.399400234}
-      - {x: -.110191345, y: -.227425456}
-      - {x: -.364738464, y: -.405640483}
-      - {x: -.288974762, y: -.175832868}
-      - {x: -.535972595, y: -.179793239}
-      - {x: -.281757355, y: -.0627968311}
-      - {x: -.533443451, y: .0290265083}
+    - - {x: .200275421, y: .226255178}
+      - {x: .341930389, y: .0747761726}
+      - {x: .378162384, y: -.156822443}
+      - {x: .260505676, y: -.28039372}
+      - {x: .159160614, y: -.419698238}
+      - {x: -.249847412, y: -.405388951}
+      - {x: -.365158081, y: -.238393664}
+      - {x: -.272476196, y: .0850050449}
+      - {x: -.18044281, y: .252626657}
 --- !u!1 &730667138
 GameObject:
   m_ObjectHideFlags: 0
@@ -3755,11 +3742,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 484100, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.11999989
+      value: -9.13000011
       objectReference: {fileID: 0}
     - target: {fileID: 484100, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .430000007
+      value: -.129999995
       objectReference: {fileID: 0}
     - target: {fileID: 484100, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3789,6 +3776,14 @@ Prefab:
       propertyPath: localGM
       value: 
       objectReference: {fileID: 1554478621}
+    - target: {fileID: 11438352, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
+      propertyPath: throwForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411738, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
+      propertyPath: throwDirection.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
   m_IsPrefabParent: 0
@@ -3870,6 +3865,10 @@ Prefab:
       propertyPath: checkpoints
       value: 
       objectReference: {fileID: 1049656216}
+    - target: {fileID: 11420958, guid: 3fbbf69642e31324682e92086224c162, type: 2}
+      propertyPath: localGM
+      value: 
+      objectReference: {fileID: 1554478621}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fbbf69642e31324682e92086224c162, type: 2}
   m_IsPrefabParent: 0

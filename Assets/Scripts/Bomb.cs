@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Bomb : MonoBehaviour, IRevertable {
 
-    public Transform checkpoints;
+    public Transform localGM;
     public float boomForce;
     public int ownIndex;
 
@@ -17,7 +17,7 @@ public class Bomb : MonoBehaviour, IRevertable {
     void Start()
     {
         myTransform = transform;
-        chManager = checkpoints.GetComponent<CheckpointManager>();
+        chManager = localGM.GetComponent<CheckpointManager>();
         spriteRenderer = gameObject.GetComponent<Renderer>();
         circleCollider = gameObject.GetComponent<Collider2D>();
         SaveParams();

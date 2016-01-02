@@ -2916,6 +2916,18 @@ Prefab:
       propertyPath: ownIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 195560, guid: 3fbbf69642e31324682e92086224c162, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195560, guid: 3fbbf69642e31324682e92086224c162, type: 2}
+      propertyPath: m_Name
+      value: bouncy mine
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420958, guid: 3fbbf69642e31324682e92086224c162, type: 2}
+      propertyPath: localGM
+      value: 
+      objectReference: {fileID: 898515007}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fbbf69642e31324682e92086224c162, type: 2}
   m_IsPrefabParent: 0
@@ -3125,11 +3137,11 @@ GameObject:
   - 212: {fileID: 919301352}
   - 68: {fileID: 919301351}
   m_Layer: 0
-  m_Name: xz
+  m_Name: bouncy platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!68 &919301351
 EdgeCollider2D:
@@ -3143,8 +3155,8 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: -.153744698, y: 2.51142597}
-  - {x: .0651226044, y: 2.51142597}
+  - {x: -.478897095, y: 2.50182748}
+  - {x: .647176743, y: 2.50484562}
 --- !u!212 &919301352
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3169,7 +3181,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 70689981
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 495bb4c4f8cd3f345bc037241eef38a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4283,6 +4295,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 68
       objectReference: {fileID: 0}
+    - target: {fileID: 168558, guid: dc688a31a5367bd49b8bfd79ffde6d9f, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 21292722, guid: dc688a31a5367bd49b8bfd79ffde6d9f, type: 2}
+      propertyPath: m_SortingLayerID
+      value: 70689981
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc688a31a5367bd49b8bfd79ffde6d9f, type: 2}
   m_IsPrefabParent: 0
@@ -4451,6 +4471,10 @@ Prefab:
       propertyPath: speed
       value: -100
       objectReference: {fileID: 0}
+    - target: {fileID: 21294094, guid: f4f0df6348636864b8f1103651c8101a, type: 2}
+      propertyPath: m_SortingLayerID
+      value: 70689981
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4f0df6348636864b8f1103651c8101a, type: 2}
   m_IsPrefabParent: 0
@@ -4601,6 +4625,10 @@ Prefab:
       propertyPath: checkpoints
       value: 
       objectReference: {fileID: 165309055}
+    - target: {fileID: 11420958, guid: 3fbbf69642e31324682e92086224c162, type: 2}
+      propertyPath: localGM
+      value: 
+      objectReference: {fileID: 898515007}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fbbf69642e31324682e92086224c162, type: 2}
   m_IsPrefabParent: 0
@@ -5982,6 +6010,10 @@ Prefab:
       propertyPath: checkpoints
       value: 
       objectReference: {fileID: 165309055}
+    - target: {fileID: 11420958, guid: 3fbbf69642e31324682e92086224c162, type: 2}
+      propertyPath: localGM
+      value: 
+      objectReference: {fileID: 898515007}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fbbf69642e31324682e92086224c162, type: 2}
   m_IsPrefabParent: 0

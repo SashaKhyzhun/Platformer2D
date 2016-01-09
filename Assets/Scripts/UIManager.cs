@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public float fadeTime;
     public float timeScaleOnPause;
 
+    private ProgressManager pm;
     private PlayerController pc;
     private Animator anim;
     private WaitForSeconds halfOfTime;
@@ -25,6 +26,7 @@ public class UIManager : MonoBehaviour
         halfOfTime = new WaitForSeconds(fadeTime / 2);
         time = new WaitForSeconds(fadeTime);
         wfeof = new WaitForEndOfFrame();
+        pm = gameObject.GetComponent<ProgressManager>();
         anim = FadePlane.GetComponent<Animator>();
         anim.SetFloat("speedMultiplier", 1 / fadeTime);
         if (GameObject.FindGameObjectsWithTag(UI.tag).Length > 1) { Destroy(GameObject.FindGameObjectsWithTag(UI.tag)[1]); }
@@ -36,10 +38,23 @@ public class UIManager : MonoBehaviour
     {
         if(pc != null)
         {
-            if (pc.finished) { if (pc.canLoad) { LoadLevel(Application.loadedLevel + 1); pc.canLoad = false; } }
+            if (pc.finished)
+            {
+                if (pc.canLoad)
+                {
+                    pc.time = Time.time - pc.startTime;
+                    LoadLevel(Application.loadedLevel + 1);
+                    pc.canLoad = false;
+                }
+            }
             if (pc.startFade) { anim.SetBool("Fade", true); }
             if (pc.startReturn) { anim.SetBool("Fade", false); }
         }
+    }
+
+    public void LoadStats(Transform levelsLayout)
+    {
+        pm.LoadStats(levelsLayout);
     }
 
     public void Restart()
@@ -97,6 +112,12 @@ public class UIManager : MonoBehaviour
     IEnumerator WaitForLoad(int level)
     {
         Time.timeScale = 1;
+        if (level > 1)
+        {
+            int currSeason = (level - 2) / pm.levelCount;
+            int currLevel = (level - 2) - (currSeason * 12);
+            pm.SaveStats(currSeason, currLevel, pc.time, 1);
+        }
         anim.SetBool("Fade", true);
         yield return halfOfTime;
         if (!LoadingScreen.activeInHierarchy) { LoadingScreen.SetActive(true); }
@@ -130,7 +151,7 @@ public class UIManager : MonoBehaviour
                 TurnLayoutOff(MenuLayout);
                 TurnLayoutOff(LoadingScreen);
                 TurnLayoutOff(PauseLayout);
-                TurnLayoutOff(SeasonsMenuLayout);
+                TurnLayoutOff(SeasonsMenuLayout);                
                 pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
                 break;
         }

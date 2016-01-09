@@ -18,12 +18,15 @@ public class PlayerController: MonoBehaviour {
     public Vector3 checkpointPosition { get; set; }
     public float cameraBackToPositionTime { get; set; }
     public int checkpointNumber { get; set; }
+    public float time { get; set; }
+    public float startTime { get; set; }
 
     private WaitForSeconds halfBackTime;
     private WaitForSeconds fullBackTime;
     private Rigidbody2D rb;  
     private PlayerMotor motor;
     private Throwable throwable;
+    
     private bool canPlay = false;
     private bool died = false;
     
@@ -41,6 +44,8 @@ public class PlayerController: MonoBehaviour {
         alive = true;
         canLoad = true;
         StartCoroutine(WaitAtStart());
+        startTime = Time.time;
+        time = Time.time - startTime;
     }
 
 	void Update () {
@@ -80,6 +85,11 @@ public class PlayerController: MonoBehaviour {
                 {
                     checkpointPosition = checkpoints[checkpointNumber].position;
                     if (!finished) { StartCoroutine(Respawn(checkpointPosition)); }
+                    else
+                    {
+                        if (canLoad)
+                        { time = Time.time - startTime; }
+                    }
                 }
             }
         }

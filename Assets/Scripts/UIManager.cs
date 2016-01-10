@@ -54,7 +54,7 @@ public class UIManager : MonoBehaviour
 
     public void LoadStats(Transform levelsLayout)
     {
-        pm.LoadStats(levelsLayout);
+        pm.LoadLevelStats(levelsLayout);
     }
 
     public void Restart()
@@ -62,9 +62,36 @@ public class UIManager : MonoBehaviour
         StartCoroutine(WaitForLoad(Application.loadedLevel));
     }
 
+    public void NextLevel()
+    {
+        StartCoroutine(WaitForLoad(Application.loadedLevel+1));
+    }
+
     public void LoadLevel(int index)
     {
-        StartCoroutine(WaitForLoad(index));
+        if (index > 0)
+        {
+            int currSeason = (index - 1) / pm.levelCount;
+            int nextLevel = (index - 1) - (currSeason * 12); //level that you want to load
+            if (pc != null) { pm.SaveStats(currSeason, nextLevel - 1, pc.time, pc.deaths); }
+
+            if (nextLevel < Season.levelCount)
+            {
+                if (Game.current.seasons[currSeason].available && Game.current.seasons[currSeason].levels[nextLevel].available)
+                {
+                    StartCoroutine(WaitForLoad(index));
+                }
+            }
+            else if (currSeason + 1 < Game.seasonCount)
+            {
+                if (Game.current.seasons[currSeason + 1].available && Game.current.seasons[currSeason].levels[nextLevel].available)
+                {
+                    StartCoroutine(WaitForLoad(index));
+                }
+            }
+            else { Debug.Log("scene index is over the limit"); }
+        }
+        else { StartCoroutine(WaitForLoad(index)); }
     }
 
     public void Pause()
@@ -111,13 +138,7 @@ public class UIManager : MonoBehaviour
 
     IEnumerator WaitForLoad(int level)
     {
-        Time.timeScale = 1;
-        if (level > 1)
-        {
-            int currSeason = (level - 2) / pm.levelCount;
-            int currLevel = (level - 2) - (currSeason * 12);
-            pm.SaveStats(currSeason, currLevel, pc.time, 1);
-        }
+        Time.timeScale = 1;        
         anim.SetBool("Fade", true);
         yield return halfOfTime;
         if (!LoadingScreen.activeInHierarchy) { LoadingScreen.SetActive(true); }

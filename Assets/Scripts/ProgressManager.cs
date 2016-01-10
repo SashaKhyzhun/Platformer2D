@@ -25,20 +25,37 @@ public class ProgressManager : MonoBehaviour {
 
     }
 
-    public void LoadStats(Transform levelsLayout)
+    public void LoadLevelStats(Transform layout)
     {
         SaveLoad.Load();
-        Transform body = levelsLayout.FindChild("Body");
-        //int levelCount = body.childCount;
-        Transform levelTile;
+        Transform body = layout.FindChild("Body");
+        Transform tile;
+        Transform stats;
+        int childCount = body.childCount;
         int currSeasonIndex = body.parent.GetSiblingIndex() - 3;
+        bool isLevel = childCount == levelCount;
+        bool isSeason = childCount == seasonCount;
         Level currLevel;
-        for (int j = 0; j < levelCount; j++)
+        Season currSeason;
+        for (int j = 0; j < childCount; j++)
         {
-            levelTile = body.GetChild(j);
-            currLevel = Game.current.seasons[currSeasonIndex].levels[j];
-            levelTile.FindChild("Deaths").GetComponent<Text>().text = currLevel.deaths + "";
-            levelTile.FindChild("Time").GetComponent<Text>().text = string.Format("{0:0}:{1:00}.{2:00}", currLevel.time.Minutes, currLevel.time.Seconds, currLevel.time.Milliseconds);
+            tile = body.GetChild(j);
+            if (isLevel)
+            {
+                stats = tile.FindChild("Stats");
+                currLevel = Game.current.seasons[currSeasonIndex].levels[j];
+                if (currLevel.available) { tile.FindChild("Locked").gameObject.SetActive(false); stats.gameObject.SetActive(true); }
+                else { tile.FindChild("Locked").gameObject.SetActive(true); stats.gameObject.SetActive(false); }            
+                if (currLevel.deaths < 0) { stats.FindChild("Deaths").GetComponent<Text>().text = "-"; }
+                else { stats.FindChild("Deaths").GetComponent<Text>().text = currLevel.deaths + ""; }
+                if (currLevel.time.TotalSeconds == 0) { stats.FindChild("Time").GetComponent<Text>().text = "--:--.--"; }
+                else { stats.FindChild("Time").GetComponent<Text>().text = string.Format("{0:0}:{1:00}.", currLevel.time.Minutes, currLevel.time.Seconds) + currLevel.time.Milliseconds.ToString("00"); }
+            }
+            else if(isSeason)
+            {
+                currSeason = Game.current.seasons[j];
+                if (currSeason.available) { tile.FindChild("Locked").gameObject.SetActive(false); }
+            }
         }
     }
 
@@ -49,14 +66,14 @@ public class ProgressManager : MonoBehaviour {
         {
             Game.current.seasons[currSeasonIndex].levels[currLevelIndex + 1].available = true;
         }
-        else if(currSeasonIndex + 1 <seasonCount)
+        else if(currSeasonIndex + 1 < seasonCount)
         {
             Game.current.seasons[currSeasonIndex + 1].available = true;
+            Game.current.seasons[currSeasonIndex + 1].levels[0].available = true;
         }
         else { /*конгратулатіонс!*/ }
-
-        currLevel.time = Level.FromIntToTimeSpan(time);
-        currLevel.deaths = deaths;
+        if (currLevel.time.TotalSeconds == 0 || time < currLevel.time.TotalSeconds) { currLevel.time = Level.FromIntToTimeSpan(time); }
+        if (currLevel.deaths < 0 || deaths < currLevel.deaths) { currLevel.deaths = deaths; }
         SaveLoad.Save();
     }
 

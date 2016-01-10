@@ -11,7 +11,7 @@ public class Level
     public Level()
     {
         time = FromIntToTimeSpan(0);
-        deaths = 0;
+        deaths = -1;
         available = false;
     }
 

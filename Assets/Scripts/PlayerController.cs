@@ -18,6 +18,7 @@ public class PlayerController: MonoBehaviour {
     public Vector3 checkpointPosition { get; set; }
     public float cameraBackToPositionTime { get; set; }
     public int checkpointNumber { get; set; }
+    public int deaths { get; set; }
     public float time { get; set; }
     public float startTime { get; set; }
 
@@ -97,7 +98,7 @@ public class PlayerController: MonoBehaviour {
 
     IEnumerator Respawn(Vector3 position)
     {
-        
+        deaths++;
         wait = true;
         transform.position = new Vector3(0, -10, 0);
         transform.rotation = new Quaternion();

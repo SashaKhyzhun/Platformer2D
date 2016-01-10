@@ -49,7 +49,8 @@ public class ProgressManager : MonoBehaviour {
                 if (currLevel.deaths < 0) { stats.FindChild("Deaths").GetComponent<Text>().text = "-"; }
                 else { stats.FindChild("Deaths").GetComponent<Text>().text = currLevel.deaths + ""; }
                 if (currLevel.time.TotalSeconds == 0) { stats.FindChild("Time").GetComponent<Text>().text = "--:--.--"; }
-                else { stats.FindChild("Time").GetComponent<Text>().text = string.Format("{0:0}:{1:00}.", currLevel.time.Minutes, currLevel.time.Seconds) + currLevel.time.Milliseconds.ToString("00"); }
+                else { stats.FindChild("Time").GetComponent<Text>().text = string.Format("{0:0}:{1:00}.", currLevel.time.Minutes, currLevel.time.Seconds) + currLevel.time.Milliseconds.ToString("ff"); }
+                tile.FindChild("LevelName").GetComponent<Text>().text = "LEVEL " + (j + 1).ToString();
             }
             else if(isSeason)
             {

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class UIManager : MonoBehaviour
@@ -73,7 +74,11 @@ public class UIManager : MonoBehaviour
         {
             int currSeason = (index - 1) / pm.levelCount;
             int nextLevel = (index - 1) - (currSeason * 12); //level that you want to load
-            if (pc != null) { pm.SaveStats(currSeason, nextLevel - 1, pc.time, pc.deaths); }
+            if (pc != null)
+            {
+                if (currSeason > 0 && nextLevel == 0) { pm.SaveStats(currSeason - 1, pm.levelCount - 1, pc.time, pc.deaths); }
+                else { pm.SaveStats(currSeason, nextLevel - 1, pc.time, pc.deaths); }
+            }
 
             if (nextLevel < Season.levelCount)
             {
@@ -96,6 +101,10 @@ public class UIManager : MonoBehaviour
 
     public void Pause()
     {
+        int level = Application.loadedLevel;
+        int currSeason = (level - 1) / pm.levelCount;
+        int currLevel = (level - 1) - (currSeason * 12);
+        PauseLayout.transform.FindChild("PauseLevelName").GetComponent<Text>().text = string.Format("SEASON {0}\nLEVEL {1}", currSeason + 1, currLevel + 1);
         TurnLayoutOn(PauseLayout);
         TurnLayoutOff(GameLayout);
         Time.timeScale = timeScaleOnPause;

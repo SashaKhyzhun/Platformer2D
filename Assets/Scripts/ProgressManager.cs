@@ -44,18 +44,25 @@ public class ProgressManager : MonoBehaviour {
             {
                 stats = tile.FindChild("Stats");
                 currLevel = Game.current.seasons[currSeasonIndex].levels[j];
-                if (currLevel.available) { tile.FindChild("Locked").gameObject.SetActive(false); stats.gameObject.SetActive(true); }
-                else { tile.FindChild("Locked").gameObject.SetActive(true); stats.gameObject.SetActive(false); }            
+
+                tile.FindChild("Locked").gameObject.SetActive(!currLevel.available);
+                stats.gameObject.SetActive(currLevel.available);
+
+                //if (currLevel.available) { tile.FindChild("Locked").gameObject.SetActive(false); stats.gameObject.SetActive(true); }
+                //else { tile.FindChild("Locked").gameObject.SetActive(true); stats.gameObject.SetActive(false); }    
+                        
                 if (currLevel.deaths < 0) { stats.FindChild("Deaths").GetComponent<Text>().text = "-"; }
                 else { stats.FindChild("Deaths").GetComponent<Text>().text = currLevel.deaths + ""; }
                 if (currLevel.time.TotalSeconds == 0) { stats.FindChild("Time").GetComponent<Text>().text = "--:--.--"; }
-                else { stats.FindChild("Time").GetComponent<Text>().text = string.Format("{0:0}:{1:00}.", currLevel.time.Minutes, currLevel.time.Seconds) + currLevel.time.Milliseconds.ToString("ff"); }
+                else { stats.FindChild("Time").GetComponent<Text>().text = string.Format("{0:0}:{1:00}.{2:00}", currLevel.time.Minutes, currLevel.time.Seconds, currLevel.time.Milliseconds/10); }// + currLevel.time.Milliseconds.ToString("N2"); }
                 tile.FindChild("LevelName").GetComponent<Text>().text = "LEVEL " + (j + 1).ToString();
             }
             else if(isSeason)
             {
                 currSeason = Game.current.seasons[j];
-                if (currSeason.available) { tile.FindChild("Locked").gameObject.SetActive(false); }
+                tile.FindChild("Locked").gameObject.SetActive(!currSeason.available);
+                //if (currSeason.available) {  }
+                //else { tile.FindChild("Locked").gameObject.SetActive(!currSeason.available); }
             }
         }
     }

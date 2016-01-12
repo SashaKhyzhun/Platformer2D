@@ -22,7 +22,8 @@ public class UIManager : MonoBehaviour
     private WaitForSeconds halfOfTime;
     private WaitForSeconds time;
     private WaitForEndOfFrame wfeof;
-    private bool pressedNextLevelButton;
+    private bool completedLevel = false;
+    private bool backToMenu = false;
 
     void Start()
     {
@@ -49,6 +50,7 @@ public class UIManager : MonoBehaviour
                     Transform LevelEndLayout = UI.transform.FindChild("LevelEndLayout");
                     TurnLayoutOn(LevelEndLayout.gameObject);
                     LoadLevelEndStats(LevelEndLayout);
+                    completedLevel = true;
                     //LoadLevel(Application.loadedLevel + 1);
                     pc.canLoad = false;
                 }
@@ -72,7 +74,7 @@ public class UIManager : MonoBehaviour
         Transform tile = layout.FindChild("LevelEndTile");
         Transform stats = tile.FindChild("Stats");
         tile.FindChild("LevelEndName").GetComponent<Text>().text = string.Format("SEASON {0} | LEVEL {1}", currSeason + 1, currLevel + 1);
-        stats.FindChild("Time").GetComponent<Text>().text = string.Format("{0:0}:{1:00}.{2:00}", time.Minutes, time.Seconds, time.Milliseconds);
+        stats.FindChild("Time").GetComponent<Text>().text = string.Format("{0:0}:{1:00}.{2:00}", time.Minutes, time.Seconds, time.Milliseconds / 10);
         stats.FindChild("Deaths").GetComponent<Text>().text = pc.deaths + "";
     }
 
@@ -102,7 +104,10 @@ public class UIManager : MonoBehaviour
             {
                 if (Game.current.seasons[currSeason].available && Game.current.seasons[currSeason].levels[nextLevel].available)
                 {
-                    StartCoroutine(WaitForLoad(index));
+                    if (!backToMenu)
+                    {
+                        StartCoroutine(WaitForLoad(index));
+                    }
                 }
             }
             else if (currSeason + 1 < Game.seasonCount)
@@ -147,6 +152,13 @@ public class UIManager : MonoBehaviour
 
     public void BackToMenu()
     {
+        if (completedLevel)
+        {
+            backToMenu = true;
+            LoadLevel(Application.loadedLevel  + 1);
+            backToMenu = false;
+            completedLevel = false;
+        }
         LoadLevel(0);
     }
 

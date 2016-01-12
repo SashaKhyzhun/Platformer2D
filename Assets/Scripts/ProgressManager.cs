@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 public class ProgressManager : MonoBehaviour {
 
@@ -25,7 +24,7 @@ public class ProgressManager : MonoBehaviour {
 
     }
 
-    public void LoadLevelStats(Transform layout)
+    public void LoadStats(Transform layout)
     {
         SaveLoad.Load();
         Transform body = layout.FindChild("Body");
@@ -80,7 +79,7 @@ public class ProgressManager : MonoBehaviour {
             Game.current.seasons[currSeasonIndex + 1].levels[0].available = true;
         }
         else { /*конгратулатіонс!*/ }
-        if (currLevel.time.TotalSeconds == 0 || time < currLevel.time.TotalSeconds) { currLevel.time = Level.FromIntToTimeSpan(time); }
+        if (currLevel.time.TotalSeconds == 0 || time < currLevel.time.TotalSeconds) { currLevel.time = Level.FromFloatToTimeSpan(time); }
         if (currLevel.deaths < 0 || deaths < currLevel.deaths) { currLevel.deaths = deaths; }
         SaveLoad.Save();
     }

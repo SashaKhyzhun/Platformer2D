@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System;
 
 public class UIManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class UIManager : MonoBehaviour
     private WaitForSeconds halfOfTime;
     private WaitForSeconds time;
     private WaitForEndOfFrame wfeof;
+    private bool pressedNextLevelButton;
 
     void Start()
     {
@@ -44,18 +46,34 @@ public class UIManager : MonoBehaviour
                 if (pc.canLoad)
                 {
                     pc.time = Time.time - pc.startTime;
-                    LoadLevel(Application.loadedLevel + 1);
+                    Transform LevelEndLayout = UI.transform.FindChild("LevelEndLayout");
+                    TurnLayoutOn(LevelEndLayout.gameObject);
+                    LoadLevelEndStats(LevelEndLayout);
+                    //LoadLevel(Application.loadedLevel + 1);
                     pc.canLoad = false;
                 }
             }
-            if (pc.startFade) { anim.SetBool("Fade", true); }
-            if (pc.startReturn) { anim.SetBool("Fade", false); }
+            //if (pc.startFade) { anim.SetBool("Fade", true); }
+            //if (pc.startReturn) { anim.SetBool("Fade", false); }
         }
     }
 
     public void LoadStats(Transform levelsLayout)
     {
-        pm.LoadLevelStats(levelsLayout);
+        pm.LoadStats(levelsLayout);
+    }
+
+    public void LoadLevelEndStats(Transform layout)
+    {
+        int level = Application.loadedLevel;
+        int currSeason = (level - 1) / pm.levelCount;
+        int currLevel = (level - 1) - (currSeason * 12);
+        TimeSpan time = Level.FromFloatToTimeSpan(pc.time);
+        Transform tile = layout.FindChild("LevelEndTile");
+        Transform stats = tile.FindChild("Stats");
+        tile.FindChild("LevelEndName").GetComponent<Text>().text = string.Format("SEASON {0} | LEVEL {1}", currSeason + 1, currLevel + 1);
+        stats.FindChild("Time").GetComponent<Text>().text = string.Format("{0:0}:{1:00}.{2:00}", time.Minutes, time.Seconds, time.Milliseconds);
+        stats.FindChild("Deaths").GetComponent<Text>().text = pc.deaths + "";
     }
 
     public void Restart()
@@ -65,7 +83,7 @@ public class UIManager : MonoBehaviour
 
     public void NextLevel()
     {
-        StartCoroutine(WaitForLoad(Application.loadedLevel+1));
+        LoadLevel(Application.loadedLevel + 1);
     }
 
     public void LoadLevel(int index)
@@ -150,7 +168,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;        
         anim.SetBool("Fade", true);
         yield return halfOfTime;
-        if (!LoadingScreen.activeInHierarchy) { LoadingScreen.SetActive(true); }
+        TurnLayoutOn(LoadingScreen);
         anim.SetBool("Fade", false);
         yield return time;
 
@@ -161,6 +179,7 @@ public class UIManager : MonoBehaviour
         anim.SetBool("Fade", true);
         yield return halfOfTime;
         async.allowSceneActivation = true;
+        GC.Collect();
         Resources.UnloadUnusedAssets();
         anim.SetBool("Fade", false);
     }

@@ -10,12 +10,12 @@ public class Level
 
     public Level()
     {
-        time = FromIntToTimeSpan(0);
+        time = FromFloatToTimeSpan(0);
         deaths = -1;
         available = false;
     }
 
-    public static TimeSpan FromIntToTimeSpan(float seconds)
+    public static TimeSpan FromFloatToTimeSpan(float seconds)
     {
         return new TimeSpan(0, 0, 0, 0, (int)(seconds * 1000));
     }

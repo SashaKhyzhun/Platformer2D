@@ -28,8 +28,9 @@ public class PlayerController: MonoBehaviour {
     private PlayerMotor motor;
     private Throwable throwable;
     
-    private bool canPlay = false;
+    private bool canControl = false;
     private bool died = false;
+    private bool first = true;
     
 
     void Start()
@@ -45,12 +46,11 @@ public class PlayerController: MonoBehaviour {
         alive = true;
         canLoad = true;
         StartCoroutine(WaitAtStart());
-        startTime = Time.time;
-        time = Time.time - startTime;
+        time = 0;
     }
-
+    
 	void Update () {
-        if (canPlay)
+        if (canControl)
         {
             if (!wait)
             {
@@ -59,28 +59,46 @@ public class PlayerController: MonoBehaviour {
                     if (Input.GetButton("Fire1"))
                     {
                         motor.moveUp = true;
-                        start = true;
-
+                        if (!start)
+                        {
+                            start = true;
+                            if (first)
+                            {
+                                first = false;
+                                startTime = Time.time;
+                            }
+                        }
                     }
                     else if (Input.touchCount > 0)
                     {
                         motor.moveUp = true;
-                        start = true;
-
+                        if (!start)
+                        {
+                            start = true;
+                            if (first)
+                            {
+                                first = false;
+                                startTime = Time.time;
+                            }
+                        }
                     }
                     motor.holdRotation = true;
                     motor.moveRight = true;
                 }
-                if (Input.GetButtonDown("Fire1"))
+                else
                 {
-                    died = false;
-                }
-                else if (Input.touchCount > 0)
-                {
-                    if (Input.GetTouch(0).phase == TouchPhase.Began)
+                    if (Input.GetButtonDown("Fire1"))
                     {
                         died = false;
                     }
+                    else if (Input.touchCount > 0)
+                    {
+                        if (Input.GetTouch(0).phase == TouchPhase.Began)
+                        {
+                            died = false;
+                        }
+                    }
+
                 }
                 if (!alive)
                 {
@@ -132,6 +150,6 @@ public class PlayerController: MonoBehaviour {
         }
         yield return fullBackTime;
         yield return fullBackTime;
-        canPlay = true;
+        canControl = true;
     }
 }

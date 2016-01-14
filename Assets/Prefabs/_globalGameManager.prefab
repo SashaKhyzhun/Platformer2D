@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11463832}
   - 114: {fileID: 11450972}
   - 114: {fileID: 11412274}
+  - 114: {fileID: 11459948}
   m_Layer: 0
   m_Name: _globalGameManager
   m_TagString: globalGM
@@ -41,13 +42,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2392139e89f20aa4c9e3b7e1e377ac93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UI: {fileID: 0}
   FadePlane: {fileID: 0}
   MenuLayout: {fileID: 0}
   GameLayout: {fileID: 0}
   PauseLayout: {fileID: 0}
+  SeasonsMenuLayout: {fileID: 0}
+  LevelsMenuLayout:
+  - {fileID: 0}
+  - {fileID: 0}
   LoadingScreen: {fileID: 0}
   fadeTime: 1
-  timeScaleOnPause: .0500000007
+  levelEndWaitTime: 1
+  timeScaleOnPause: 0.05
 --- !u!114 &11450972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -59,6 +66,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b0acc2987266dd4f9b65848ff5d6bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11459948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c06731f1092c61b488b437d307426d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  savefileName: save
+  savefileExtention: fy
+  seasonCount: 3
+  levelCount: 12
+  layoutOffset: 4
 --- !u!114 &11463832
 MonoBehaviour:
   m_ObjectHideFlags: 1

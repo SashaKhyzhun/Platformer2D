@@ -14,22 +14,25 @@ public class UIManager : MonoBehaviour
     public GameObject[] LevelsMenuLayout;
     public GameObject LoadingScreen;
     public float fadeTime;
+    public float levelEndWaitTime;
     public float timeScaleOnPause;
 
     private ProgressManager pm;
     private PlayerController pc;
     private Animator anim;
-    private WaitForSeconds halfOfTime;
-    private WaitForSeconds time;
+    private WaitForSeconds halfFadeTimeWFS;
+    private WaitForSeconds fadeTimeWFS;
     private WaitForEndOfFrame wfeof;
+    private WaitForSeconds levelEndWaitTimeWFS;
     private bool completedLevel = false;
     private bool backToMenu = false;
 
     void Start()
     {
-        halfOfTime = new WaitForSeconds(fadeTime / 2);
-        time = new WaitForSeconds(fadeTime);
+        halfFadeTimeWFS = new WaitForSeconds(fadeTime / 2);
+        fadeTimeWFS = new WaitForSeconds(fadeTime);
         wfeof = new WaitForEndOfFrame();
+        levelEndWaitTimeWFS = new WaitForSeconds(levelEndWaitTime);
         pm = gameObject.GetComponent<ProgressManager>();
         anim = FadePlane.GetComponent<Animator>();
         anim.SetFloat("speedMultiplier", 1 / fadeTime);
@@ -47,16 +50,12 @@ public class UIManager : MonoBehaviour
                 if (pc.canLoad)
                 {
                     pc.time = Time.time - pc.startTime;
-                    Transform LevelEndLayout = UI.transform.FindChild("LevelEndLayout");
-                    TurnLayoutOn(LevelEndLayout.gameObject);
-                    LoadLevelEndStats(LevelEndLayout);
+                    StartCoroutine(WaitForConfirm(levelEndWaitTime));                    
                     completedLevel = true;
                     //LoadLevel(Application.loadedLevel + 1);
                     pc.canLoad = false;
                 }
             }
-            //if (pc.startFade) { anim.SetBool("Fade", true); }
-            //if (pc.startReturn) { anim.SetBool("Fade", false); }
         }
     }
 
@@ -171,25 +170,34 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1;
         anim.SetBool("Fade", true);
-        yield return halfOfTime;
+        yield return halfFadeTimeWFS;
         Application.Quit();
+    }
+
+    IEnumerator WaitForConfirm(float seconds)
+    {
+
+        Transform LevelEndLayout = UI.transform.FindChild("LevelEndLayout");
+        yield return levelEndWaitTimeWFS;
+        TurnLayoutOn(LevelEndLayout.gameObject);
+        LoadLevelEndStats(LevelEndLayout);
     }
 
     IEnumerator WaitForLoad(int level)
     {
         Time.timeScale = 1;        
         anim.SetBool("Fade", true);
-        yield return halfOfTime;
+        yield return halfFadeTimeWFS;
         TurnLayoutOn(LoadingScreen);
         anim.SetBool("Fade", false);
-        yield return time;
+        yield return fadeTimeWFS;
 
         AsyncOperation async = Application.LoadLevelAsync(level);
         async.allowSceneActivation = false;
         while (async.progress < 0.9f) { yield return wfeof; }
 
         anim.SetBool("Fade", true);
-        yield return halfOfTime;
+        yield return halfFadeTimeWFS;
         async.allowSceneActivation = true;
         GC.Collect();
         Resources.UnloadUnusedAssets();
@@ -212,7 +220,7 @@ public class UIManager : MonoBehaviour
                 TurnLayoutOff(MenuLayout);
                 TurnLayoutOff(LoadingScreen);
                 TurnLayoutOff(PauseLayout);
-                TurnLayoutOff(SeasonsMenuLayout);                
+                TurnLayoutOff(SeasonsMenuLayout);        
                 pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
                 break;
         }

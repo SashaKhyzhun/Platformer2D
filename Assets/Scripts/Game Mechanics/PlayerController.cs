@@ -14,6 +14,7 @@ public class PlayerController: MonoBehaviour {
     public bool wait { get; set; }
     public bool startFade { get; set; }
     public bool startReturn { get; set; }
+    public bool canTouch { get; set; }
     public Transform[] checkpoints { get; set; }
     public Vector3 checkpointPosition { get; set; }
     public float cameraBackToPositionTime { get; set; }
@@ -45,6 +46,7 @@ public class PlayerController: MonoBehaviour {
         wait = false;
         alive = true;
         canLoad = true;
+        canTouch = true;
         StartCoroutine(WaitAtStart());
         time = 0;
     }

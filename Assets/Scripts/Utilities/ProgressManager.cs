@@ -7,6 +7,7 @@ public class ProgressManager : MonoBehaviour {
     public string savefileExtention;
     public int seasonCount;
     public int levelCount;
+    public int layoutOffset;
 
     void Start()
     {
@@ -31,7 +32,7 @@ public class ProgressManager : MonoBehaviour {
         Transform tile;
         Transform stats;
         int childCount = body.childCount;
-        int currSeasonIndex = body.parent.GetSiblingIndex() - 3;
+        int currSeasonIndex = body.parent.GetSiblingIndex() - layoutOffset;
         bool isLevel = childCount == levelCount;
         bool isSeason = childCount == seasonCount;
         Level currLevel;

@@ -36,14 +36,14 @@ public class Bomb : MonoBehaviour, IRevertable {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.CompareTag("Player"))
-        {
+        //if (coll.gameObject.CompareTag("Player"))
+        //{
             Vector3 direction = (coll.transform.position - myTransform.position).normalized;
             playerRb = coll.gameObject.GetComponent<Rigidbody2D>();
             playerRb.AddForce(direction * boomForce * Time.fixedDeltaTime, ForceMode2D.Impulse);
             spriteRenderer.enabled = false;
             circleCollider.enabled = false;
-        }
+        //}
     }
   
     public void SaveParams()

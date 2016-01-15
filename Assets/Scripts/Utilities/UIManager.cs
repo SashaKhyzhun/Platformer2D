@@ -56,6 +56,8 @@ public class UIManager : MonoBehaviour
                     pc.canLoad = false;
                 }
             }
+            if (pc.startFade) { anim.SetBool("Fade", true); }
+            if (pc.startReturn) { anim.SetBool("Fade", false); }
         }
     }
 

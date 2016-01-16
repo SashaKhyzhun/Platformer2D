@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11411738}
   - 114: {fileID: 11438352}
   m_Layer: 11
-  m_Name: Player
+  m_Name: _Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.35200024, y: -1.27999997, z: 0}
-  m_LocalScale: {x: .539522231, y: .539522231, z: .539522231}
+  m_LocalPosition: {x: -7.352, y: -1.28, z: 0}
+  m_LocalScale: {x: 0.53952223, y: 0.53952223, z: 0.53952223}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -40,7 +40,8 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128450}
-  m_Mass: .75
+  m_UseAutoMass: 0
+  m_Mass: 0.75
   m_LinearDrag: 0
   m_AngularDrag: 1
   m_GravityScale: 1
@@ -56,12 +57,13 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128450}
   m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: .705492854
+  m_Radius: 0.70549285
 --- !u!114 &11411738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -82,7 +84,7 @@ MonoBehaviour:
   zRotationToHold: 0
   rotationHoldForce: 1
   rotationTreshold: 15
-  rotationBreakForce: .699999988
+  rotationBreakForce: 0.7
   throwDirection: {x: 1, y: 2, z: 0}
 --- !u!114 &11427206
 MonoBehaviour:
@@ -95,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0326ad72aa6d8994291759e47eea44ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraStayTime: .300000012
+  cameraStayTime: 0.3
 --- !u!114 &11438352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,13 +137,15 @@ SpriteRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1538498155
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 6120b49960f26b5488bf80e6a8c4a3f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

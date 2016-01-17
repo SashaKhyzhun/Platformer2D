@@ -5,7 +5,7 @@ public class BulletMover : MonoBehaviour {
 
     public GameObject bullet;
 
-    float bulletSpeed = 5f;
+    public float bulletSpeed = 5f;
 	
 	void Update () {
 

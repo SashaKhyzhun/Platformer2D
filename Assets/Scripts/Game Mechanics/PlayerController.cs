@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 [RequireComponent(typeof (PlayerMotor))]
@@ -23,6 +24,7 @@ public class PlayerController: MonoBehaviour {
     public float time { get; set; }
     public float startTime { get; set; }
 
+    private EventSystem es;
     private WaitForSeconds halfBackTime;
     private WaitForSeconds fullBackTime;
     private Rigidbody2D rb;  
@@ -36,6 +38,7 @@ public class PlayerController: MonoBehaviour {
 
     void Start()
     {
+        es = EventSystem.current;
         rb = GetComponent<Rigidbody2D>();
         motor = GetComponent<PlayerMotor>();
         throwable = GetComponent<Throwable>();
@@ -58,32 +61,45 @@ public class PlayerController: MonoBehaviour {
             {
                 if (!died)
                 {
-                    if (Input.GetButton("Fire1"))
+                    
+                    if (Input.touchCount > 0 || Input.GetButton("Fire1"))
                     {
-                        motor.moveUp = true;
-                        if (!start)
+                        if (es != null)
                         {
-                            start = true;
-                            if (first)
+                            if (!es.IsPointerOverGameObject())
                             {
-                                first = false;
-                                startTime = Time.time;
+                                motor.moveUp = true;
+                                if (!start)
+                                {
+                                    start = true;
+                                    if (first)
+                                    {
+                                        first = false;
+                                        startTime = Time.time;
+                                    }
+                                }
                             }
+                            else
+                            {
+                                Debug.Log("The Pointer is over Game Object");
+                            }
+
                         }
-                    }
-                    else if (Input.touchCount > 0)
-                    {
-                        motor.moveUp = true;
-                        if (!start)
+                        else
                         {
-                            start = true;
-                            if (first)
+                            motor.moveUp = true;
+                            if (!start)
                             {
-                                first = false;
-                                startTime = Time.time;
+                                start = true;
+                                if (first)
+                                {
+                                    first = false;
+                                    startTime = Time.time;
+                                }
                             }
-                        }
+                        }                        
                     }
+
                     motor.holdRotation = true;
                     motor.moveRight = true;
                 }

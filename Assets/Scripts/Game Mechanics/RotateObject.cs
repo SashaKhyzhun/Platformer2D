@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+[RequireComponent(typeof(Rigidbody2D))]
 public class RotateObject : MonoBehaviour
 {
     public float speed;
@@ -9,6 +9,7 @@ public class RotateObject : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.isKinematic = true;
     }
       
     void FixedUpdate()

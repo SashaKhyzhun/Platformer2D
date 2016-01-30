@@ -1,11 +1,11 @@
 fileFormatVersion: 2
 guid: 6120b49960f26b5488bf80e6a8c4a3f2
-timeCreated: 1446560586
+timeCreated: 1454172408
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Furry_Jump_11_256_1024_0
-    21300002: Furry_Jump_11_256_1024_1
+    21300002: GameIcon
     21300004: Furry_Jump_11_256_1024_2
     21300006: Furry_Jump_11_256_1024_3
     21300008: Furry_Jump_11_256_1024_4
@@ -33,7 +33,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -58,7 +58,7 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
@@ -79,9 +79,20 @@ TextureImporter:
         width: 169
         height: 176
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Furry_Jump_11_256_1024_1
+      outline:
+      - - {x: -13.75, y: 22}
+        - {x: -16.75, y: 21}
+        - {x: -20.75, y: 13}
+        - {x: -20.75, y: -10}
+        - {x: -12.75, y: -22}
+        - {x: 16.25, y: -22}
+        - {x: 19.25, y: -21}
+        - {x: 22.25, y: -19}
+        - {x: 22.25, y: 18}
+        - {x: 21.25, y: 22}
+    - name: GameIcon
       rect:
         serializedVersion: 2
         x: 299
@@ -89,8 +100,17 @@ TextureImporter:
         width: 169
         height: 176
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.75, y: 22}
+        - {x: -20.75, y: 18}
+        - {x: -20.75, y: -13}
+        - {x: -8.75, y: -22}
+        - {x: 16.25, y: -22}
+        - {x: 22.25, y: -15}
+        - {x: 22.25, y: 21}
+        - {x: 19.25, y: 22}
     - name: Furry_Jump_11_256_1024_2
       rect:
         serializedVersion: 2
@@ -99,8 +119,16 @@ TextureImporter:
         width: 167
         height: 177
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 22.5}
+        - {x: -21, y: -21.5}
+        - {x: -17, y: -22.5}
+        - {x: 20, y: -22.5}
+        - {x: 21, y: -20.5}
+        - {x: 21, y: 19.5}
+        - {x: 15, y: 22.5}
     - name: Furry_Jump_11_256_1024_3
       rect:
         serializedVersion: 2
@@ -109,8 +137,15 @@ TextureImporter:
         width: 171
         height: 174
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 22.5}
+        - {x: -21.5, y: 15.5}
+        - {x: -21.5, y: -15.5}
+        - {x: -19.5, y: -21.5}
+        - {x: 22.5, y: -21.5}
+        - {x: 22.5, y: 22.5}
     - name: Furry_Jump_11_256_1024_4
       rect:
         serializedVersion: 2
@@ -119,8 +154,16 @@ TextureImporter:
         width: 161
         height: 168
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.25, y: 22}
+        - {x: -20.25, y: 19}
+        - {x: -20.25, y: -14}
+        - {x: -18.25, y: -20}
+        - {x: -11.25, y: -21}
+        - {x: 20.75, y: -21}
+        - {x: 20.75, y: 22}
     - name: Furry_Jump_11_256_1024_5
       rect:
         serializedVersion: 2
@@ -129,8 +172,17 @@ TextureImporter:
         width: 149
         height: 177
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 22.75}
+        - {x: -18.5, y: 20.75}
+        - {x: -18.5, y: -12.25}
+        - {x: -13.5, y: -22.25}
+        - {x: 11.5, y: -22.25}
+        - {x: 19.5, y: -11.25}
+        - {x: 19.5, y: 19.75}
+        - {x: 14.5, y: 22.75}
     - name: Furry_Jump_11_256_1024_6
       rect:
         serializedVersion: 2
@@ -139,8 +191,17 @@ TextureImporter:
         width: 148
         height: 183
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: 24}
+        - {x: -18.5, y: 18}
+        - {x: -18.5, y: -19}
+        - {x: -14.5, y: -23}
+        - {x: 9.5, y: -23}
+        - {x: 18.5, y: -15}
+        - {x: 18.5, y: 22}
+        - {x: 14.5, y: 24}
     - name: Furry_Jump_11_256_1024_7
       rect:
         serializedVersion: 2
@@ -149,8 +210,16 @@ TextureImporter:
         width: 148
         height: 178
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.75, y: 22.75}
+        - {x: -18.75, y: 18.75}
+        - {x: -18.75, y: -20.25}
+        - {x: -11.75, y: -22.25}
+        - {x: 16.25, y: -22.25}
+        - {x: 19.25, y: -9.25}
+        - {x: 19.25, y: 22.75}
     - name: Furry_Jump_11_256_1024_8
       rect:
         serializedVersion: 2
@@ -159,8 +228,16 @@ TextureImporter:
         width: 159
         height: 153
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.75, y: 20}
+        - {x: -19.75, y: 18}
+        - {x: -19.75, y: -14}
+        - {x: -5.75, y: -19}
+        - {x: 21.25, y: -19}
+        - {x: 21.25, y: 19}
+        - {x: 19.25, y: 20}
     - name: Furry_Jump_11_256_1024_9
       rect:
         serializedVersion: 2
@@ -169,8 +246,14 @@ TextureImporter:
         width: 151
         height: 149
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.75, y: 19.75}
+        - {x: -18.75, y: 15.75}
+        - {x: -18.75, y: -18.25}
+        - {x: 20.25, y: -18.25}
+        - {x: 20.25, y: 19.75}
     - name: Furry_Jump_11_256_1024_10
       rect:
         serializedVersion: 2
@@ -179,8 +262,17 @@ TextureImporter:
         width: 153
         height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 20.5}
+        - {x: -19.5, y: 13.5}
+        - {x: -19.5, y: -11.5}
+        - {x: -14.5, y: -19.5}
+        - {x: 16.5, y: -19.5}
+        - {x: 19.5, y: -18.5}
+        - {x: 19.5, y: 13.5}
+        - {x: 17.5, y: 20.5}
     - name: Furry_Jump_11_256_1024_11
       rect:
         serializedVersion: 2
@@ -189,8 +281,15 @@ TextureImporter:
         width: 158
         height: 185
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.75, y: 23.75}
+        - {x: -19.75, y: 15.75}
+        - {x: -19.75, y: -23.25}
+        - {x: 20.25, y: -23.25}
+        - {x: 20.25, y: 4.75}
+        - {x: 14.25, y: 23.75}
     - name: Furry_Jump_11_256_1024_12
       rect:
         serializedVersion: 2
@@ -199,8 +298,16 @@ TextureImporter:
         width: 161
         height: 174
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.75, y: 22.5}
+        - {x: -19.75, y: 18.5}
+        - {x: -19.75, y: -13.5}
+        - {x: -14.75, y: -21.5}
+        - {x: 21.25, y: -21.5}
+        - {x: 21.25, y: 12.5}
+        - {x: 13.25, y: 22.5}
     - name: Furry_Jump_11_256_1024_13
       rect:
         serializedVersion: 2
@@ -209,8 +316,17 @@ TextureImporter:
         width: 155
         height: 179
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 23.75}
+        - {x: -19.5, y: 22.75}
+        - {x: -19.5, y: -12.25}
+        - {x: -14.5, y: -22.25}
+        - {x: 15.5, y: -22.25}
+        - {x: 19.5, y: -18.25}
+        - {x: 19.5, y: 13.75}
+        - {x: 13.5, y: 23.75}
     - name: Furry_Jump_11_256_1024_14
       rect:
         serializedVersion: 2
@@ -219,8 +335,16 @@ TextureImporter:
         width: 158
         height: 193
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.75, y: 24.75}
+        - {x: -19.75, y: 15.75}
+        - {x: -19.75, y: -14.25}
+        - {x: -11.75, y: -24.25}
+        - {x: 20.25, y: -24.25}
+        - {x: 20.25, y: 9.75}
+        - {x: 16.25, y: 24.75}
     - name: Furry_Jump_11_256_1024_15
       rect:
         serializedVersion: 2
@@ -229,8 +353,15 @@ TextureImporter:
         width: 152
         height: 191
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.25, y: 25.25}
+        - {x: -19.25, y: -15.75}
+        - {x: -14.25, y: -23.75}
+        - {x: 19.75, y: -23.75}
+        - {x: 19.75, y: 25.25}
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

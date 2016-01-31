@@ -121,6 +121,7 @@ public class UIManager : MonoBehaviour
             else { Debug.Log("scene index is over the limit"); }
         }
         else { StartCoroutine(WaitForLoad(index)); }
+        completedLevel = false;
     }
 
     public void Pause()

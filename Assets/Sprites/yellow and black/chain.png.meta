@@ -1,9 +1,11 @@
 fileFormatVersion: 2
 guid: c47216b03926fc14aab1dbfff96499f6
-timeCreated: 1447629227
+timeCreated: 1454267421
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: chain_0
+    21300002: chain_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -17,7 +19,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -38,23 +40,53 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings:
   - buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 64
     textureFormat: -1
     compressionQuality: 50
     allowsAlphaSplitting: 0
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: chain_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 14
+        height: 66
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: chain_1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 0
+        width: 40
+        height: 66
+      alignment: 9
+      pivot: {x: 0.5, y: 0.90080166}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.287878, y: 6.348694}
+        - {x: -19.287878, y: -54.651306}
+        - {x: -16.287878, y: -57.651306}
+        - {x: 15.712122, y: -57.651306}
+        - {x: 19.712122, y: -52.651306}
+        - {x: 19.712122, y: 5.348694}
+        - {x: 17.712122, y: 6.348694}
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

@@ -52,7 +52,7 @@ public class CameraMovement : MonoBehaviour
                 }
                 else
                 {
-                    if (speed >= targetSpeed) { speed -= accelerationTime * speed; }
+                    if (speed >= targetSpeed) { speed -= accelerationTime * Time.deltaTime * speed; }
                     else { speed = targetSpeed; }
                 }
             }
@@ -65,7 +65,7 @@ public class CameraMovement : MonoBehaviour
                 playerController.alive = false;
             }
             //Start breaking
-            if (!playerController.alive) { if (speed > 0) { speed -= accelerationTime * speed; } }
+            if (!playerController.alive) { if (speed > 0) { speed -= accelerationTime * Time.deltaTime * speed; } }
             if (playerController.startFade) { speed = 0; }
         }
 

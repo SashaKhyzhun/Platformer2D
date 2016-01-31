@@ -270,7 +270,7 @@ MonoBehaviour:
   target: {fileID: 0}
   finish: {fileID: 0}
   targetSpeed: 0.5
-  accelerationTime: 0.02
+  accelerationTime: 1.5
   followTemp: 4
   offsetPerc: -50
 --- !u!114 &11471428
@@ -502,6 +502,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: accelerationTime
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

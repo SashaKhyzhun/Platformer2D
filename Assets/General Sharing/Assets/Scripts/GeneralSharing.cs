@@ -68,7 +68,7 @@ public class GeneralSharing : MonoBehaviour
 	IEnumerator SaveAndShare ()
 	{
 		yield return new WaitForEndOfFrame ();
-		#if UNITY_ANDROID
+#if UNITY_ANDROID
 		
 		byte[] bytes = MyImage.EncodeToPNG();
 		string path = Application.persistentDataPath + "/MyImage.png";
@@ -81,7 +81,7 @@ public class GeneralSharing : MonoBehaviour
 		intentObject.Call<AndroidJavaObject>("setType", "image/*");
 		intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_SUBJECT"), "Media Sharing ");
 		intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TITLE"), "Media Sharing ");
-		intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"), "Media Sharing Android Demo");
+		intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"), "Hello, Everyone! Look at this FREE funny game, you must play it!");
 		
 		AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri");
 		AndroidJavaClass fileClass = new AndroidJavaClass("java.io.File");
@@ -93,42 +93,42 @@ public class GeneralSharing : MonoBehaviour
 		//			string uriPath =  uriObject.Call<string>("getPath");
 		bool fileExist = fileObject.Call<bool>("exists");
 		Debug.Log("File exist : " + fileExist);
-		if (fileExist)
-			intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_STREAM"), uriObject);
-		
-		AndroidJavaClass unity = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-		AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject>("currentActivity");
-		currentActivity.Call("startActivity", intentObject);
-		#endif
-		
+        if (fileExist) {
+            intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_STREAM"), uriObject);
+
+            AndroidJavaClass unity = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+            AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject>("currentActivity");
+            currentActivity.Call("startActivity", intentObject);
+#endif
+        }
 	}
-	#endregion
+#endregion
 	
-	#region BUTTON_CLICK_LISTENER
+#region BUTTON_CLICK_LISTENER
 	
 	public void OnShareSimpleText ()
 	{
-		#if UNITY_ANDROID
+#if UNITY_ANDROID
 		StartCoroutine (ShareAndroidText ());
-		#elif UNITY_IPHONE || UNITY_IPAD
+#elif UNITY_IPHONE || UNITY_IPAD
 		GeneralSharingiOSBridge.ShareSimpleText ("Hello !!!");
-		#endif
+#endif
 	}
 	
 	public void OnShareTextWithImage ()
 	{
 		Debug.Log ("Media Share");
-		#if UNITY_ANDROID
+#if UNITY_ANDROID
 		StartCoroutine (SaveAndShare ());
-		#elif UNITY_IPHONE || UNITY_IPAD
+#elif UNITY_IPHONE || UNITY_IPAD
 		byte[] bytes = MyImage.EncodeToPNG ();
 		string path = Application.persistentDataPath + "/MyImage.png";
 		File.WriteAllBytes (path, bytes);
 		string path_ = "MyImage.png";
 		
 		StartCoroutine (ScreenshotHandler.Save (path_, "Media Share", true));
-		#endif
+#endif
 	}
-	#endregion
+#endregion
 	
 }

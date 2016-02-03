@@ -2,44 +2,76 @@
 using System.Collections;
 
 public class MachineShooting : MonoBehaviour {
+    
+    public Transform target;
+    public Transform muzzle;
+    public Transform bulletPool;
+    public float spotDistance = 25;
+    public float shootForce;
+    public float shootRate = 0.50f;
 
-	public Vector3 bulletOffset = new Vector3(0, 0.5f, 0);
-	
-	public GameObject bulletPrefab;
-	int bulletLayer;
+    public bool withinReach { get; set; }
 
-	public float fireDelay = 0.50f;
-	float cooldownTimer = 0;
-
-	Transform player;
-
+    private Transform myTransform;
+    private Transform currBullet;
+    private Rigidbody2D currBulletRB;
+    private BulletCleaner currBulletBC;
+    private WaitForSeconds shootRateWFS;
+    private bool canShoot = true;
+    private int currBulletIndex = 0;
+    private int bulletLayer;
+    
 	void Start() {
-		bulletLayer = gameObject.layer;
-	}
-
+        myTransform = transform;
+        bulletLayer = gameObject.layer;
+        shootRateWFS = new WaitForSeconds(shootRate);
+        canShoot = true;
+}
 
 	void Update () {
-
-		if(player == null) {
-			// Find the player;
-			GameObject go = GameObject.FindWithTag ("Player");
-			
-			if(go != null) {
-				player = go.transform;
-			}
-		}
-
-
-		cooldownTimer -= Time.deltaTime;
-		
-		if( cooldownTimer <= 0 && player != null && Vector3.Distance(transform.position, player.position) < 25) {
-			// shoot
-			cooldownTimer = fireDelay;
-			
-			Vector3 offset = transform.rotation * bulletOffset;
-			
-			GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, transform.position + offset, transform.rotation);
-			bulletGO.layer = bulletLayer;
-		}
+        withinReach = (target.position - myTransform.position).magnitude < spotDistance;
+        if (withinReach)
+        {
+            if (canShoot)
+            {
+                StartCoroutine(Shoot());
+            }
+        }
 	}
+
+    IEnumerator Shoot()
+    {
+        canShoot = false;
+
+        currBullet = bulletPool.GetChild(currBulletIndex);
+
+        currBulletRB = currBullet.GetComponent<Rigidbody2D>();
+        currBulletBC = currBullet.GetComponent<BulletCleaner>();
+
+        //currBullet.gameObject.layer = bulletLayer;
+        currBullet.gameObject.SetActive(true);
+
+        currBulletBC.origin = gameObject;
+        currBullet.position = muzzle.position;
+        currBullet.rotation = muzzle.rotation;
+        currBulletRB.velocity = Vector2.zero;
+        currBulletRB.angularVelocity = 0;
+        currBulletRB.AddForce(muzzle.up * shootForce, ForceMode2D.Impulse);
+
+        yield return shootRateWFS;
+        canShoot = true;
+        if (currBulletIndex < bulletPool.childCount - 1)
+        {
+            currBulletIndex++;
+        }
+        else
+        {
+            currBulletIndex = 0;
+        }
+    }
+
+    void OnEnable()
+    {
+        canShoot = true;
+    }
 }

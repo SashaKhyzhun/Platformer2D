@@ -72,7 +72,8 @@ public class GeneralSharing : MonoBehaviour
 		
 		byte[] bytes = MyImage.EncodeToPNG();
 		string path = Application.persistentDataPath + "/MyImage.png";
-		File.WriteAllBytes(path, bytes);
+        //string path = Application.dataPath + "/MyImage.png";
+        File.WriteAllBytes(path, bytes);
 		
 		AndroidJavaClass intentClass = new AndroidJavaClass("android.content.Intent");
 		AndroidJavaObject intentObject = new AndroidJavaObject("android.content.Intent");
@@ -81,7 +82,7 @@ public class GeneralSharing : MonoBehaviour
 		intentObject.Call<AndroidJavaObject>("setType", "image/*");
 		intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_SUBJECT"), "Media Sharing ");
 		intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TITLE"), "Media Sharing ");
-		intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"), "Hello, Everyone! Look at this FREE funny game, you must play it!");
+		intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"), "Hello, Everyone! Look at this FREE funny game, you must play it! http://www.somesite.com");
 		
 		AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri");
 		AndroidJavaClass fileClass = new AndroidJavaClass("java.io.File");

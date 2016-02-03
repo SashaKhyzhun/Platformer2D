@@ -79,11 +79,6 @@ public class PlayerController: MonoBehaviour {
                                     }
                                 }
                             }
-                            else
-                            {
-                                Debug.Log("The Pointer is over Game Object");
-                            }
-
                         }
                         else
                         {

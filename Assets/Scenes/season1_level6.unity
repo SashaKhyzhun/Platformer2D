@@ -341,7 +341,7 @@ PlatformEffector2D:
     m_Bits: 4294966271
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 360
   m_UseSideFriction: 1
   m_UseSideBounce: 0
   m_SideArc: 60
@@ -4182,7 +4182,12 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 67ce51537962deb4d9e3f352708cabb9,
         type: 3}
-    m_RemovedComponents: []
+    - target: {fileID: 6821044, guid: 196c9de3b1297624d81885516de7d904, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6062206, guid: 196c9de3b1297624d81885516de7d904, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 196c9de3b1297624d81885516de7d904, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1355144085

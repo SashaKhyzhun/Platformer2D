@@ -764,7 +764,7 @@ PlatformEffector2D:
     m_Bits: 4294966271
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 360
   m_UseSideFriction: 1
   m_UseSideBounce: 0
   m_SideArc: 60
@@ -1431,7 +1431,7 @@ PlatformEffector2D:
     m_Bits: 4294966271
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 360
   m_UseSideFriction: 1
   m_UseSideBounce: 0
   m_SideArc: 60
@@ -3555,7 +3555,7 @@ PlatformEffector2D:
     m_Bits: 4294966271
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 360
   m_UseSideFriction: 1
   m_UseSideBounce: 0
   m_SideArc: 60
@@ -4413,7 +4413,7 @@ PlatformEffector2D:
     m_Bits: 4294966271
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 360
   m_UseSideFriction: 1
   m_UseSideBounce: 0
   m_SideArc: 60
@@ -4929,11 +4929,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6191616, guid: 412fb4780ef7c4a4eb245decdcb9ae2d, type: 2}
       propertyPath: m_Offset.x
-      value: -1.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5010856, guid: 412fb4780ef7c4a4eb245decdcb9ae2d, type: 2}
       propertyPath: m_Mass
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191616, guid: 412fb4780ef7c4a4eb245decdcb9ae2d, type: 2}
+      propertyPath: m_Offset.y
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191616, guid: 412fb4780ef7c4a4eb245decdcb9ae2d, type: 2}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191616, guid: 412fb4780ef7c4a4eb245decdcb9ae2d, type: 2}
+      propertyPath: m_Size.y
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11489642, guid: 412fb4780ef7c4a4eb245decdcb9ae2d, type: 2}

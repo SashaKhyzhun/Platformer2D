@@ -45,7 +45,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.449999988, z: 0}
+  m_LocalPosition: {x: 0, y: -0.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 454950}
@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.17000008, y: 3.67000008, z: 0}
+  m_LocalPosition: {x: 8.17, y: 3.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 424110}
@@ -70,9 +70,10 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119016}
+  m_UseAutoMass: 0
   m_Mass: 1000
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0.05
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -86,6 +87,7 @@ PolygonCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119016}
   m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
@@ -93,15 +95,15 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 1.495, y: -6.25}
-      - {x: 1.42499995, y: -2.71000004}
-      - {x: 2.04500008, y: 0}
-      - {x: -2.04500008, y: 0}
-      - {x: -1.79499996, y: -1.63}
-      - {x: -1.66739309, y: -4.08602667}
-      - {x: -1.76284182, y: -4.85738564}
-      - {x: -1.55499995, y: -5.03000021}
-      - {x: -1.245, y: -7.82000017}
-      - {x: 1.72500002, y: -7.80000019}
+      - {x: 1.425, y: -2.71}
+      - {x: 2.045, y: 0}
+      - {x: -2.045, y: 0}
+      - {x: -1.795, y: -1.63}
+      - {x: -1.6673931, y: -4.0860267}
+      - {x: -1.7628418, y: -4.8573856}
+      - {x: -1.555, y: -5.03}
+      - {x: -1.245, y: -7.82}
+      - {x: 1.725, y: -7.8}
 --- !u!114 &11428436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,13 +159,15 @@ SpriteRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 70689981
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9eba4dfe427549442915a64bb3848589, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!212 &21293314
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -185,13 +189,15 @@ SpriteRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 70689981
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9c36e875823dce04dbe9af336fcd4aa8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!234 &23420396
 SliderJoint2D:
   m_ObjectHideFlags: 1
@@ -199,19 +205,23 @@ SliderJoint2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119016}
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 8.17000008, y: 3.22000003}
+  m_ConnectedAnchor: {x: 8.17, y: 3.22}
+  m_AutoConfigureAngle: 0
   m_Angle: 90
   m_UseMotor: 1
   m_Motor:
-    m_MotorSpeed: -2
+    m_MotorSpeed: -3
     m_MaximumMotorForce: 20000
   m_UseLimits: 1
   m_TranslationLimits:
-    m_LowerTranslation: -6.80999994
+    m_LowerTranslation: -6.81
     m_UpperTranslation: 0
 --- !u!1001 &100100000
 Prefab:
@@ -223,6 +233,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Name
       value: press_body
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Motor.m_MotorSpeed
+      value: -3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

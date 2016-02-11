@@ -59,7 +59,7 @@ public class Culling : MonoBehaviour {
         }
     }
 
-    private void TurnOn()
+    public void TurnOn()
     {
         active = true;
         if (rend != null) { if (!rend.enabled) { rend.enabled = true; } }

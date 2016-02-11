@@ -17,12 +17,14 @@ public class Throwable : MonoBehaviour, IRevertable
     private Quaternion initialRotation;
     private bool initialUsed;
     private bool initialKinematic;
+    private Culling culling;
 
     void Start()
     {
         bodyRb = body.GetComponent<Rigidbody2D>();
         chManager = localGM.GetComponent<CheckpointManager>();
-        SaveParams();        
+        SaveParams();
+        culling = GetComponent<Culling>();
     }
 
     void Update()
@@ -30,7 +32,11 @@ public class Throwable : MonoBehaviour, IRevertable
         if (chManager != null)
         {
             if (chManager.revert) {
-                if (chManager.currentIndex <= ownIndex) { LoadParams(); }
+                if (chManager.currentIndex <= ownIndex)
+                {
+                    LoadParams();
+                    if(culling!= null) { culling.TurnOn(); }
+                }
             }
         }
     }

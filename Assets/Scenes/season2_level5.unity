@@ -1962,7 +1962,7 @@ Animation:
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 1
-  m_CullingType: 0
+  m_CullingType: 1
 --- !u!4 &561550481 stripped
 Transform:
   m_PrefabParentObject: {fileID: 444588, guid: 860b25cf2e0d5ed4bab37dfdeedfe793, type: 2}
@@ -4449,11 +4449,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21258198, guid: 5c3fe3bf179bb5f4fa082f22a6aaba33, type: 2}
       propertyPath: m_SortingLayerID
-      value: 70689981
+      value: 2084215165
       objectReference: {fileID: 0}
     - target: {fileID: 21258198, guid: 5c3fe3bf179bb5f4fa082f22a6aaba33, type: 2}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c3fe3bf179bb5f4fa082f22a6aaba33, type: 2}
@@ -6918,6 +6918,10 @@ Prefab:
     - target: {fileID: 21244412, guid: 860b25cf2e0d5ed4bab37dfdeedfe793, type: 2}
       propertyPath: m_Color.b
       value: 0.42460346
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439206, guid: 860b25cf2e0d5ed4bab37dfdeedfe793, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11443420, guid: 860b25cf2e0d5ed4bab37dfdeedfe793, type: 2}

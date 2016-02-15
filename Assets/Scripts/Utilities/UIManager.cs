@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour
     private WaitForSeconds levelEndWaitTimeWFS;
     private bool completedLevel = false;
     private bool backToMenu = false;
+    private bool restart = false;
 
     void Start()
     {
@@ -81,7 +82,17 @@ public class UIManager : MonoBehaviour
 
     public void Restart()
     {
-        StartCoroutine(WaitForLoad(Application.loadedLevel));
+        //StartCoroutine(WaitForLoad(Application.loadedLevel));
+        if (completedLevel)
+        {
+            backToMenu = true;
+            LoadLevel(Application.loadedLevel + 1);
+            backToMenu = false;
+            completedLevel = false;
+        }
+        restart = true;
+        LoadLevel(Application.loadedLevel + 1);
+        restart = false;
     }
 
     public void NextLevel()
@@ -89,7 +100,7 @@ public class UIManager : MonoBehaviour
         LoadLevel(Application.loadedLevel + 1);
     }
 
-    public void LoadLevel(int index)
+    public void LoadLevel(int index) // needs next level index;
     {
         if (index > 0)
         {
@@ -107,7 +118,8 @@ public class UIManager : MonoBehaviour
                 {
                     if (!backToMenu)
                     {
-                        StartCoroutine(WaitForLoad(index));
+                        if (!restart) { StartCoroutine(WaitForLoad(index)); }
+                        else { StartCoroutine(WaitForLoad(index - 1)); }
                     }
                 }
             }
@@ -115,7 +127,12 @@ public class UIManager : MonoBehaviour
             {
                 if (Game.current.seasons[currSeason + 1].available && Game.current.seasons[currSeason].levels[nextLevel].available)
                 {
-                    StartCoroutine(WaitForLoad(index));
+                    //StartCoroutine(WaitForLoad(index));
+                    if (!backToMenu)
+                    {
+                        if (!restart) { StartCoroutine(WaitForLoad(index)); }
+                        else { StartCoroutine(WaitForLoad(index - 1)); }
+                    }
                 }
             }
             else { Debug.Log("scene index is over the limit"); }
@@ -129,7 +146,7 @@ public class UIManager : MonoBehaviour
         int level = Application.loadedLevel;
         int currSeason = (level - 1) / pm.levelCount;
         int currLevel = (level - 1) - (currSeason * 12);
-        PauseLayout.transform.FindChild("PauseLevelName").GetComponent<Text>().text = string.Format("SEASON {0}\nLEVEL {1}", currSeason + 1, currLevel + 1);
+        PauseLayout.transform.FindChild("PauseTile").FindChild("PauseLevelName").GetComponent<Text>().text = string.Format("SEASON {0} | LEVEL {1}", currSeason + 1, currLevel + 1);
         TurnLayoutOn(PauseLayout);
         TurnLayoutOff(GameLayout);
         Time.timeScale = timeScaleOnPause;

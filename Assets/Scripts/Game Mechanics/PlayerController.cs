@@ -7,6 +7,8 @@ using System.Collections;
 public class PlayerController: MonoBehaviour {
 
     public float cameraStayTime;
+    public float blinkTime;
+    public float lookUpTime;
 
     public bool alive { get; set; }
     public bool finished { get; set; }
@@ -27,13 +29,18 @@ public class PlayerController: MonoBehaviour {
     private EventSystem es;
     private WaitForSeconds halfBackTime;
     private WaitForSeconds fullBackTime;
-    private Rigidbody2D rb;  
+    private WaitForSeconds blinkTimeWFS;
+    private WaitForSeconds lookUpTimeWFS;
+    private Rigidbody2D rb;
     private PlayerMotor motor;
+    private Animator anim;
     private Throwable throwable;
     
     private bool canControl = false;
     private bool died = false;
     private bool first = true;
+    private bool canBlink = true;
+    private bool canLookUp = true;
     
 
     void Start()
@@ -41,11 +48,14 @@ public class PlayerController: MonoBehaviour {
         es = EventSystem.current;
         rb = GetComponent<Rigidbody2D>();
         motor = GetComponent<PlayerMotor>();
+        anim = GetComponent<Animator>();
         throwable = GetComponent<Throwable>();
         GameObject globalGM = GameObject.FindGameObjectWithTag("globalGM");
         if (globalGM != null) { cameraBackToPositionTime = globalGM.GetComponent<UIManager>().fadeTime; }
         halfBackTime = new WaitForSeconds(cameraBackToPositionTime / 2);
         fullBackTime = new WaitForSeconds(cameraBackToPositionTime);
+        blinkTimeWFS = new WaitForSeconds(blinkTime);
+        lookUpTimeWFS = new WaitForSeconds(lookUpTime);
         wait = false;
         alive = true;
         canLoad = true;
@@ -61,7 +71,10 @@ public class PlayerController: MonoBehaviour {
             {
                 if (!died)
                 {
-                    
+                    // animations coroutines start
+                    if(canBlink) { StartCoroutine(Blink()); }
+                    if (canLookUp) { StartCoroutine(LookUp()); }
+
                     if (Input.touchCount > 0 || Input.GetButton("Fire1"))
                     {
                         if (es != null)
@@ -111,7 +124,6 @@ public class PlayerController: MonoBehaviour {
                             died = false;
                         }
                     }
-
                 }
                 if (!alive)
                 {
@@ -127,23 +139,53 @@ public class PlayerController: MonoBehaviour {
         }
     }
 
+    IEnumerator Blink()
+    {
+        canBlink = false;
+        yield return blinkTimeWFS;
+        anim.SetTrigger("blink");
+        canBlink = true;
+    }
+
+    IEnumerator LookUp()
+    {
+        canLookUp = false;
+        yield return lookUpTimeWFS;
+        anim.SetTrigger("lookUp");
+        canLookUp = true;
+    }
+
     IEnumerator Respawn(Vector3 position)
     {
         deaths++;
         wait = true;
+        anim.SetTrigger("death");
+        gameObject.layer = 13; // Player_dead layer
+        
+        yield return fullBackTime;
+
+        //reset transfor
         transform.position = new Vector3(0, -10, 0);
         transform.rotation = new Quaternion();
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0;
+        //
         rb.isKinematic = true;
-        yield return fullBackTime;
+        gameObject.layer = 11; // Player layer
+
         startFade = true;
+
         yield return halfBackTime;
+
         System.GC.Collect();
         Resources.UnloadUnusedAssets();
         startReturn = true;
+
+        // back to checkpoint
         transform.position = position;
+
         yield return halfBackTime;
+
         rb.isKinematic = false;
         start = false;
         startFade = false;
@@ -152,6 +194,8 @@ public class PlayerController: MonoBehaviour {
         died = true;
         wait = false;
     }
+
+
 
     IEnumerator WaitAtStart()
     {

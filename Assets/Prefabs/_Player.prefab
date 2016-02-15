@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11427206}
   - 114: {fileID: 11411738}
   - 114: {fileID: 11438352}
+  - 95: {fileID: 9543412}
   m_Layer: 11
   m_Name: _Player
   m_TagString: Player
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.352, y: -1.28, z: 0}
+  m_LocalPosition: {x: -8.8, y: -2.96, z: 0}
   m_LocalScale: {x: 0.53952223, y: 0.53952223, z: 0.53952223}
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,6 +65,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.70549285
+--- !u!95 &9543412
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128450}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c292f9a998a7fb1468c16f23890aeb22, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11411738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,7 +103,7 @@ MonoBehaviour:
   rotationHoldForce: 1
   rotationTreshold: 15
   rotationBreakForce: 0.7
-  throwDirection: {x: 1, y: 2, z: 0}
+  throwDirection: {x: 1, y: 3, z: 0}
 --- !u!114 &11427206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,6 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraStayTime: 0.3
+  blinkTime: 3
+  lookUpTime: 5
 --- !u!114 &11438352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,8 +133,8 @@ MonoBehaviour:
   localGM: {fileID: 0}
   freeze: 0
   addTorque: 1
-  throwForce: 5
-  torque: -30
+  throwForce: 7
+  torque: 15
   ownIndex: 0
 --- !u!212 &21283244
 SpriteRenderer:

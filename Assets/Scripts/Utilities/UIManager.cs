@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject UI;
     public GameObject FadePlane;
+    public GameObject Background;
     public GameObject MenuLayout;
     public GameObject GameLayout;
     public GameObject PauseLayout;
@@ -232,12 +233,14 @@ public class UIManager : MonoBehaviour
                 TurnLayoutOff(GameLayout);
                 TurnLayoutOff(LoadingScreen);
                 TurnLayoutOn(MenuLayout);
+                TurnLayoutOn(Background);
                 TurnLayoutOff(PauseLayout);
                 TurnLayoutOff(SeasonsMenuLayout);
                 break;
             default:
                 TurnLayoutOn(GameLayout);
                 TurnLayoutOff(MenuLayout);
+                TurnLayoutOff(Background);
                 TurnLayoutOff(LoadingScreen);
                 TurnLayoutOff(PauseLayout);
                 TurnLayoutOff(SeasonsMenuLayout);        

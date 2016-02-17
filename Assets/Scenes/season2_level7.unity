@@ -929,13 +929,14 @@ Transform:
   - {fileID: 1790879252}
   - {fileID: 2011001391}
   - {fileID: 1845259060}
-  - {fileID: 1393421494}
   - {fileID: 1526146821}
+  - {fileID: 2026679661}
+  - {fileID: 1393421494}
+  - {fileID: 473826005}
   - {fileID: 655511848}
   - {fileID: 1807761892}
   - {fileID: 356569423}
   - {fileID: 121813197}
-  - {fileID: 2026679661}
   - {fileID: 367102600}
   - {fileID: 1625354841}
   - {fileID: 1831229184}
@@ -944,7 +945,6 @@ Transform:
   - {fileID: 1734292179}
   - {fileID: 1433687078}
   - {fileID: 1982969950}
-  - {fileID: 473826005}
   - {fileID: 1784227924}
   - {fileID: 872919557}
   - {fileID: 175374555}
@@ -1748,7 +1748,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 186199171}
-  m_RootOrder: 49
+  m_RootOrder: 37
 --- !u!60 &473826006
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2251,11 +2251,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 484100, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.35200024
+      value: -8.41
       objectReference: {fileID: 0}
     - target: {fileID: 484100, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.27999997
+      value: -1.28
       objectReference: {fileID: 0}
     - target: {fileID: 484100, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2285,6 +2285,14 @@ Prefab:
       propertyPath: localGM
       value: 
       objectReference: {fileID: 898515007}
+    - target: {fileID: 11411738, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
+      propertyPath: throwDirection.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11438352, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
+      propertyPath: throwForce
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
   m_IsPrefabParent: 0
@@ -5687,7 +5695,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 186199171}
-  m_RootOrder: 35
+  m_RootOrder: 34
 --- !u!114 &1526146822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8176,7 +8184,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 186199171}
-  m_RootOrder: 40
+  m_RootOrder: 35
 --- !u!60 &2026679662
 PolygonCollider2D:
   m_ObjectHideFlags: 0

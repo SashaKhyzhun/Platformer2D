@@ -7,6 +7,7 @@ using System.Collections;
 public class PlayerController: MonoBehaviour {
 
     public float cameraStayTime;
+    public float maxVelVol = 4;
     public float blinkTime;
     public float lookUpTime;
 
@@ -35,6 +36,7 @@ public class PlayerController: MonoBehaviour {
     private PlayerMotor motor;
     private Animator anim;
     private Throwable throwable;
+    private AudioSource audioSource;
     
     private bool canControl = false;
     private bool died = false;
@@ -50,6 +52,7 @@ public class PlayerController: MonoBehaviour {
         motor = GetComponent<PlayerMotor>();
         anim = GetComponent<Animator>();
         throwable = GetComponent<Throwable>();
+        audioSource = GetComponent<AudioSource>();
         GameObject globalGM = GameObject.FindGameObjectWithTag("globalGM");
         if (globalGM != null) { cameraBackToPositionTime = globalGM.GetComponent<UIManager>().fadeTime; }
         halfBackTime = new WaitForSeconds(cameraBackToPositionTime / 2);
@@ -138,6 +141,41 @@ public class PlayerController: MonoBehaviour {
             }
         }
     }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (audioSource != null) {
+            Rigidbody2D otherRb = coll.rigidbody;
+            float relVel = 0;
+
+            if (otherRb != null)
+            {
+                if (otherRb.velocity.sqrMagnitude < 0.0001f) // if not moving
+                {
+                    // relVel = difference between own velocity and tangent velocity of collision point
+                    relVel = (rb.velocity - TangentialVelocity(coll.contacts[0].point, coll.transform.position, otherRb.angularVelocity)).magnitude;
+                }
+                else
+                {
+                    // else equals to a difference between velocities
+                    relVel = (rb.velocity - otherRb.velocity).magnitude;
+                }
+            }
+            //if has no rb relVel equals to own velocity
+            else { relVel = rb.velocity.magnitude; }
+
+            audioSource.volume = relVel / maxVelVol; //fraction of maximum velocity
+            audioSource.Play();
+        }
+        else { Debug.Log("There are no audio source on " + gameObject.name + ". Please add one." ); }
+    }
+
+    Vector2 TangentialVelocity(Vector2 point, Vector2 center, float angularVelocity) // angVel must be in rads
+    {
+        Vector2 positionVector = point - center;
+        float r = positionVector.magnitude;
+        return new Vector2(positionVector.y, -positionVector.x).normalized * r * -angularVelocity;// * Mathf.Deg2Rad;
+    } 
 
     IEnumerator Blink()
     {

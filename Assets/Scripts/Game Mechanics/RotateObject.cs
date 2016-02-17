@@ -14,7 +14,8 @@ public class RotateObject : MonoBehaviour
       
     void FixedUpdate()
     {
-        rb.MoveRotation(rb.rotation + speed * Time.deltaTime);
+        rb.angularVelocity = speed * Time.deltaTime;
+        rb.MoveRotation(rb.rotation + rb.angularVelocity);
     }
 
 }

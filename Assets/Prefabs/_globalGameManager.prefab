@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11450972}
   - 114: {fileID: 11412274}
   - 114: {fileID: 11459948}
+  - 114: {fileID: 11465004}
   m_Layer: 0
   m_Name: _globalGameManager
   m_TagString: globalGM
@@ -44,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UI: {fileID: 0}
   FadePlane: {fileID: 0}
+  Background: {fileID: 0}
   MenuLayout: {fileID: 0}
   GameLayout: {fileID: 0}
   PauseLayout: {fileID: 0}
@@ -81,7 +83,7 @@ MonoBehaviour:
   savefileExtention: fy
   seasonCount: 3
   levelCount: 12
-  layoutOffset: 4
+  layoutOffset: 5
 --- !u!114 &11463832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,8 +97,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenHeight: 720
   doCap: 0
-  doChangeResolution: 0
+  doChangeResolution: 1
   frameRate: 60
+--- !u!114 &11465004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53cc495b9535c604aba1bb05bcd8c550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyImage: {fileID: 2800000, guid: 92f0315b95ffb3f4e850fc70e17bd7d7, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

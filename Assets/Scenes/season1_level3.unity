@@ -1540,6 +1540,10 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!4 &548023960 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 456672, guid: eff42cdc931053946b240f0fd9cae659, type: 2}
+  m_PrefabInternal: {fileID: 2054067379}
 --- !u!1001 &572358131
 Prefab:
   m_ObjectHideFlags: 0
@@ -1577,7 +1581,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 488546, guid: 899434065263fae428ecadfa38843afe, type: 2}
       propertyPath: m_RootOrder
-      value: 59
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 11480232, guid: 899434065263fae428ecadfa38843afe, type: 2}
       propertyPath: speed
@@ -1635,7 +1639,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 642111019}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 18d054968f253e14cabd72de903b55a5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -2239,7 +2243,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 820990737}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 18d054968f253e14cabd72de903b55a5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -2609,7 +2613,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1265927621}
-  m_RootOrder: 57
+  m_RootOrder: 49
 --- !u!114 &930821856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2939,7 +2943,12 @@ Prefab:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6854358, guid: 51ca48fd8ff878840b10c3265b1ff9e8, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6060930, guid: 51ca48fd8ff878840b10c3265b1ff9e8, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 51ca48fd8ff878840b10c3265b1ff9e8, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1002812330
@@ -3641,7 +3650,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1178056122}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 18d054968f253e14cabd72de903b55a5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -3823,6 +3832,7 @@ Transform:
   - {fileID: 842736648}
   - {fileID: 2128998940}
   - {fileID: 157546400}
+  - {fileID: 930821855}
   - {fileID: 1248157310}
   - {fileID: 1337885977}
   - {fileID: 921998029}
@@ -3831,11 +3841,11 @@ Transform:
   - {fileID: 1476105793}
   - {fileID: 850846120}
   - {fileID: 1201381443}
-  - {fileID: 930821855}
-  - {fileID: 1811025115}
   - {fileID: 1526400301}
   - {fileID: 1439041080}
+  - {fileID: 1811025115}
   - {fileID: 311969571}
+  - {fileID: 548023960}
   m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!1 &1267645139
@@ -5061,7 +5071,12 @@ Prefab:
       propertyPath: m_SleepingMode
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6854358, guid: 51ca48fd8ff878840b10c3265b1ff9e8, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6060930, guid: 51ca48fd8ff878840b10c3265b1ff9e8, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 51ca48fd8ff878840b10c3265b1ff9e8, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1696969819
@@ -5113,7 +5128,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1696969819}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 18d054968f253e14cabd72de903b55a5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -5416,7 +5431,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 413266, guid: b309b79e47265254fb662e2053a9c6fe, type: 2}
       propertyPath: m_RootOrder
-      value: 61
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b309b79e47265254fb662e2053a9c6fe, type: 2}
@@ -6073,7 +6088,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 488546, guid: 899434065263fae428ecadfa38843afe, type: 2}
       propertyPath: m_RootOrder
-      value: 60
+      value: 59
       objectReference: {fileID: 0}
     - target: {fileID: 194142, guid: 899434065263fae428ecadfa38843afe, type: 2}
       propertyPath: m_Name
@@ -6085,6 +6100,48 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 899434065263fae428ecadfa38843afe, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &2054067379
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1265927621}
+    m_Modifications:
+    - target: {fileID: 456672, guid: eff42cdc931053946b240f0fd9cae659, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 147.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 456672, guid: eff42cdc931053946b240f0fd9cae659, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 456672, guid: eff42cdc931053946b240f0fd9cae659, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 456672, guid: eff42cdc931053946b240f0fd9cae659, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 456672, guid: eff42cdc931053946b240f0fd9cae659, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 456672, guid: eff42cdc931053946b240f0fd9cae659, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 456672, guid: eff42cdc931053946b240f0fd9cae659, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 456672, guid: eff42cdc931053946b240f0fd9cae659, type: 2}
+      propertyPath: m_RootOrder
+      value: 62
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: eff42cdc931053946b240f0fd9cae659, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2119347039
 GameObject:
@@ -6135,7 +6192,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 2119347039}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 18d054968f253e14cabd72de903b55a5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}

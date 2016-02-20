@@ -294,7 +294,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 472954, guid: 098bc2bf9b7dfa34a8a1896e2e61ddbd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.47
+      value: -1.6
       objectReference: {fileID: 0}
     - target: {fileID: 472954, guid: 098bc2bf9b7dfa34a8a1896e2e61ddbd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2981,11 +2981,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 484100, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.547
+      value: -9.04
       objectReference: {fileID: 0}
     - target: {fileID: 484100, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.266
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 484100, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3017,7 +3017,7 @@ Prefab:
       objectReference: {fileID: 1620029701}
     - target: {fileID: 11438352, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
       propertyPath: throwForce
-      value: 15
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11438352, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
       propertyPath: torque
@@ -3025,7 +3025,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11411738, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
       propertyPath: throwDirection.y
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8221204, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411738, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
+      propertyPath: throwDirection.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
@@ -3062,7 +3070,7 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.13}
   m_Points:
     m_Paths:
     - - {x: 9.711488, y: -9.154593}
@@ -3094,31 +3102,29 @@ PolygonCollider2D:
       - {x: 10.017274, y: -9.998564}
       - {x: 10.017274, y: -9.093436}
       - {x: 9.99281, y: -9.081205}
-    - - {x: 8.109168, y: -1.1063024}
-      - {x: 8.402722, y: -1.0940709}
-      - {x: 8.80636, y: -0.98398787}
-      - {x: 9.112146, y: -0.9350621}
-      - {x: 9.699256, y: -0.8861363}
-      - {x: 10.017274, y: -0.82497907}
+    - - {x: 8.080521, y: -0.9347354}
+      - {x: 8.245392, y: -0.9313761}
+      - {x: 8.897034, y: -0.77987254}
+      - {x: 9.075928, y: -0.7720758}
+      - {x: 9.238251, y: -0.7134129}
+      - {x: 9.650085, y: -0.7076274}
+      - {x: 10.017273, y: -0.66199267}
       - {x: 10.017274, y: 0.018990694}
       - {x: -0.00028070214, y: 0.018990694}
-      - {x: -0.00028070214, y: -1.069608}
-      - {x: 1.7121217, y: -1.069608}
-      - {x: 2.0546021, y: -1.0451452}
-      - {x: 2.1402223, y: -0.99621934}
-      - {x: 2.7640262, y: -1.0084507}
-      - {x: 2.9108033, y: -1.0573765}
-      - {x: 3.4856813, y: -1.1063024}
-      - {x: 4.207337, y: -1.1063024}
-      - {x: 4.48866, y: -1.1674596}
-      - {x: 4.953455, y: -1.1919224}
-      - {x: 5.4304814, y: -1.2041539}
-      - {x: 5.6751103, y: -1.2286168}
-      - {x: 6.1765995, y: -1.2897741}
-      - {x: 6.9471807, y: -1.2897741}
-      - {x: 7.1673465, y: -1.2530797}
-      - {x: 7.6688356, y: -1.2408482}
-      - {x: 7.9623904, y: -1.179691}
+      - {x: -0.0002746582, y: -0.9040967}
+      - {x: 1.7594147, y: -0.9040967}
+      - {x: 2.101883, y: -0.8205224}
+      - {x: 2.8022766, y: -0.83070767}
+      - {x: 3.563202, y: -0.9369787}
+      - {x: 4.2658234, y: -0.9373683}
+      - {x: 4.534134, y: -0.99202836}
+      - {x: 4.992447, y: -1.0229884}
+      - {x: 5.440338, y: -1.0217787}
+      - {x: 6.015213, y: -1.070887}
+      - {x: 6.2554626, y: -1.1271151}
+      - {x: 6.909668, y: -1.1294907}
+      - {x: 7.1980286, y: -1.0552832}
+      - {x: 7.6449738, y: -1.0635134}
 --- !u!212 &946180179
 SpriteRenderer:
   m_ObjectHideFlags: 0

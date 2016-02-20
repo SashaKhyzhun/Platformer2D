@@ -205,7 +205,7 @@ GameObject:
   - 233: {fileID: 59440101}
   - 61: {fileID: 59440100}
   - 114: {fileID: 59440099}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: link (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,8 +273,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 10
-    m_UpperAngle: -10
+    m_LowerAngle: 1
+    m_UpperAngle: -1
 --- !u!50 &59440102
 Rigidbody2D:
   serializedVersion: 2
@@ -286,7 +286,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 0.1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -691,7 +691,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 140005715}
   m_Layer: 10
-  m_Name: ball_&_chain_dangling
+  m_Name: Razor_of_death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4098,7 +4098,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -4286,11 +4286,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6819076, guid: eb14e4a17c88fc64587862d7c83e7635, type: 2}
       propertyPath: m_Points.Array.data[5].x
-      value: 0.04155588
+      value: 0.030939043
       objectReference: {fileID: 0}
     - target: {fileID: 6819076, guid: eb14e4a17c88fc64587862d7c83e7635, type: 2}
       propertyPath: m_Points.Array.data[5].y
-      value: -2.6721516
+      value: -2.5751476
       objectReference: {fileID: 0}
     - target: {fileID: 6819076, guid: eb14e4a17c88fc64587862d7c83e7635, type: 2}
       propertyPath: m_Points.Array.data[3].x
@@ -5755,7 +5755,7 @@ GameObject:
   - 233: {fileID: 1258487545}
   - 61: {fileID: 1258487544}
   - 114: {fileID: 1258487543}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: link (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5773,7 +5773,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 0.1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -5829,8 +5829,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 10
-    m_UpperAngle: -10
+    m_LowerAngle: 1
+    m_UpperAngle: -1
 --- !u!212 &1258487546
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7163,7 +7163,7 @@ GameObject:
   - 233: {fileID: 1557789919}
   - 61: {fileID: 1557789918}
   - 114: {fileID: 1557789917}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7181,7 +7181,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 0.1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -7237,8 +7237,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: 290
-    m_UpperAngle: 250
+    m_LowerAngle: 0
+    m_UpperAngle: 0
 --- !u!212 &1557789920
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9599,7 +9599,7 @@ GameObject:
   - 233: {fileID: 2095311841}
   - 61: {fileID: 2095311840}
   - 114: {fileID: 2095311839}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: link (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9617,7 +9617,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 0.1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -9673,8 +9673,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 10
-    m_UpperAngle: -10
+    m_LowerAngle: 1
+    m_UpperAngle: -1
 --- !u!212 &2095311842
 SpriteRenderer:
   m_ObjectHideFlags: 0

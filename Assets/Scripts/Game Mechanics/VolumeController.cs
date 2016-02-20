@@ -10,12 +10,6 @@ public class VolumeController : MonoBehaviour {
 
 	void Start ()
     {
-        // test -----------------------------------------------
-        //Debug.Log(ignoreLayers.value + " " + gameObject.name);
-        //Debug.Log(gameObject.layer + " " + gameObject.name);
-        //Debug.Log(CompareMask(gameObject.layer, ignoreLayers) + " " + gameObject.name);
-        // ----------------------------------------------------
-
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
     }

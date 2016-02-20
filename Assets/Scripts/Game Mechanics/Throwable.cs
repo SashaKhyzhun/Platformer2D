@@ -4,6 +4,7 @@ public class Throwable : MonoBehaviour, IRevertable
 {
     public Transform body;
     public Transform localGM;
+	public AudioSource launchSound;
     public bool freeze = true;
     public bool addTorque = false;
     public float throwForce;
@@ -69,6 +70,7 @@ public class Throwable : MonoBehaviour, IRevertable
         bodyRb.isKinematic = false;
         bodyRb.AddForce(direction.normalized * throwForce, ForceMode2D.Impulse);
         if (addTorque) { bodyRb.AddTorque(torque); }
+		launchSound.Play ();
     }
 
     public void SaveParams()

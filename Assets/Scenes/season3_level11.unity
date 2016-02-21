@@ -791,6 +791,10 @@ Prefab:
       propertyPath: throwDirection.x
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11438352, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
+      propertyPath: launchSound
+      value: 
+      objectReference: {fileID: 1791937865}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13e4b0e075a277946a21b085c6cba841, type: 2}
   m_IsPrefabParent: 0
@@ -971,6 +975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 294314000}
   localGM: {fileID: 1398303034}
+  launchSound: {fileID: 0}
   freeze: 0
   addTorque: 0
   throwForce: 0
@@ -1043,6 +1048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 340353185}
   localGM: {fileID: 1398303034}
+  launchSound: {fileID: 0}
   freeze: 0
   addTorque: 0
   throwForce: 0
@@ -1562,6 +1568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 453859327}
   localGM: {fileID: 1398303034}
+  launchSound: {fileID: 0}
   freeze: 0
   addTorque: 0
   throwForce: 0
@@ -5233,6 +5240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 1384464503}
   localGM: {fileID: 1398303034}
+  launchSound: {fileID: 0}
   freeze: 0
   addTorque: 0
   throwForce: 0
@@ -5259,6 +5267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 1389735037}
   localGM: {fileID: 1398303034}
+  launchSound: {fileID: 0}
   freeze: 0
   addTorque: 0
   throwForce: 0
@@ -6228,6 +6237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 1623845195}
   localGM: {fileID: 1398303034}
+  launchSound: {fileID: 0}
   freeze: 0
   addTorque: 0
   throwForce: 0
@@ -6254,6 +6264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 1656533338}
   localGM: {fileID: 1398303034}
+  launchSound: {fileID: 0}
   freeze: 0
   addTorque: 0
   throwForce: 0
@@ -6702,6 +6713,53 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63478b52b664ddb40b6a5cca4400170c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1791937864
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 404848, guid: 3e1f4f35b6925704e8f34f8efacee7f3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -8.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 404848, guid: 3e1f4f35b6925704e8f34f8efacee7f3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 404848, guid: 3e1f4f35b6925704e8f34f8efacee7f3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 404848, guid: 3e1f4f35b6925704e8f34f8efacee7f3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 404848, guid: 3e1f4f35b6925704e8f34f8efacee7f3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 404848, guid: 3e1f4f35b6925704e8f34f8efacee7f3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 404848, guid: 3e1f4f35b6925704e8f34f8efacee7f3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 404848, guid: 3e1f4f35b6925704e8f34f8efacee7f3, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3e1f4f35b6925704e8f34f8efacee7f3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!82 &1791937865 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 8249408, guid: 3e1f4f35b6925704e8f34f8efacee7f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1791937864}
 --- !u!1 &1803798702
 GameObject:
   m_ObjectHideFlags: 0
@@ -7010,6 +7068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 1849890833}
   localGM: {fileID: 1398303034}
+  launchSound: {fileID: 0}
   freeze: 0
   addTorque: 0
   throwForce: 0
@@ -7788,6 +7847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 2108257597}
   localGM: {fileID: 1398303034}
+  launchSound: {fileID: 0}
   freeze: 0
   addTorque: 0
   throwForce: 0

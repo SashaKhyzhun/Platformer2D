@@ -9,6 +9,7 @@ public class Bomb : MonoBehaviour, IRevertable {
 
     private Transform myTransform;
     private Rigidbody2D playerRb;
+    private AudioSource audioSource;
     private CheckpointManager chManager;
     private Renderer spriteRenderer;
     private Collider2D circleCollider;
@@ -17,6 +18,7 @@ public class Bomb : MonoBehaviour, IRevertable {
     void Start()
     {
         myTransform = transform;
+        audioSource = GetComponent<AudioSource>();
         chManager = localGM.GetComponent<CheckpointManager>();
         spriteRenderer = gameObject.GetComponent<Renderer>();
         circleCollider = gameObject.GetComponent<Collider2D>();
@@ -36,14 +38,12 @@ public class Bomb : MonoBehaviour, IRevertable {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        //if (coll.gameObject.CompareTag("Player"))
-        //{
-            Vector3 direction = (coll.transform.position - myTransform.position).normalized;
-            playerRb = coll.gameObject.GetComponent<Rigidbody2D>();
-            playerRb.AddForce(direction * boomForce * Time.fixedDeltaTime, ForceMode2D.Impulse);
-            spriteRenderer.enabled = false;
-            circleCollider.enabled = false;
-        //}
+        Vector3 direction = (coll.transform.position - myTransform.position).normalized;
+        playerRb = coll.gameObject.GetComponent<Rigidbody2D>();
+        playerRb.AddForce(direction * boomForce * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        spriteRenderer.enabled = false;
+        circleCollider.enabled = false;
+        audioSource.Play(); 
     }
   
     public void SaveParams()

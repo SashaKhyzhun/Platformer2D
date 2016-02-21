@@ -14,6 +14,8 @@ GameObject:
   - 114: {fileID: 11438020}
   - 61: {fileID: 6186438}
   - 114: {fileID: 11492986}
+  - 82: {fileID: 8222024}
+  - 114: {fileID: 11455056}
   m_Layer: 10
   m_Name: saw_freefall
   m_TagString: Untagged
@@ -44,8 +46,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.4799995, y: 2.24000001, z: 0}
-  m_LocalScale: {x: .533538103, y: .528207719, z: .594836235}
+  m_LocalPosition: {x: 11.48, y: 2.24, z: 0}
+  m_LocalScale: {x: 0.5335381, y: 0.5282077, z: 0.59483624}
   m_Children:
   - {fileID: 468358}
   m_Father: {fileID: 0}
@@ -69,9 +71,10 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129416}
+  m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0.05
   m_GravityScale: 1
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -85,12 +88,13 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129416}
   m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.3599999
+  m_Radius: 2.36
 --- !u!61 &6186438
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -98,12 +102,87 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129416}
   m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -20.8299999, y: -8.5}
+  m_Offset: {x: -20.83, y: -8.5}
   serializedVersion: 2
-  m_Size: {x: 5.11999989, y: 20}
+  m_Size: {x: 5.12, y: 20}
+--- !u!82 &8222024
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129416}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1b845269b3b7c8f4ea6a4fa560845950, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 2.5
+  MinDistance: 5
+  MaxDistance: 20
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &11438020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,11 +196,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 464164}
   localGM: {fileID: 0}
+  launchSound: {fileID: 0}
   freeze: 0
   addTorque: 0
   throwForce: 0
   torque: 0
   ownIndex: 2
+--- !u!114 &11455056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c578db3b5828d4bad02e8e9451183f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVelVol: 32
+  ignoreLayers:
+    serializedVersion: 2
+    m_Bits: 4294966783
 --- !u!114 &11492932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,13 +260,15 @@ SpriteRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 70689981
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c649e5d1d116dab4ca78b30d2161b185, type: 3}
-  m_Color: {r: .862745166, g: .745098054, b: .0941176564, a: 1}
+  m_Color: {r: 0.86274517, g: 0.74509805, b: 0.09411766, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

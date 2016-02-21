@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11439206}
   - 50: {fileID: 5066984}
   - 114: {fileID: 11443420}
+  - 82: {fileID: 8229406}
   m_Layer: 8
   m_Name: axe
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.63999987, y: -4.51000023, z: 0}
+  m_LocalPosition: {x: 6.64, y: -4.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,9 +41,10 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193220}
+  m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0.05
   m_GravityScale: 1
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -56,32 +58,107 @@ EdgeCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193220}
   m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 1.47000003}
+  m_Offset: {x: 0, y: 1.47}
   m_Points:
-  - {x: -.300763011, y: -2.03685832}
-  - {x: -.247900367, y: .592423439}
-  - {x: -.216415405, y: 1.8914125}
-  - {x: -.956730843, y: 1.08886242}
-  - {x: -1.28831065, y: 1.44778132}
-  - {x: -1.48028791, y: 1.78941512}
-  - {x: -1.55296755, y: 2.37365365}
-  - {x: -1.41482723, y: 2.86710525}
-  - {x: -1.07130814, y: 3.35708499}
-  - {x: -.845723867, y: 2.81438184}
-  - {x: -.359814644, y: 2.72005248}
-  - {x: .352579236, y: 2.73717332}
-  - {x: .803827524, y: 2.77224469}
-  - {x: 1.11645317, y: 3.33477807}
-  - {x: 1.50587571, y: 2.71619439}
-  - {x: 1.56429458, y: 2.18493915}
-  - {x: 1.44768703, y: 1.66672373}
-  - {x: 1.24574876, y: 1.32820392}
-  - {x: .9662413, y: 1.08871365}
-  - {x: .219531298, y: 1.89167905}
-  - {x: .326813638, y: -1.69977438}
+  - {x: -0.300763, y: -2.0368583}
+  - {x: -0.24790037, y: 0.59242344}
+  - {x: -0.2164154, y: 1.8914125}
+  - {x: -0.95673084, y: 1.0888624}
+  - {x: -1.2883106, y: 1.4477813}
+  - {x: -1.4802879, y: 1.7894151}
+  - {x: -1.5529675, y: 2.3736537}
+  - {x: -1.4148272, y: 2.8671052}
+  - {x: -1.0713081, y: 3.357085}
+  - {x: -0.84572387, y: 2.8143818}
+  - {x: -0.35981464, y: 2.7200525}
+  - {x: 0.35257924, y: 2.7371733}
+  - {x: 0.8038275, y: 2.7722447}
+  - {x: 1.1164532, y: 3.334778}
+  - {x: 1.5058757, y: 2.7161944}
+  - {x: 1.5642946, y: 2.1849391}
+  - {x: 1.447687, y: 1.6667237}
+  - {x: 1.2457488, y: 1.3282039}
+  - {x: 0.9662413, y: 1.0887136}
+  - {x: 0.2195313, y: 1.891679}
+  - {x: 0.32681364, y: -1.6997744}
+--- !u!82 &8229406
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193220}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2d991e8cb393e604290c748a64688190, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 0.18525
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 5.51
+  MaxDistance: 21.86
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &11429138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,13 +214,15 @@ SpriteRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 70689981
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f2d39acaf316ac749b559d63ad03cd41, type: 3}
-  m_Color: {r: 1, g: .826612949, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.82661295, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

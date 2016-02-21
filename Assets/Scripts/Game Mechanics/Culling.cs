@@ -19,7 +19,7 @@ public class Culling : MonoBehaviour {
         myTransform = transform;
         mainCam = Camera.main;
         mainCamTransform = mainCam.transform;
-        camDiagonal = (new Vector2(mainCam.orthographicSize * mainCam.aspect, 0) + new Vector2(0, mainCam.orthographicSize)).magnitude; // diagonal is a mgnitude of a sum of width and height vectors
+        camDiagonal = (new Vector2(mainCam.orthographicSize * mainCam.aspect, mainCam.orthographicSize)).magnitude; // diagonal is a mgnitude of a sum of width and height vectors
         rend = GetComponent<Renderer>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();

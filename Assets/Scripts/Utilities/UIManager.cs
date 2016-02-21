@@ -109,12 +109,16 @@ public class UIManager : MonoBehaviour
             int nextLevel = (index - 1) - (currSeason * 12); //level that you want to load
             if (pc != null)
             {
-                if (currSeason > 0 && nextLevel == 0) { pm.SaveStats(currSeason - 1, pm.levelCount - 1, pc.time, pc.deaths); }
-                else { pm.SaveStats(currSeason, nextLevel - 1, pc.time, pc.deaths); }
+                if (!restart)
+                {
+                    if (currSeason > 0 && nextLevel == 0) { pm.SaveStats(currSeason - 1, pm.levelCount - 1, pc.time, pc.deaths); }
+                    else { pm.SaveStats(currSeason, nextLevel - 1, pc.time, pc.deaths); }
+                }
             }
 
             if (nextLevel < Season.levelCount)
             {
+				
                 if (Game.current.seasons[currSeason].available && Game.current.seasons[currSeason].levels[nextLevel].available)
                 {
                     if (!backToMenu)

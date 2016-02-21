@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 
-//[RequireComponent(typeof(Renderer))]
 public class Culling : MonoBehaviour {
 
     private Transform myTransform;
+    private Transform mainCamTransform;
+    private Camera mainCam;
     private Parallax parallax;
     private Renderer rend;
     private Animator anim;
@@ -11,51 +12,46 @@ public class Culling : MonoBehaviour {
     private Rigidbody2D rb;
     private RotateObject rotObj;
     private bool active = true;
-
     private bool isKinematic;
-
-    private float leftCamBorder;
-    private float rightCamBorder;
-    private float spriteCenterX;
-    private float selfExtent;
-
+    private float camDiagonal;
     void Start()
     {
         myTransform = transform;
-        parallax = Camera.main.GetComponent<Parallax>();
+        mainCam = Camera.main;
+        mainCamTransform = mainCam.transform;
+        camDiagonal = (new Vector2(mainCam.orthographicSize * mainCam.aspect, 0) + new Vector2(0, mainCam.orthographicSize)).magnitude; // diagonal is a mgnitude of a sum of width and height vectors
         rend = GetComponent<Renderer>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
-        rotObj = GetComponent<RotateObject>();        
-        if (rend != null) { selfExtent = rend.bounds.extents.x; }
-        else { selfExtent = 2; }
+        rotObj = GetComponent<RotateObject>();
         if (rb != null) { isKinematic = rb.isKinematic; }
-
         TurnOff();
     }
 
     void Update()
     {
-        //spriteCenterX = rend.bounds.center.x;
-
-        if (rend != null) { spriteCenterX = rend.bounds.center.x; }
-        else { spriteCenterX = myTransform.position.x; }
-
-        if (parallax != null)
-        {
-            leftCamBorder = parallax.leftCameraBorder;
-            rightCamBorder = parallax.rightCameraBorder;
-        }
-        else { Debug.Log("There is no Parallax script on the camera"); }
-
         if (active)
         {
-            if (leftCamBorder >= spriteCenterX + selfExtent || rightCamBorder <= spriteCenterX - selfExtent) { TurnOff(); }
+            if (rend != null)
+            {
+                if (!rend.IsVisibleFrom(mainCam)) { TurnOff(); }
+            }
+            else
+            {
+                if ((mainCamTransform.position.x - myTransform.position.x) > camDiagonal) { TurnOff(); }
+            }
         }
         if (!active)
         {
-            if (leftCamBorder <= spriteCenterX + selfExtent && rightCamBorder >= spriteCenterX - selfExtent) { TurnOn(); }
+            if (rend != null)
+            {
+                if (rend.IsVisibleFrom(mainCam)) { TurnOn(); }
+            }
+            else
+            {
+                if ((mainCamTransform.position.x - myTransform.position.x) < camDiagonal) { TurnOn(); }
+            }
         }
     }
 
@@ -70,7 +66,6 @@ public class Culling : MonoBehaviour {
         {
             if (rb.isKinematic != isKinematic) { rb.isKinematic = isKinematic; }
             if (rb.IsSleeping()) { rb.WakeUp(); }
-            //rb.simulated = true;
         }
     }
 
@@ -85,7 +80,6 @@ public class Culling : MonoBehaviour {
         {
             if (!rb.isKinematic) { rb.isKinematic = true; }
             if (rb.IsAwake()) { rb.Sleep(); }
-            //rb.simulated = false;
         }        
     }
 }

@@ -80,7 +80,7 @@ Rigidbody2D:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!61 &6132448
 BoxCollider2D:
@@ -93,9 +93,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -0.51717377}
+  m_Offset: {x: 0, y: -1.92}
   serializedVersion: 2
-  m_Size: {x: 0.4013556, y: 8.694346}
+  m_Size: {x: 0.4013556, y: 5.71}
 --- !u!61 &6136184
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -300,6 +300,18 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: b79c7cf9ad129e94d80abae5ffc7a8af, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.y
+      value: -1.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.y
+      value: 5.71
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128880}

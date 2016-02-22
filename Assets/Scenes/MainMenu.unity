@@ -622,7 +622,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22484286, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 300.34387
+      value: 300.16254
       objectReference: {fileID: 0}
     - target: {fileID: 22484286, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
       propertyPath: m_AnchoredPosition.y
@@ -815,6 +815,10 @@ Prefab:
     - target: {fileID: 11475728, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnShareTextWithImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 11407840, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
+      propertyPath: m_Text
+      value: FLYING ADVENTURES
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
@@ -1105,6 +1109,18 @@ Prefab:
       propertyPath: LoadingScreen
       value: 
       objectReference: {fileID: 433414832}
+    - target: {fileID: 11463832, guid: 174b95b084c3d3445b1d6b894f0ca3b2, type: 2}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11463832, guid: 174b95b084c3d3445b1d6b894f0ca3b2, type: 2}
+      propertyPath: doChangeResolution
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11463832, guid: 174b95b084c3d3445b1d6b894f0ca3b2, type: 2}
+      propertyPath: screenHeight
+      value: 720
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 174b95b084c3d3445b1d6b894f0ca3b2, type: 2}
   m_IsPrefabParent: 0

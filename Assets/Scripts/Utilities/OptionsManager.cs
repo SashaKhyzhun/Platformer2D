@@ -29,6 +29,6 @@ public class OptionsManager : MonoBehaviour {
 		yield return new WaitForEndOfFrame ();
 		yield return new WaitForEndOfFrame ();
 		Vector2 resDelta = new Vector2(Screen.width - prevRes.x, Screen.height - prevRes.y);
-		cs.referenceResolution -= resDelta;
+		//cs.referenceResolution -= resDelta; //fix for broken canvas scaler 
 	}
 }

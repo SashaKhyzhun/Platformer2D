@@ -1191,7 +1191,7 @@ Transform:
   - {fileID: 1554550888}
   - {fileID: 895490021}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &390976266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3090,6 +3090,20 @@ MonoBehaviour:
   throwForce: 0
   torque: 0
   ownIndex: 3
+--- !u!61 &895490026
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 895490017}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -15.02, y: -3.31}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 14.15}
 --- !u!1 &929611170
 GameObject:
   m_ObjectHideFlags: 0
@@ -5545,7 +5559,7 @@ Prefab:
         type: 3}
     - target: {fileID: 5053666, guid: 68e73ff5612e5b04b8a66ff4b9ca0542, type: 2}
       propertyPath: m_IsKinematic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 466092, guid: 68e73ff5612e5b04b8a66ff4b9ca0542, type: 2}
       propertyPath: m_LocalScale.x

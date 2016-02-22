@@ -1060,6 +1060,7 @@ GameObject:
   - 58: {fileID: 332966560}
   - 114: {fileID: 332966559}
   - 50: {fileID: 332966562}
+  - 114: {fileID: 332966563}
   m_Layer: 9
   m_Name: level3_2_new_cicrle (10)
   m_TagString: Untagged
@@ -1151,6 +1152,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &332966563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332966557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab6908a6f236dd428d58e46ad921c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 332966558}
+  localGM: {fileID: 1398303034}
+  launchSound: {fileID: 0}
+  freeze: 0
+  addTorque: 0
+  throwForce: 0
+  torque: 0
+  ownIndex: 3
 --- !u!1 &348510433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,6 +1786,7 @@ GameObject:
   - 58: {fileID: 563796276}
   - 114: {fileID: 563796275}
   - 50: {fileID: 563796278}
+  - 114: {fileID: 563796279}
   m_Layer: 9
   m_Name: level3_2_new_cicrle (9)
   m_TagString: Untagged
@@ -1857,6 +1878,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &563796279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 563796273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab6908a6f236dd428d58e46ad921c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 563796274}
+  localGM: {fileID: 1398303034}
+  launchSound: {fileID: 0}
+  freeze: 0
+  addTorque: 0
+  throwForce: 0
+  torque: 0
+  ownIndex: 3
 --- !u!1 &574480029
 GameObject:
   m_ObjectHideFlags: 0
@@ -2488,6 +2528,7 @@ GameObject:
   - 58: {fileID: 755414277}
   - 114: {fileID: 755414276}
   - 50: {fileID: 755414279}
+  - 114: {fileID: 755414280}
   m_Layer: 9
   m_Name: level3_2_new_cicrle (6)
   m_TagString: Untagged
@@ -2579,6 +2620,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &755414280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 755414274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab6908a6f236dd428d58e46ad921c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 755414275}
+  localGM: {fileID: 1398303034}
+  launchSound: {fileID: 0}
+  freeze: 0
+  addTorque: 0
+  throwForce: 0
+  torque: 0
+  ownIndex: 3
 --- !u!1 &770735392
 GameObject:
   m_ObjectHideFlags: 0
@@ -2848,6 +2908,7 @@ GameObject:
   - 58: {fileID: 829825549}
   - 114: {fileID: 829825548}
   - 50: {fileID: 829825551}
+  - 114: {fileID: 829825552}
   m_Layer: 9
   m_Name: level3_2_new_cicrle (11)
   m_TagString: Untagged
@@ -2939,6 +3000,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &829825552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 829825546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab6908a6f236dd428d58e46ad921c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 829825547}
+  localGM: {fileID: 1398303034}
+  launchSound: {fileID: 0}
+  freeze: 0
+  addTorque: 0
+  throwForce: 0
+  torque: 0
+  ownIndex: 3
 --- !u!1 &839095024
 GameObject:
   m_ObjectHideFlags: 0
@@ -4513,6 +4593,7 @@ GameObject:
   - 58: {fileID: 1512219333}
   - 114: {fileID: 1512219332}
   - 50: {fileID: 1512219335}
+  - 114: {fileID: 1512219336}
   m_Layer: 9
   m_Name: level3_2_new_cicrle (5)
   m_TagString: Untagged
@@ -4604,6 +4685,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1512219336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1512219330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab6908a6f236dd428d58e46ad921c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 1512219331}
+  localGM: {fileID: 1398303034}
+  launchSound: {fileID: 0}
+  freeze: 0
+  addTorque: 0
+  throwForce: 0
+  torque: 0
+  ownIndex: 3
 --- !u!1 &1524330735
 GameObject:
   m_ObjectHideFlags: 0
@@ -6184,6 +6284,7 @@ GameObject:
   - 58: {fileID: 2067427244}
   - 114: {fileID: 2067427243}
   - 50: {fileID: 2067427246}
+  - 114: {fileID: 2067427247}
   m_Layer: 9
   m_Name: level3_2_new_cicrle (8)
   m_TagString: Untagged
@@ -6275,6 +6376,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2067427247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2067427241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab6908a6f236dd428d58e46ad921c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 2067427242}
+  localGM: {fileID: 1398303034}
+  launchSound: {fileID: 0}
+  freeze: 0
+  addTorque: 0
+  throwForce: 0
+  torque: 0
+  ownIndex: 3
 --- !u!1 &2069656758
 GameObject:
   m_ObjectHideFlags: 0
@@ -6287,6 +6407,7 @@ GameObject:
   - 58: {fileID: 2069656761}
   - 114: {fileID: 2069656760}
   - 50: {fileID: 2069656763}
+  - 114: {fileID: 2069656764}
   m_Layer: 9
   m_Name: level3_2_new_cicrle (7)
   m_TagString: Untagged
@@ -6378,6 +6499,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2069656764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2069656758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab6908a6f236dd428d58e46ad921c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 2069656759}
+  localGM: {fileID: 1398303034}
+  launchSound: {fileID: 0}
+  freeze: 0
+  addTorque: 0
+  throwForce: 0
+  torque: 0
+  ownIndex: 3
 --- !u!1 &2089087180
 GameObject:
   m_ObjectHideFlags: 0

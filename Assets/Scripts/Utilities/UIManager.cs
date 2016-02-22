@@ -118,15 +118,18 @@ public class UIManager : MonoBehaviour
 
             if (nextLevel < Season.levelCount)
             {
-				
-                if (Game.current.seasons[currSeason].available && Game.current.seasons[currSeason].levels[nextLevel].available)
+
+                if (!restart)
                 {
-                    if (!backToMenu)
+                    if (Game.current.seasons[currSeason].available && Game.current.seasons[currSeason].levels[nextLevel].available)
                     {
-                        if (!restart) { StartCoroutine(WaitForLoad(index)); }
-                        else { StartCoroutine(WaitForLoad(index - 1)); }
+                        if (!backToMenu)
+                        {
+                            StartCoroutine(WaitForLoad(index));
+                        }
                     }
                 }
+                else { StartCoroutine(WaitForLoad(index - 1)); }
             }
             else if (currSeason + 1 < Game.seasonCount)
             {

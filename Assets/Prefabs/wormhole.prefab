@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11483614}
   - 114: {fileID: 11483424}
   - 58: {fileID: 5801390}
+  - 114: {fileID: 11401760}
   m_Layer: 8
   m_Name: wormhole
   m_TagString: Untagged
@@ -63,6 +64,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.14
+--- !u!114 &11401760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68b9c62690e6c1449d8542a405b74ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11483424
 MonoBehaviour:
   m_ObjectHideFlags: 1

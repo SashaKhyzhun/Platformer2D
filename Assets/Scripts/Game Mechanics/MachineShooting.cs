@@ -15,6 +15,7 @@ public class MachineShooting : MonoBehaviour {
     private Transform myTransform;
     private Transform currBullet;
     private Rigidbody2D currBulletRB;
+    private AudioSource audio;
     private BulletCleaner currBulletBC;
     private WaitForSeconds shootRateWFS;
     private bool canShoot = true;
@@ -23,6 +24,7 @@ public class MachineShooting : MonoBehaviour {
     
 	void Start() {
         myTransform = transform;
+        audio = GetComponent<AudioSource>();
         bulletLayer = gameObject.layer;
         shootRateWFS = new WaitForSeconds(shootRate);
         canShoot = true;
@@ -43,6 +45,7 @@ public class MachineShooting : MonoBehaviour {
     {
         canShoot = false;
 
+        audio.Play();
         currBullet = bulletPool.GetChild(currBulletIndex);
 
         currBulletRB = currBullet.GetComponent<Rigidbody2D>();

@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c578db3b5828d4bad02e8e9451183f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelVol: 8
+  maxVelVol: 1
   ignoreLayers:
     serializedVersion: 2
     m_Bits: 4294966783
@@ -311,6 +311,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Size.y
       value: 5.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxVelVol
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

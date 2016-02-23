@@ -602,7 +602,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 469150, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 469150, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
       propertyPath: m_LocalScale.x
@@ -1948,6 +1948,7 @@ GameObject:
   - 212: {fileID: 479382180}
   - 50: {fileID: 479382179}
   - 114: {fileID: 479382181}
+  - 114: {fileID: 479382178}
   m_Layer: 9
   m_Name: hand
   m_TagString: Untagged
@@ -1966,7 +1967,19 @@ Transform:
   m_LocalScale: {x: 1.6, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1406145994}
-  m_RootOrder: 0
+  m_RootOrder: 2
+--- !u!114 &479382178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479382176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c037f1e52732d4680b853a8576e566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -30
 --- !u!50 &479382179
 Rigidbody2D:
   serializedVersion: 2
@@ -2209,7 +2222,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 469150, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 469150, guid: b25c2e590a0222346b6c46519e7a4edc, type: 2}
       propertyPath: m_LocalScale.x
@@ -4976,9 +4989,9 @@ Transform:
   m_LocalPosition: {x: 134.55, y: 2.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 479382177}
   - {fileID: 1866185643}
   - {fileID: 1954074310}
+  - {fileID: 479382177}
   m_Father: {fileID: 392458576}
   m_RootOrder: 38
 --- !u!1 &1414311875

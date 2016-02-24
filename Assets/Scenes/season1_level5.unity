@@ -4386,7 +4386,7 @@ Prefab:
       objectReference: {fileID: 1286703219}
     - target: {fileID: 11416378, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
       propertyPath: freeze
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5005008, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
       propertyPath: m_IsKinematic
@@ -7930,7 +7930,6 @@ GameObject:
   - 212: {fileID: 1762947990}
   - 60: {fileID: 1762947989}
   - 114: {fileID: 1762947988}
-  - 251: {fileID: 1762947991}
   m_Layer: 9
   m_Name: level3_2_8
   m_TagString: Map
@@ -7971,7 +7970,7 @@ PolygonCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
@@ -8012,23 +8011,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!251 &1762947991
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1762947986}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseOneWay: 1
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 97.2
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 89.8
 --- !u!1001 &1764220694
 Prefab:
   m_ObjectHideFlags: 0

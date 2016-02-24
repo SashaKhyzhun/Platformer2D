@@ -4100,9 +4100,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6818162, guid: 64d3f8c3fa06e554aac0e7626d49a78d, type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6818162, guid: 64d3f8c3fa06e554aac0e7626d49a78d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 64d3f8c3fa06e554aac0e7626d49a78d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &505775907
@@ -7905,6 +7906,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 118776028}
   m_RootOrder: 6
+--- !u!1 &1357424024 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 185150, guid: 1fd4e9218ad3bc748a24aa9d624aaecb, type: 2}
+  m_PrefabInternal: {fileID: 1976856576}
+--- !u!114 &1357424025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1357424024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c037f1e52732d4680b853a8576e566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 100
 --- !u!50 &1364616637 stripped
 Rigidbody2D:
   m_PrefabParentObject: {fileID: 5073506, guid: b91a1b7b0c2fb0a49916eba13de372e8,
@@ -8333,13 +8350,7 @@ PolygonCollider2D:
       - {x: 6.5553927, y: 2.9119904}
       - {x: 6.4966984, y: 2.9119904}
       - {x: 6.393984, y: 2.8532963}
-      - {x: 6.4086576, y: 2.4277644}
-      - {x: 6.5260453, y: 2.0609267}
-      - {x: 6.599413, y: 1.7674563}
-      - {x: 6.8048425, y: 1.1364952}
-      - {x: 6.9809246, y: 0.6229222}
-      - {x: 7.12766, y: 0.19739029}
-      - {x: 7.2450476, y: -0.09607999}
+      - {x: 6.7759094, y: 1.4601817}
       - {x: 7.4358034, y: -0.5069384}
       - {x: 7.538518, y: -0.69769406}
       - {x: 7.685253, y: -0.97649086}

@@ -8,11 +8,14 @@ public class Press : MonoBehaviour {
     private Transform myTransform;
     private Transform pressBody;
     private SliderJoint2D sj;
+    private AudioSource audioSource;
     private bool canStartCoroutine = true;
+    private bool canPlaySound = true;
 
 	void Start ()
     {
         myTransform = transform;
+        audioSource = GetComponent<AudioSource>();
         foreach (Transform ch in myTransform)
         {
             if (ch.CompareTag("Press")) { pressBody = ch; }
@@ -28,10 +31,11 @@ public class Press : MonoBehaviour {
             if (sj.limitState == JointLimitState2D.LowerLimit)
             {
                 sj.useMotor = false;
+                canPlaySound = true;
             }
             else if (sj.limitState == JointLimitState2D.UpperLimit)
             {
-                if(canStartCoroutine) { StartCoroutine(Rest()); };
+                if (canStartCoroutine) { StartCoroutine(Rest()); };
             }
         }
 	}
@@ -39,6 +43,7 @@ public class Press : MonoBehaviour {
     private IEnumerator Rest()
     {
         canStartCoroutine = false;
+        if (canPlaySound) { canPlaySound = false; audioSource.Play(); }
         yield return new WaitForSeconds(restTime);
         sj.useMotor = true;
         canStartCoroutine = true;

@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 332966558}
   localGM: {fileID: 1398303034}
-  launchSound: {fileID: 0}
+  launchSound: {fileID: 616337011}
   freeze: 0
   addTorque: 0
   throwForce: 0
@@ -1891,7 +1891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 563796274}
   localGM: {fileID: 1398303034}
-  launchSound: {fileID: 0}
+  launchSound: {fileID: 616337011}
   freeze: 0
   addTorque: 0
   throwForce: 0
@@ -2633,7 +2633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 755414275}
   localGM: {fileID: 1398303034}
-  launchSound: {fileID: 0}
+  launchSound: {fileID: 616337011}
   freeze: 0
   addTorque: 0
   throwForce: 0
@@ -3013,7 +3013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 829825547}
   localGM: {fileID: 1398303034}
-  launchSound: {fileID: 0}
+  launchSound: {fileID: 616337011}
   freeze: 0
   addTorque: 0
   throwForce: 0
@@ -4702,7 +4702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 1512219331}
   localGM: {fileID: 1398303034}
-  launchSound: {fileID: 0}
+  launchSound: {fileID: 616337011}
   freeze: 0
   addTorque: 0
   throwForce: 0
@@ -4866,6 +4866,14 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8266606, guid: fd99286222df83c43a367bffc805f28d, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: adca38a9d6812b54d9bec7e361e7be1c, type: 3}
+    - target: {fileID: 8266606, guid: fd99286222df83c43a367bffc805f28d, type: 2}
+      propertyPath: m_Pitch
+      value: 1.852
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fd99286222df83c43a367bffc805f28d, type: 2}
   m_IsPrefabParent: 0
@@ -4920,6 +4928,10 @@ Prefab:
       propertyPath: speed
       value: -150
       objectReference: {fileID: 0}
+    - target: {fileID: 8210882, guid: c61af38f8a8acf646ba422b896790491, type: 2}
+      propertyPath: m_Pitch
+      value: 0.555
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c61af38f8a8acf646ba422b896790491, type: 2}
   m_IsPrefabParent: 0
@@ -4965,6 +4977,10 @@ Prefab:
     - target: {fileID: 11485892, guid: c61af38f8a8acf646ba422b896790491, type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210882, guid: c61af38f8a8acf646ba422b896790491, type: 2}
+      propertyPath: m_Pitch
+      value: 0.555
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c61af38f8a8acf646ba422b896790491, type: 2}
@@ -5117,6 +5133,14 @@ Prefab:
     - target: {fileID: 11419090, guid: fd99286222df83c43a367bffc805f28d, type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266606, guid: fd99286222df83c43a367bffc805f28d, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: adca38a9d6812b54d9bec7e361e7be1c, type: 3}
+    - target: {fileID: 8266606, guid: fd99286222df83c43a367bffc805f28d, type: 2}
+      propertyPath: m_Pitch
+      value: 1.86
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fd99286222df83c43a367bffc805f28d, type: 2}
@@ -6393,7 +6417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 2067427242}
   localGM: {fileID: 1398303034}
-  launchSound: {fileID: 0}
+  launchSound: {fileID: 616337011}
   freeze: 0
   addTorque: 0
   throwForce: 0
@@ -6516,7 +6540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 2069656759}
   localGM: {fileID: 1398303034}
-  launchSound: {fileID: 0}
+  launchSound: {fileID: 616337011}
   freeze: 0
   addTorque: 0
   throwForce: 0

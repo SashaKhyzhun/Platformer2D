@@ -3,6 +3,7 @@
 public class VolumeController : MonoBehaviour {
 
     public float maxVelVol = 16; //use this to adjust the volume
+    public bool useCosine = true;
     public LayerMask ignoreLayers; // layers to ignore
 
     private AudioSource audioSource;
@@ -41,7 +42,16 @@ public class VolumeController : MonoBehaviour {
                 //if has no rb relVel equals to own velocity
                 else { relVel = rb.velocity.magnitude; }
 
-                audioSource.volume = Mathf.Clamp01(relVel / maxVelVol) * cosine; //fraction of maximum velocity times the cosine
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.volume = Mathf.Clamp01(Mathf.Abs(relVel / maxVelVol)); //fraction of maximum velocity
+                    if (useCosine) { audioSource.volume *= cosine; } // depends on angle to the surface
+                }
+                if (CompareTag("Player"))
+                {
+                    audioSource.volume = Mathf.Clamp01(Mathf.Abs(relVel / maxVelVol)); //fraction of maximum velocity
+                    if (useCosine) { audioSource.volume *= cosine; } // depends on angle to the surface
+                }
                 audioSource.Play();
             }
             else { Debug.Log("There are no audio source on " + gameObject.name + ". Please add one."); }

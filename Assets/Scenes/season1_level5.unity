@@ -265,7 +265,7 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.1}
   m_Points:
     m_Paths:
     - - {x: 5.720378, y: -8.499554}
@@ -287,15 +287,14 @@ PolygonCollider2D:
       - {x: 6.2584066, y: -8.560694}
       - {x: 6.087216, y: -8.536238}
     - - {x: -0.0022927367, y: 0.011084545}
-      - {x: -0.0022927367, y: -0.6247677}
-      - {x: 1.3672353, y: -0.6247677}
-      - {x: 1.4039191, y: -0.6736795}
-      - {x: 2.5778003, y: -0.6369957}
-      - {x: 3.0546894, y: -0.72259116}
-      - {x: 3.6905417, y: -0.71036327}
-      - {x: 4.913335, y: -0.72259116}
-      - {x: 4.9744744, y: -0.74704707}
-      - {x: 6.2584066, y: -0.74704707}
+      - {x: -0.002292633, y: -0.47508642}
+      - {x: 1.3391304, y: -0.48123148}
+      - {x: 1.8006134, y: -0.49819508}
+      - {x: 2.495861, y: -0.4296358}
+      - {x: 3.0203133, y: -0.5319962}
+      - {x: 3.6699142, y: -0.5333828}
+      - {x: 5.0095863, y: -0.5728384}
+      - {x: 6.2515335, y: -0.58368015}
       - {x: 6.2584066, y: 0.011084545}
 --- !u!212 &69497688
 SpriteRenderer:
@@ -3711,6 +3710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxVelVol: 4
+  useCosine: 1
   ignoreLayers:
     serializedVersion: 2
     m_Bits: 512
@@ -4309,7 +4309,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 465122, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -9.02
+      value: -8.07
       objectReference: {fileID: 0}
     - target: {fileID: 465122, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4362,7 +4362,7 @@ Prefab:
       objectReference: {fileID: 1778959862}
     - target: {fileID: 6188174, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
       propertyPath: m_Offset.x
-      value: -.0599999987
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 21270074, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
       propertyPath: m_Color.r
@@ -4390,7 +4390,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5005008, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
       propertyPath: m_IsKinematic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 128880, guid: 92ce1a89447ea4a4e84a40eec11b0d16, type: 2}
       propertyPath: m_Name
@@ -7841,6 +7841,10 @@ Prefab:
       propertyPath: m_Offset.x
       value: -0.67
       objectReference: {fileID: 0}
+    - target: {fileID: 11443090, guid: 63478b52b664ddb40b6a5cca4400170c, type: 2}
+      propertyPath: speed
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63478b52b664ddb40b6a5cca4400170c, type: 2}
   m_IsPrefabParent: 0
@@ -7853,11 +7857,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 465826, guid: 63478b52b664ddb40b6a5cca4400170c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 174.63
+      value: 174.49
       objectReference: {fileID: 0}
     - target: {fileID: 465826, guid: 63478b52b664ddb40b6a5cca4400170c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.73
+      value: -2.29
       objectReference: {fileID: 0}
     - target: {fileID: 465826, guid: 63478b52b664ddb40b6a5cca4400170c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7906,7 +7910,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11443090, guid: 63478b52b664ddb40b6a5cca4400170c, type: 2}
       propertyPath: speed
-      value: -150
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 5875880, guid: 63478b52b664ddb40b6a5cca4400170c, type: 2}
       propertyPath: m_Offset.x
@@ -7971,16 +7975,19 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.04}
   m_Points:
     m_Paths:
     - - {x: 6.2553496, y: 0.011084545}
       - {x: -0.005349719, y: 0.011084545}
-      - {x: -0.005349719, y: -0.52694434}
-      - {x: 1.3886342, y: -0.52694434}
-      - {x: 2.134538, y: -0.47803262}
-      - {x: 4.9836454, y: -0.4291209}
-      - {x: 6.2553496, y: -0.36798126}
+      - {x: -0.0053482056, y: -0.4944976}
+      - {x: 1.3432426, y: -0.4485135}
+      - {x: 2.3231583, y: -0.37845385}
+      - {x: 3.1157303, y: -0.38090461}
+      - {x: 3.9373665, y: -0.39840502}
+      - {x: 5.1047745, y: -0.34677345}
+      - {x: 5.762291, y: -0.29281908}
+      - {x: 6.255348, y: -0.3257369}
 --- !u!212 &1762947990
 SpriteRenderer:
   m_ObjectHideFlags: 0

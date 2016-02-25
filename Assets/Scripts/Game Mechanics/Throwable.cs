@@ -70,7 +70,7 @@ public class Throwable : MonoBehaviour, IRevertable
         bodyRb.isKinematic = false;
         bodyRb.AddForce(direction.normalized * throwForce, ForceMode2D.Impulse);
         if (addTorque) { bodyRb.AddTorque(torque); }
-		launchSound.Play ();
+ 		launchSound.Play ();
     }
 
     public void SaveParams()

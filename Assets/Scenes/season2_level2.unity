@@ -2362,7 +2362,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 454704, guid: e5877872dbd1a274cbfd3b472be69ecd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 243.67
+      value: 235.7
       objectReference: {fileID: 0}
     - target: {fileID: 454704, guid: e5877872dbd1a274cbfd3b472be69ecd, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2398,7 +2398,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6121294, guid: e5877872dbd1a274cbfd3b472be69ecd, type: 2}
       propertyPath: m_Offset.x
-      value: -7.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 116652, guid: e5877872dbd1a274cbfd3b472be69ecd, type: 2}
       propertyPath: m_TagString
@@ -2801,7 +2801,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11420222, guid: 1df412891f1dacb49862f160eaa4f47b, type: 2}
       propertyPath: speed
-      value: -40
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 8258134, guid: 1df412891f1dacb49862f160eaa4f47b, type: 2}
       propertyPath: m_Pitch
@@ -3276,6 +3276,43 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 454950, guid: 641a0fda7e0aa8d4bbc5a4782a6af9fb, type: 2}
   m_PrefabInternal: {fileID: 1087190665}
+--- !u!1 &1087190667 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 111566, guid: 641a0fda7e0aa8d4bbc5a4782a6af9fb, type: 2}
+  m_PrefabInternal: {fileID: 1087190665}
+--- !u!60 &1087190668
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1087190667}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.09, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 1.9621755, y: -0.45087147}
+      - {x: 2.2687953, y: -0.05230069}
+      - {x: 2.3465273, y: 0.45826077}
+      - {x: 2.3782656, y: 1.0817392}
+      - {x: -2.56, y: 1.09}
+      - {x: -2.56, y: 0.45}
+      - {x: -2.52, y: -0.07}
+      - {x: -2.12, y: -0.57}
+      - {x: -2.04, y: -0.65}
+      - {x: -1.5799999, y: -0.87}
+      - {x: -1.0799999, y: -0.98999995}
+      - {x: -1, y: -0.98999995}
+      - {x: -0.7, y: -0.96999997}
+      - {x: -0.32, y: -0.95}
+      - {x: -0.02, y: -1.09}
+      - {x: 0.35999998, y: -1.09}
+      - {x: 0.74, y: -1.01}
+      - {x: 1.14, y: -0.89}
+      - {x: 1.28, y: -0.84999996}
 --- !u!1 &1096155908
 GameObject:
   m_ObjectHideFlags: 0
@@ -4975,7 +5012,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1404707816}
   m_LocalRotation: {x: 0, y: 0, z: 0.9999966, w: -0.0026181154}
-  m_LocalPosition: {x: 80.44, y: -0.03, z: 0}
+  m_LocalPosition: {x: 80.77, y: -0.13, z: 0}
   m_LocalScale: {x: 1.1315825, y: 1.1315825, z: 1.1315825}
   m_Children: []
   m_Father: {fileID: 296463851}
@@ -5123,6 +5160,43 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 454950, guid: 641a0fda7e0aa8d4bbc5a4782a6af9fb, type: 2}
   m_PrefabInternal: {fileID: 1414159943}
+--- !u!1 &1414159945 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 111566, guid: 641a0fda7e0aa8d4bbc5a4782a6af9fb, type: 2}
+  m_PrefabInternal: {fileID: 1414159943}
+--- !u!60 &1414159946
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1414159945}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.09, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 1.9153472, y: -0.5034876}
+      - {x: 2.2888348, y: -0.08674359}
+      - {x: 2.4204628, y: 0.71000004}
+      - {x: 2.4553463, y: 1.1016283}
+      - {x: -2.56, y: 1.09}
+      - {x: -2.56, y: 0.45}
+      - {x: -2.52, y: -0.07}
+      - {x: -2.12, y: -0.57}
+      - {x: -2.04, y: -0.65}
+      - {x: -1.5799999, y: -0.87}
+      - {x: -1.0799999, y: -0.98999995}
+      - {x: -1, y: -0.98999995}
+      - {x: -0.7, y: -0.96999997}
+      - {x: -0.32, y: -0.95}
+      - {x: -0.02, y: -1.09}
+      - {x: 0.35999998, y: -1.09}
+      - {x: 0.74, y: -1.01}
+      - {x: 1.14, y: -0.89}
+      - {x: 1.28, y: -0.84999996}
 --- !u!1 &1452944037
 GameObject:
   m_ObjectHideFlags: 0

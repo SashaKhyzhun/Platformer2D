@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 439542}
   - 212: {fileID: 21291732}
-  - 68: {fileID: 6818162}
   - 114: {fileID: 11405930}
   - 114: {fileID: 11462296}
   - 61: {fileID: 6126018}
@@ -75,57 +74,6 @@ BoxCollider2D:
   m_Offset: {x: 0.0002705625, y: 0.8490293}
   serializedVersion: 2
   m_Size: {x: 0.57354826, y: 2.5300257}
---- !u!68 &6818162
-EdgeCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101774}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-  - {x: 0.44070387, y: -0.8156643}
-  - {x: 0.35518932, y: -0.9366443}
-  - {x: 0.23920918, y: -1.0256109}
-  - {x: 0.14503956, y: -1.0717015}
-  - {x: 0.003469944, y: -1.0710709}
-  - {x: -0.0654583, y: -1.0208797}
-  - {x: -0.13278818, y: -0.94220996}
-  - {x: -0.2178359, y: -0.6651521}
-  - {x: -0.35746813, y: -0.64003134}
-  - {x: -0.51278496, y: -0.7117033}
-  - {x: -0.6879039, y: -0.8211155}
-  - {x: -0.8620753, y: -0.80930996}
-  - {x: -0.9953327, y: -0.6329715}
-  - {x: -0.9961071, y: -0.40276074}
-  - {x: -0.8070302, y: -0.24631667}
-  - {x: -0.49636364, y: -0.060684204}
-  - {x: -0.9372158, y: 0.71240664}
-  - {x: -0.43357325, y: 0.7121129}
-  - {x: -0.30272627, y: 1.6240153}
-  - {x: -0.29856777, y: 2.3658433}
-  - {x: -0.12307167, y: 2.4950812}
-  - {x: 0.1515913, y: 2.4885437}
-  - {x: 0.3032303, y: 2.3656168}
-  - {x: 0.32882547, y: 1.6897955}
-  - {x: 0.38103628, y: 1.1317806}
-  - {x: 0.45741034, y: 0.71131825}
-  - {x: 0.91543007, y: 0.7050538}
-  - {x: 0.52926207, y: 0.024817228}
-  - {x: 0.7956567, y: 0.04487586}
-  - {x: 0.9341173, y: -0.06077504}
-  - {x: 0.96702766, y: -0.14435482}
-  - {x: 0.90908813, y: -0.27868867}
-  - {x: 0.73818445, y: -0.3920331}
-  - {x: 0.36719513, y: -0.4522755}
-  - {x: 0.3199458, y: -0.53430295}
-  - {x: 0.35790014, y: -0.6202841}
-  - {x: 0.4367833, y: -0.71909666}
-  - {x: 0.4422269, y: -0.81704617}
 --- !u!82 &8266966
 AudioSource:
   m_ObjectHideFlags: 1
@@ -134,7 +82,8 @@ AudioSource:
   m_GameObject: {fileID: 101774}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300001, guid: 14f78d755989dda47898121b3c4fa536,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: b168420d1979af547b44c866b97a4053, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
@@ -310,6 +259,11 @@ Prefab:
       propertyPath: m_Volume
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300001, guid: 14f78d755989dda47898121b3c4fa536,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 101774}

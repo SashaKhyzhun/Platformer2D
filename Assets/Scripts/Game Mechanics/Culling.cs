@@ -39,7 +39,7 @@ public class Culling : MonoBehaviour {
             }
             else
             {
-                if ((mainCamTransform.position.x - myTransform.position.x) > camDiagonal) { TurnOff(); }
+                if ((mainCamTransform.position.x - myTransform.position.x) > camDiagonal * 1.75) { TurnOff(); }
             }
         }
         if (!active)
@@ -50,7 +50,7 @@ public class Culling : MonoBehaviour {
             }
             else
             {
-                if ((mainCamTransform.position.x - myTransform.position.x) < camDiagonal) { TurnOn(); }
+                if ((mainCamTransform.position.x - myTransform.position.x) < camDiagonal * 1.75) { TurnOn(); }
             }
         }
     }

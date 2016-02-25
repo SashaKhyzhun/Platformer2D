@@ -75,7 +75,8 @@ AudioSource:
   m_GameObject: {fileID: 128450}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300001, guid: 14f78d755989dda47898121b3c4fa536,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: a50a6ea12953a24498f494a4090de38c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -129,7 +130,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -225,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxVelVol: 16
+  useCosine: 1
   ignoreLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -293,6 +295,15 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300001, guid: 14f78d755989dda47898121b3c4fa536,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128450}

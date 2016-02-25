@@ -85,6 +85,8 @@ public class Throwable : MonoBehaviour, IRevertable
     {
         body.position = initialPosition;
         body.rotation = initialRotation;
+        bodyRb.velocity = Vector2.zero;
+        bodyRb.angularVelocity = 0;
         used = initialUsed;
         bodyRb.isKinematic = initialKinematic;
     }

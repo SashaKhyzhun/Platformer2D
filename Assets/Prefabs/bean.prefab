@@ -101,7 +101,8 @@ AudioSource:
   m_GameObject: {fileID: 183602}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300001, guid: 14f78d755989dda47898121b3c4fa536,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 70a281e050444fe4b9eea709fad775ed, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -190,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxVelVol: 16
+  useCosine: 1
   ignoreLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -282,6 +284,11 @@ Prefab:
       propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300001, guid: 14f78d755989dda47898121b3c4fa536,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 183602}

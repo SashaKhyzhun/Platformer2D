@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour
     private WaitForEndOfFrame wfeof;
     private WaitForSeconds levelEndWaitTimeWFS;
     private bool completedLevel = false;
+    private bool completedSeason = false;
     private bool backToMenu = false;
     private bool restart = false;
 
@@ -98,7 +99,15 @@ public class UIManager : MonoBehaviour
 
     public void NextLevel()
     {
-        LoadLevel(Application.loadedLevel + 1);
+        if ((Application.loadedLevel) % pm.levelCount == 0)
+        {
+            BackToMenu();
+            completedSeason = true;
+        }
+        else
+        {
+            LoadLevel(Application.loadedLevel + 1);
+        }
     }
 
     public void LoadLevel(int index) // needs next level index;
@@ -239,10 +248,18 @@ public class UIManager : MonoBehaviour
             case 0:
                 TurnLayoutOff(GameLayout);
                 TurnLayoutOff(LoadingScreen);
-                TurnLayoutOn(MenuLayout);
+                if (completedSeason)
+                {
+                    TurnLayoutOff(MenuLayout);
+                    TurnLayoutOn(SeasonsMenuLayout);
+                    completedSeason = false;
+                }
+                else {
+                    TurnLayoutOn(MenuLayout);
+                    TurnLayoutOff(SeasonsMenuLayout);
+                }
                 TurnLayoutOn(Background);
                 TurnLayoutOff(PauseLayout);
-                TurnLayoutOff(SeasonsMenuLayout);
                 break;
             default:
                 TurnLayoutOn(GameLayout);
@@ -250,7 +267,7 @@ public class UIManager : MonoBehaviour
                 TurnLayoutOff(Background);
                 TurnLayoutOff(LoadingScreen);
                 TurnLayoutOff(PauseLayout);
-                TurnLayoutOff(SeasonsMenuLayout);        
+                TurnLayoutOff(SeasonsMenuLayout);
                 pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
                 break;
         }

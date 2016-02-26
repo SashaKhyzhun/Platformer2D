@@ -10,6 +10,7 @@ public class Bomb : MonoBehaviour, IRevertable {
     private Transform myTransform;
     private Rigidbody2D playerRb;
     private AudioSource audioSource;
+    private Animator anim;
     private CheckpointManager chManager;
     private Renderer spriteRenderer;
     private Collider2D circleCollider;
@@ -19,6 +20,7 @@ public class Bomb : MonoBehaviour, IRevertable {
     {
         myTransform = transform;
         audioSource = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
         chManager = localGM.GetComponent<CheckpointManager>();
         spriteRenderer = gameObject.GetComponent<Renderer>();
         circleCollider = gameObject.GetComponent<Collider2D>();
@@ -41,9 +43,16 @@ public class Bomb : MonoBehaviour, IRevertable {
         Vector3 direction = (coll.transform.position - myTransform.position).normalized;
         playerRb = coll.gameObject.GetComponent<Rigidbody2D>();
         playerRb.AddForce(direction * boomForce * Time.fixedDeltaTime, ForceMode2D.Impulse);
-        spriteRenderer.enabled = false;
+        StartCoroutine(Explode());
+    }
+
+    public IEnumerator Explode()
+    {
+        anim.SetTrigger("explode");
         circleCollider.enabled = false;
-        audioSource.Play(); 
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.enabled = false;
+        audioSource.Play();
     }
   
     public void SaveParams()

@@ -57,9 +57,12 @@ public class Throwable : MonoBehaviour, IRevertable
     {
         if (freeze)
         {
-            if (!bodyRb.isKinematic)
+            if (bodyRb != null)
             {
-                if (coll.gameObject.CompareTag("Map")) { bodyRb.isKinematic = true; }
+                if (!bodyRb.isKinematic)
+                {
+                    if (coll.gameObject.CompareTag("Map")) { bodyRb.isKinematic = true; }
+                }
             }
         }
     }
@@ -67,9 +70,12 @@ public class Throwable : MonoBehaviour, IRevertable
     public void Launch(Vector3 direction)
     {
         used = true;
-        bodyRb.isKinematic = false;
-        bodyRb.AddForce(direction.normalized * throwForce, ForceMode2D.Impulse);
-        if (addTorque) { bodyRb.AddTorque(torque); }
+        if (bodyRb != null)
+        {
+            bodyRb.isKinematic = false;
+            bodyRb.AddForce(direction.normalized * throwForce, ForceMode2D.Impulse);
+            if (addTorque) { bodyRb.AddTorque(torque); }
+        }
  		launchSound.Play ();
     }
 
@@ -78,16 +84,22 @@ public class Throwable : MonoBehaviour, IRevertable
         initialPosition = body.position;
         initialRotation = body.rotation;
         initialUsed = used;
-        initialKinematic = bodyRb.isKinematic;
+        if (bodyRb != null)
+        {
+            initialKinematic = bodyRb.isKinematic;
+        }
     }
 
     public void LoadParams()
     {
         body.position = initialPosition;
         body.rotation = initialRotation;
-        bodyRb.velocity = Vector2.zero;
-        bodyRb.angularVelocity = 0;
         used = initialUsed;
-        bodyRb.isKinematic = initialKinematic;
+        if (bodyRb != null)
+        {
+            bodyRb.velocity = Vector2.zero;
+            bodyRb.angularVelocity = 0;
+            bodyRb.isKinematic = initialKinematic;
+        }
     }
 }

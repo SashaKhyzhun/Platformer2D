@@ -19,7 +19,8 @@ public class AudioManager : MonoBehaviour {
 
     public void AudioUnpause()
     {
-        defaultSnapshot.TransitionTo(transitionTime * Time.timeScale);
+        if (musicState) { defaultSnapshot.TransitionTo(transitionTime * Time.timeScale); }
+        else { musicOffSnapshot.TransitionTo(transitionTime * Time.timeScale); }
     }
 
     public void AudioPause()

@@ -65,7 +65,7 @@ public class GeneralSharing : MonoBehaviour
 		#endif
 	}
 	
-	IEnumerator SaveAndShare ()
+	IEnumerator SaveAndShare (string text)
 	{
 		yield return new WaitForEndOfFrame ();
 #if UNITY_ANDROID
@@ -80,9 +80,9 @@ public class GeneralSharing : MonoBehaviour
 		
 		intentObject.Call<AndroidJavaObject>("setAction", intentClass.GetStatic<string>("ACTION_SEND"));
 		intentObject.Call<AndroidJavaObject>("setType", "image/*");
-		intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_SUBJECT"), "Media Sharing ");
-		intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TITLE"), "Media Sharing ");
-		intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"), "Hello, Everyone! Look at this FREE funny game, you must play it! http://www.somesite.com");
+		intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_SUBJECT"), "Flying Adventures");
+		intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TITLE"), "Flying Adventures");
+		intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"), text);
 		
 		AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri");
 		AndroidJavaClass fileClass = new AndroidJavaClass("java.io.File");
@@ -107,7 +107,7 @@ public class GeneralSharing : MonoBehaviour
 	
 #region BUTTON_CLICK_LISTENER
 	
-	public void OnShareSimpleText ()
+	public void OnShareSimpleText (ShareInfo shI)
 	{
 #if UNITY_ANDROID
 		StartCoroutine (ShareAndroidText ());
@@ -116,11 +116,11 @@ public class GeneralSharing : MonoBehaviour
 #endif
 	}
 	
-	public void OnShareTextWithImage ()
+	public void OnShareTextWithImage (ShareInfo shI)
 	{
-		Debug.Log ("Media Share");
+		//Debug.Log ("Media Share");
 #if UNITY_ANDROID
-		StartCoroutine (SaveAndShare ());
+		StartCoroutine (SaveAndShare (shI.text));
 #elif UNITY_IPHONE || UNITY_IPAD
 		byte[] bytes = MyImage.EncodeToPNG ();
 		string path = Application.persistentDataPath + "/MyImage.png";

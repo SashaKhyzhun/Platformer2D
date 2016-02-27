@@ -28,15 +28,17 @@ public class CheckpointManager : MonoBehaviour {
 	void Update () {
         float playerPositionX = playerTransform.position.x;
 
-        if (playerPositionX >= checkpoints[currentIndex].position.x)
+        if (playerController.alive)
         {
-            if (currentIndex < checkpoints.Length - 1)
+            if (playerPositionX >= checkpoints[currentIndex].position.x)
             {
-                playerController.checkpointNumber = currentIndex;
-                currentIndex++;
+                if (currentIndex < checkpoints.Length - 1)
+                {
+                    playerController.checkpointNumber = currentIndex;
+                    currentIndex++;
+                }
             }
         }
-
         if (revert != playerController.startReturn) { revert = playerController.startReturn; }
     }
 }

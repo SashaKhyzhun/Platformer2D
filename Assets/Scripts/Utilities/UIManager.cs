@@ -14,12 +14,14 @@ public class UIManager : MonoBehaviour
     public GameObject SeasonsMenuLayout;
     public GameObject[] LevelsMenuLayout;
     public GameObject LoadingScreen;
+    public GameObject CongratulationsLayout;
     public float fadeTime;
     public float levelEndWaitTime;
     public float timeScaleOnPause;
 
     private ProgressManager pm;
     private PlayerController pc;
+    private ShareInfo shI;
     private Animator anim;
     private WaitForSeconds halfFadeTimeWFS;
     private WaitForSeconds fadeTimeWFS;
@@ -27,11 +29,14 @@ public class UIManager : MonoBehaviour
     private WaitForSeconds levelEndWaitTimeWFS;
     private bool completedLevel = false;
     private bool completedSeason = false;
+    private bool completedGame = false;
     private bool backToMenu = false;
     private bool restart = false;
 
     void Start()
     {
+        shI = GetComponent<ShareInfo>();
+        shI.text = "Look, there's an amazing game! You can play it too!\n https://play.google.com/store";
         halfFadeTimeWFS = new WaitForSeconds(fadeTime / 2);
         fadeTimeWFS = new WaitForSeconds(fadeTime);
         wfeof = new WaitForEndOfFrame();
@@ -78,8 +83,25 @@ public class UIManager : MonoBehaviour
         Transform tile = layout.FindChild("LevelEndTile");
         Transform stats = tile.FindChild("Stats");
         tile.FindChild("LevelEndName").GetComponent<Text>().text = string.Format("SEASON {0} | LEVEL {1}", currSeason + 1, currLevel + 1);
-        stats.FindChild("Time").GetComponent<Text>().text = string.Format("{0:0}:{1:00}.{2:00}", time.Minutes, time.Seconds, time.Milliseconds / 10);
+        string timeString = string.Format("{0:0}:{1:00}.{2:00}", time.Minutes, time.Seconds, time.Milliseconds / 10);
+        stats.FindChild("Time").GetComponent<Text>().text = timeString;
         stats.FindChild("Deaths").GetComponent<Text>().text = pc.deaths + "";
+
+        string deathsString = "";
+        switch (pc.deaths)
+        {
+            case 0:
+                deathsString = "out deaths at all";
+                break;
+            case 1:
+                deathsString = " only one death";
+                break;
+            default:
+                deathsString = " " + pc.deaths + " deaths";
+                break;
+        }
+
+        shI.text = string.Format("Look, I've finished level {0}.{1} in {2}m. with{3}!\nYou can try it too! {4}", currSeason + 1, currLevel + 1, timeString, deathsString, "https://play.google.com/");
     }
 
     public void Restart()
@@ -116,6 +138,20 @@ public class UIManager : MonoBehaviour
         {
             int currSeason = (index - 1) / pm.levelCount;
             int nextLevel = (index - 1) - (currSeason * 12); //level that you want to load
+            if (currSeason >= pm.seasonCount)
+            {
+                completedGame = true;
+                if (backToMenu)
+                {
+                    pm.SaveStats(currSeason - 1, pm.levelCount - 1, pc.time, pc.deaths);
+                }
+                else if (restart)
+                {
+                    pm.SaveStats(currSeason - 1, pm.levelCount - 1, pc.time, pc.deaths);
+                    StartCoroutine(WaitForLoad(index - 1));
+                }
+                return;
+            }
             if (pc != null)
             {
                 if (!restart)
@@ -244,6 +280,7 @@ public class UIManager : MonoBehaviour
 
     void OnLevelWasLoaded(int level)
     {
+        shI.text = "Look, there's an amazing game! You can play it too!\n https://play.google.com/store";
         switch (level)
         {
             case 0:
@@ -252,8 +289,15 @@ public class UIManager : MonoBehaviour
                 if (completedSeason)
                 {
                     TurnLayoutOff(MenuLayout);
-                    TurnLayoutOn(SeasonsMenuLayout);
-                    LoadStats(SeasonsMenuLayout.transform);
+                    if (completedGame)
+                    {
+                        TurnLayoutOn(CongratulationsLayout);
+                    }
+                    else
+                    {
+                        TurnLayoutOn(SeasonsMenuLayout);
+                        LoadStats(SeasonsMenuLayout.transform);
+                    }
                     completedSeason = false;
                 }
                 else {

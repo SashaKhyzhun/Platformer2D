@@ -91,7 +91,7 @@ public class UIManager : MonoBehaviour
         switch (pc.deaths)
         {
             case 0:
-                deathsString = "out deaths at all";
+                deathsString = "out any deaths at all";
                 break;
             case 1:
                 deathsString = " only one death";

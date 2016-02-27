@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour {
 
     public void AudioPause()
     {
-        pausedSnapshot.TransitionTo(transitionTime * Time.timeScale);
+        if (musicState) { pausedSnapshot.TransitionTo(transitionTime * Time.timeScale); }
     }
 
     public void TurnOffAudio()

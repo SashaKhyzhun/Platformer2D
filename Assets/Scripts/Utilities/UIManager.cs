@@ -253,6 +253,7 @@ public class UIManager : MonoBehaviour
                 {
                     TurnLayoutOff(MenuLayout);
                     TurnLayoutOn(SeasonsMenuLayout);
+                    LoadStats(SeasonsMenuLayout.transform);
                     completedSeason = false;
                 }
                 else {

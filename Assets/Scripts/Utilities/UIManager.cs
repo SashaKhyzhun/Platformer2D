@@ -218,6 +218,7 @@ public class UIManager : MonoBehaviour
         yield return levelEndWaitTimeWFS;
         TurnLayoutOn(LevelEndLayout.gameObject);
         LoadLevelEndStats(LevelEndLayout);
+        GetComponent<AudioManager>().AudioPause();
     }
 
     IEnumerator WaitForLoad(int level)

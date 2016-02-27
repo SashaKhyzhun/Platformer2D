@@ -352,7 +352,7 @@ AudioSource:
   m_GameObject: {fileID: 59440097}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300001, guid: 14f78d755989dda47898121b3c4fa536,
+  OutputAudioMixerGroup: {fileID: 24334430, guid: 14f78d755989dda47898121b3c4fa536,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 87db77150f27e3643a3df200feb5a84c, type: 3}
   m_PlayOnAwake: 0
@@ -6088,7 +6088,7 @@ AudioSource:
   m_GameObject: {fileID: 1258487541}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300001, guid: 14f78d755989dda47898121b3c4fa536,
+  OutputAudioMixerGroup: {fileID: 24334430, guid: 14f78d755989dda47898121b3c4fa536,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 87db77150f27e3643a3df200feb5a84c, type: 3}
   m_PlayOnAwake: 0
@@ -6649,6 +6649,11 @@ Prefab:
       propertyPath: startFraq
       value: 0.88
       objectReference: {fileID: 0}
+    - target: {fileID: 8299808, guid: 641a0fda7e0aa8d4bbc5a4782a6af9fb, type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24334430, guid: 14f78d755989dda47898121b3c4fa536,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 641a0fda7e0aa8d4bbc5a4782a6af9fb, type: 2}
   m_IsPrefabParent: 0
@@ -7627,7 +7632,7 @@ AudioSource:
   m_GameObject: {fileID: 1557789915}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300001, guid: 14f78d755989dda47898121b3c4fa536,
+  OutputAudioMixerGroup: {fileID: 24334430, guid: 14f78d755989dda47898121b3c4fa536,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 87db77150f27e3643a3df200feb5a84c, type: 3}
   m_PlayOnAwake: 0
@@ -10393,7 +10398,7 @@ AudioSource:
   m_GameObject: {fileID: 2095311837}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300001, guid: 14f78d755989dda47898121b3c4fa536,
+  OutputAudioMixerGroup: {fileID: 24334430, guid: 14f78d755989dda47898121b3c4fa536,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 87db77150f27e3643a3df200feb5a84c, type: 3}
   m_PlayOnAwake: 0

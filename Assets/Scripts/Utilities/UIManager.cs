@@ -126,7 +126,6 @@ public class UIManager : MonoBehaviour
 
     public void NextLevel()
     {
-		if (interstitial != null) { interstitial.Destroy (); }
         if ((Application.loadedLevel) % pm.levelCount == 0)
         {
             BackToMenu();
@@ -264,17 +263,25 @@ public class UIManager : MonoBehaviour
 		#endif
 
 		// Initialize an InterstitialAd.
-		InterstitialAd interstitial = new InterstitialAd(adUnitId);
-		// Create an empty ad request.
-		AdRequest request = new AdRequest.Builder().Build();
-		// Load the interstitial with the request.
-		interstitial.LoadAd (request);
+    	InterstitialAd interstitial = new InterstitialAd(adUnitId);
+        // Create an empty ad request.
+
+        //for release
+        //AdRequest request = new AdRequest.Builder().Build();
+
+        AdRequest request = new AdRequest.Builder()
+            .AddTestDevice(AdRequest.TestDeviceSimulator)
+            .AddTestDevice("94B6F3B031BFB085513365B02FBBB6DE")
+            .AddTestDevice("09970ED4E5B9A61393ED38E4E163783C")
+            .Build();
+
+        // Load the interstitial with the request.
+        interstitial.LoadAd (request);
 		return interstitial;
 	}
 
     IEnumerator WaitForConfirm(float seconds)
     {
-		interstitial = RequestInterstitial ();
         Transform LevelEndLayout = UI.transform.FindChild("LevelEndLayout");
         yield return levelEndWaitTimeWFS;
 		if (interstitial.IsLoaded())
@@ -309,7 +316,8 @@ public class UIManager : MonoBehaviour
 
     void OnLevelWasLoaded(int level)
     {
-        shI.text = "Look, there's an amazing game! You can play it too!\n https://play.google.com/store";
+        interstitial = RequestInterstitial();
+        if (shI != null) { shI.text = "Look, there's an amazing game! You can play it too!\n https://play.google.com/store"; }
         switch (level)
         {
             case 0:

@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using System.Collections;
 using System;
+//ads
+using GoogleMobileAds.Api;
+//ads
 
 public class UIManager : MonoBehaviour
 {
@@ -32,6 +35,8 @@ public class UIManager : MonoBehaviour
     private bool completedGame = false;
     private bool backToMenu = false;
     private bool restart = false;
+
+	private InterstitialAd interstitial;
 
     void Start()
     {
@@ -121,6 +126,7 @@ public class UIManager : MonoBehaviour
 
     public void NextLevel()
     {
+		if (interstitial != null) { interstitial.Destroy (); }
         if ((Application.loadedLevel) % pm.levelCount == 0)
         {
             BackToMenu();
@@ -247,11 +253,34 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
+	private InterstitialAd RequestInterstitial()
+	{
+		#if UNITY_ANDROID
+		string adUnitId = "ca-app-pub-8810835231774698/6782405565";
+		#elif UNITY_IPHONE
+		string adUnitId = "INSERT_IOS_INTERSTITIAL_AD_UNIT_ID_HERE";
+		#else
+		string adUnitId = "unexpected_platform";
+		#endif
+
+		// Initialize an InterstitialAd.
+		InterstitialAd interstitial = new InterstitialAd(adUnitId);
+		// Create an empty ad request.
+		AdRequest request = new AdRequest.Builder().Build();
+		// Load the interstitial with the request.
+		interstitial.LoadAd (request);
+		return interstitial;
+	}
+
     IEnumerator WaitForConfirm(float seconds)
     {
-
+		interstitial = RequestInterstitial ();
         Transform LevelEndLayout = UI.transform.FindChild("LevelEndLayout");
         yield return levelEndWaitTimeWFS;
+		if (interstitial.IsLoaded())
+		{
+			interstitial.Show ();
+		}
         TurnLayoutOn(LevelEndLayout.gameObject);
         LoadLevelEndStats(LevelEndLayout);
         GetComponent<AudioManager>().AudioPause();

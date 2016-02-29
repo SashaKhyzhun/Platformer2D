@@ -309,7 +309,9 @@ public class UIManager : MonoBehaviour
         anim.SetBool("Fade", true);
         yield return halfFadeTimeWFS;
         async.allowSceneActivation = true;
+        Resources.UnloadUnusedAssets();
         GC.Collect();
+        GC.WaitForPendingFinalizers();
         Resources.UnloadUnusedAssets();
         anim.SetBool("Fade", false);
     }

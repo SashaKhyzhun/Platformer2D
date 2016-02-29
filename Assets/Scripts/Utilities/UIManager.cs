@@ -270,9 +270,9 @@ public class UIManager : MonoBehaviour
         //AdRequest request = new AdRequest.Builder().Build();
 
         AdRequest request = new AdRequest.Builder()
-            .AddTestDevice(AdRequest.TestDeviceSimulator)
-            .AddTestDevice("94B6F3B031BFB085513365B02FBBB6DE")
-            .AddTestDevice("09970ED4E5B9A61393ED38E4E163783C")
+            //.AddTestDevice(AdRequest.TestDeviceSimulator)
+            //.AddTestDevice("94B6F3B031BFB085513365B02FBBB6DE")
+            //.AddTestDevice("09970ED4E5B9A61393ED38E4E163783C")
             .Build();
 
         // Load the interstitial with the request.
@@ -319,7 +319,7 @@ public class UIManager : MonoBehaviour
     void OnLevelWasLoaded(int level)
     {
         interstitial = RequestInterstitial();
-        if (shI != null) { shI.text = "Look, there's an amazing game! You can play it too!\n https://play.google.com/store"; }
+        if (shI != null) { shI.text = "Look, there's an amazing game called Flying Adventures! You can play it too!\n https://play.google.com/store"; }
         switch (level)
         {
             case 0:

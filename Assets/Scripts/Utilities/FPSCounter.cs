@@ -23,7 +23,7 @@ public class FPSCounter : MonoBehaviour {
     {
         deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
         fps = 1.0f / deltaTime;
-        fpsText = string.Format("{0:0.} fps", fps);
-        text.text = fpsText;
+		fpsText = string.Format("{0:0.} fps", fps);
+		text.text = string.Format ("{0}\n{1}x{2}",fpsText, Screen.width, Screen.height);
     }
 }

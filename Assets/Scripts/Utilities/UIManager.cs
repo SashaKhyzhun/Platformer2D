@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         shI = GetComponent<ShareInfo>();
-        shI.text = "Look, there's an amazing game! You can play it too!\n https://play.google.com/store";
+        shI.text = "Look, there's an amazing game! You can play it too!\n https://goo.gl/1yrz7b";
         halfFadeTimeWFS = new WaitForSeconds(fadeTime / 2);
         fadeTimeWFS = new WaitForSeconds(fadeTime);
         wfeof = new WaitForEndOfFrame();
@@ -106,7 +106,7 @@ public class UIManager : MonoBehaviour
                 break;
         }
 
-        shI.text = string.Format("Look, I've finished level {0}.{1} in {2}m. with{3}!\nYou can try it too! {4}", currSeason + 1, currLevel + 1, timeString, deathsString, "https://play.google.com/");
+        shI.text = string.Format("Look, I've finished level {0}.{1} in {2}m. with{3}!\nYou can try it too! {4}", currSeason + 1, currLevel + 1, timeString, deathsString, "https://goo.gl/1yrz7b");
     }
 
     public void Restart()
@@ -319,7 +319,7 @@ public class UIManager : MonoBehaviour
     void OnLevelWasLoaded(int level)
     {
         interstitial = RequestInterstitial();
-        if (shI != null) { shI.text = "Look, there's an amazing game called Flying Adventures! You can play it too!\n https://play.google.com/store"; }
+        if (shI != null) { shI.text = "Look, there's an amazing game called Flying Adventures! You can play it too!\n https://goo.gl/1yrz7b"; }
         switch (level)
         {
             case 0:

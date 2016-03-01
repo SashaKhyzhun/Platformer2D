@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     public float fadeTime;
     public float levelEndWaitTime;
     public float timeScaleOnPause;
+    public bool allowAds = true;
 
     private ProgressManager pm;
     private PlayerController pc;
@@ -284,10 +285,7 @@ public class UIManager : MonoBehaviour
     {
         Transform LevelEndLayout = UI.transform.FindChild("LevelEndLayout");
         yield return levelEndWaitTimeWFS;
-		if (interstitial.IsLoaded())
-		{
-			interstitial.Show ();
-		}
+        if (allowAds) { if (interstitial.IsLoaded()) { interstitial.Show(); } }
         TurnLayoutOn(LevelEndLayout.gameObject);
         LoadLevelEndStats(LevelEndLayout);
         GetComponent<AudioManager>().AudioPause();
@@ -318,7 +316,7 @@ public class UIManager : MonoBehaviour
 
     void OnLevelWasLoaded(int level)
     {
-        interstitial = RequestInterstitial();
+        if (allowAds) { interstitial = RequestInterstitial(); }
         if (shI != null) { shI.text = "Look, there's an amazing game called Flying Adventures! You can play it too!\n https://goo.gl/1yrz7b"; }
         switch (level)
         {
@@ -330,6 +328,7 @@ public class UIManager : MonoBehaviour
                     TurnLayoutOff(MenuLayout);
                     if (completedGame)
                     {
+                        if (shI != null) { shI.text = "Look, I've completed the whole game! You should try too\n https://goo.gl/1yrz7b"; }
                         TurnLayoutOn(CongratulationsLayout);
                     }
                     else

@@ -2,8 +2,9 @@
 using UnityEngine.UI;
 using System.Collections;
 using System;
+
 //ads
-using GoogleMobileAds.Api;
+//using GoogleMobileAds.Api;
 //ads
 
 public class UIManager : MonoBehaviour
@@ -21,7 +22,7 @@ public class UIManager : MonoBehaviour
     public float fadeTime;
     public float levelEndWaitTime;
     public float timeScaleOnPause;
-    public bool allowAds = true;
+    //public bool allowAds = true;
 
     private ProgressManager pm;
     private PlayerController pc;
@@ -37,7 +38,7 @@ public class UIManager : MonoBehaviour
     private bool backToMenu = false;
     private bool restart = false;
 
-	private InterstitialAd interstitial;
+    //	private InterstitialAd interstitial;
 
     void Start()
     {
@@ -50,14 +51,23 @@ public class UIManager : MonoBehaviour
         pm = gameObject.GetComponent<ProgressManager>();
         anim = FadePlane.GetComponent<Animator>();
         anim.SetFloat("speedMultiplier", 1 / fadeTime);
-        if (GameObject.FindGameObjectsWithTag(UI.tag).Length > 1) { Destroy(GameObject.FindGameObjectsWithTag(UI.tag)[1]); }
-        if (GameObject.FindGameObjectsWithTag("es").Length > 1) { Destroy(GameObject.FindGameObjectsWithTag("es")[1]); }
-        if (GameObject.FindGameObjectsWithTag(gameObject.tag).Length > 1) { Destroy(gameObject); }
+        if (GameObject.FindGameObjectsWithTag(UI.tag).Length > 1)
+        {
+            Destroy(GameObject.FindGameObjectsWithTag(UI.tag)[1]);
+        }
+        if (GameObject.FindGameObjectsWithTag("es").Length > 1)
+        {
+            Destroy(GameObject.FindGameObjectsWithTag("es")[1]);
+        }
+        if (GameObject.FindGameObjectsWithTag(gameObject.tag).Length > 1)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()
     {
-        if(pc != null)
+        if (pc != null)
         {
             if (pc.finished)
             {
@@ -70,8 +80,14 @@ public class UIManager : MonoBehaviour
                     pc.canLoad = false;
                 }
             }
-            if (pc.startFade) { anim.SetBool("Fade", true); }
-            if (pc.startReturn) { anim.SetBool("Fade", false); }
+            if (pc.startFade)
+            {
+                anim.SetBool("Fade", true);
+            }
+            if (pc.startReturn)
+            {
+                anim.SetBool("Fade", false);
+            }
         }
     }
 
@@ -162,8 +178,14 @@ public class UIManager : MonoBehaviour
             {
                 if (!restart)
                 {
-                    if (currSeason > 0 && nextLevel == 0) { pm.SaveStats(currSeason - 1, pm.levelCount - 1, pc.time, pc.deaths); }
-                    else { pm.SaveStats(currSeason, nextLevel - 1, pc.time, pc.deaths); }
+                    if (currSeason > 0 && nextLevel == 0)
+                    {
+                        pm.SaveStats(currSeason - 1, pm.levelCount - 1, pc.time, pc.deaths);
+                    }
+                    else
+                    {
+                        pm.SaveStats(currSeason, nextLevel - 1, pc.time, pc.deaths);
+                    }
                 }
             }
 
@@ -180,7 +202,10 @@ public class UIManager : MonoBehaviour
                         }
                     }
                 }
-                else { StartCoroutine(WaitForLoad(index - 1)); }
+                else
+                {
+                    StartCoroutine(WaitForLoad(index - 1));
+                }
             }
             else if (currSeason + 1 < Game.seasonCount)
             {
@@ -189,14 +214,26 @@ public class UIManager : MonoBehaviour
                     //StartCoroutine(WaitForLoad(index));
                     if (!backToMenu)
                     {
-                        if (!restart) { StartCoroutine(WaitForLoad(index)); }
-                        else { StartCoroutine(WaitForLoad(index - 1)); }
+                        if (!restart)
+                        {
+                            StartCoroutine(WaitForLoad(index));
+                        }
+                        else
+                        {
+                            StartCoroutine(WaitForLoad(index - 1));
+                        }
                     }
                 }
             }
-            else { Debug.Log("scene index is over the limit"); }
+            else
+            {
+                Debug.Log("scene index is over the limit");
+            }
         }
-        else { StartCoroutine(WaitForLoad(index)); }
+        else
+        {
+            StartCoroutine(WaitForLoad(index));
+        }
         completedLevel = false;
     }
 
@@ -220,12 +257,18 @@ public class UIManager : MonoBehaviour
 
     public void TurnLayoutOn(GameObject layout)
     {
-        if (!layout.activeInHierarchy) { layout.SetActive(true); }
+        if (!layout.activeInHierarchy)
+        {
+            layout.SetActive(true);
+        }
     }
 
     public void TurnLayoutOff(GameObject layout)
     {
-        if (layout.activeInHierarchy) { layout.SetActive(false); }
+        if (layout.activeInHierarchy)
+        {
+            layout.SetActive(false);
+        }
     }
 
     public void BackToMenu()
@@ -233,7 +276,7 @@ public class UIManager : MonoBehaviour
         if (completedLevel)
         {
             backToMenu = true;
-            LoadLevel(Application.loadedLevel  + 1);
+            LoadLevel(Application.loadedLevel + 1);
             backToMenu = false;
             completedLevel = false;
         }
@@ -253,39 +296,39 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
-	private InterstitialAd RequestInterstitial()
-	{
-		#if UNITY_ANDROID
-		string adUnitId = "ca-app-pub-8810835231774698/6782405565";
-		#elif UNITY_IPHONE
-		string adUnitId = "INSERT_IOS_INTERSTITIAL_AD_UNIT_ID_HERE";
-		#else
-		string adUnitId = "unexpected_platform";
-		#endif
-
-		// Initialize an InterstitialAd.
-    	InterstitialAd interstitial = new InterstitialAd(adUnitId);
-        // Create an empty ad request.
-
-        //for release
-        //AdRequest request = new AdRequest.Builder().Build();
-
-        AdRequest request = new AdRequest.Builder()
-            //.AddTestDevice(AdRequest.TestDeviceSimulator)
-            //.AddTestDevice("94B6F3B031BFB085513365B02FBBB6DE")
-            //.AddTestDevice("09970ED4E5B9A61393ED38E4E163783C")
-            .Build();
-
-        // Load the interstitial with the request.
-        interstitial.LoadAd (request);
-		return interstitial;
-	}
+    //	private InterstitialAd RequestInterstitial()
+    //	{
+    //		#if UNITY_ANDROID
+    //		string adUnitId = "ca-app-pub-8810835231774698/6782405565";
+    //		#elif UNITY_IPHONE
+    //		string adUnitId = "INSERT_IOS_INTERSTITIAL_AD_UNIT_ID_HERE";
+    //		#else
+    //		string adUnitId = "unexpected_platform";
+    //		#endif
+    //
+    //		// Initialize an InterstitialAd.
+    //    	InterstitialAd interstitial = new InterstitialAd(adUnitId);
+    //        // Create an empty ad request.
+    //
+    //        //for release
+    //        //AdRequest request = new AdRequest.Builder().Build();
+    //
+    //        AdRequest request = new AdRequest.Builder()
+    //            //.AddTestDevice(AdRequest.TestDeviceSimulator)
+    //            //.AddTestDevice("94B6F3B031BFB085513365B02FBBB6DE")
+    //            //.AddTestDevice("09970ED4E5B9A61393ED38E4E163783C")
+    //            .Build();
+    //
+    //        // Load the interstitial with the request.
+    //        interstitial.LoadAd (request);
+    //		return interstitial;
+    //	}
 
     IEnumerator WaitForConfirm(float seconds)
     {
         Transform LevelEndLayout = UI.transform.FindChild("LevelEndLayout");
         yield return levelEndWaitTimeWFS;
-        if (allowAds) { if (interstitial.IsLoaded()) { interstitial.Show(); } }
+//        if (allowAds) { if (interstitial.IsLoaded()) { interstitial.Show(); } }
         TurnLayoutOn(LevelEndLayout.gameObject);
         LoadLevelEndStats(LevelEndLayout);
         GetComponent<AudioManager>().AudioPause();
@@ -302,7 +345,10 @@ public class UIManager : MonoBehaviour
 
         AsyncOperation async = Application.LoadLevelAsync(level);
         async.allowSceneActivation = false;
-        while (async.progress < 0.9f) { yield return wfeof; }
+        while (async.progress < 0.9f)
+        {
+            yield return wfeof;
+        }
 
         anim.SetBool("Fade", true);
         yield return halfFadeTimeWFS;
@@ -316,8 +362,11 @@ public class UIManager : MonoBehaviour
 
     void OnLevelWasLoaded(int level)
     {
-        if (allowAds) { interstitial = RequestInterstitial(); }
-        if (shI != null) { shI.text = "Look, there's an amazing game called Flying Adventures! You can play it too!\n https://goo.gl/1yrz7b"; }
+        //if (allowAds) { interstitial = RequestInterstitial(); }
+        if (shI != null)
+        {
+            shI.text = "Look, there's an amazing game called Flying Adventures! You can play it too!\n https://goo.gl/1yrz7b";
+        }
         switch (level)
         {
             case 0:
@@ -328,7 +377,10 @@ public class UIManager : MonoBehaviour
                     TurnLayoutOff(MenuLayout);
                     if (completedGame)
                     {
-                        if (shI != null) { shI.text = "Look, I've completed the whole game! You should try too\n https://goo.gl/1yrz7b"; }
+                        if (shI != null)
+                        {
+                            shI.text = "Look, I've completed the whole game! You should try too\n https://goo.gl/1yrz7b";
+                        }
                         TurnLayoutOn(CongratulationsLayout);
                     }
                     else
@@ -338,7 +390,8 @@ public class UIManager : MonoBehaviour
                     }
                     completedSeason = false;
                 }
-                else {
+                else
+                {
                     TurnLayoutOn(MenuLayout);
                     TurnLayoutOff(SeasonsMenuLayout);
                 }

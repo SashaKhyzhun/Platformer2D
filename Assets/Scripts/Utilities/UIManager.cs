@@ -19,7 +19,9 @@ public class UIManager : MonoBehaviour
     public GameObject[] LevelsMenuLayout;
     public GameObject LoadingScreen;
     public GameObject CongratulationsLayout;
+    public Animator splashScreen;
     public float fadeTime;
+    public float splashTime;
     public float levelEndWaitTime;
     public float timeScaleOnPause;
     //public bool allowAds = true;
@@ -43,7 +45,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         shI = GetComponent<ShareInfo>();
-        shI.text = "Look, there's an amazing game! You can play it too!\n https://goo.gl/1yrz7b";
+        shI.text = "Look, there's an amazing game! You can play it too!\n https://play.google.com/store/apps/details?id=" + Application.bundleIdentifier;
         halfFadeTimeWFS = new WaitForSeconds(fadeTime / 2);
         fadeTimeWFS = new WaitForSeconds(fadeTime);
         wfeof = new WaitForEndOfFrame();
@@ -51,6 +53,7 @@ public class UIManager : MonoBehaviour
         pm = gameObject.GetComponent<ProgressManager>();
         anim = FadePlane.GetComponent<Animator>();
         anim.SetFloat("speedMultiplier", 1 / fadeTime);
+        StartCoroutine(WaitForSplash());
         if (GameObject.FindGameObjectsWithTag(UI.tag).Length > 1)
         {
             Destroy(GameObject.FindGameObjectsWithTag(UI.tag)[1]);
@@ -123,7 +126,7 @@ public class UIManager : MonoBehaviour
                 break;
         }
 
-        shI.text = string.Format("Look, I've finished level {0}.{1} in {2}m. with{3}!\nYou can try it too! {4}", currSeason + 1, currLevel + 1, timeString, deathsString, "https://goo.gl/1yrz7b");
+        shI.text = string.Format("Look, I've finished level {0}.{1} in {2}m. with{3}!\nYou can try it too! {4}", currSeason + 1, currLevel + 1, timeString, deathsString, "https://play.google.com/store/apps/details?id=" + Application.bundleIdentifier);
     }
 
     public void Restart()
@@ -288,6 +291,13 @@ public class UIManager : MonoBehaviour
         StartCoroutine(WaitForExit());
     }
 
+    IEnumerator WaitForSplash()
+    {
+        splashScreen.SetTrigger("Play");
+        yield return new WaitForSeconds(splashTime);
+        anim.SetBool("Fade", false);
+    }
+
     IEnumerator WaitForExit()
     {
         Time.timeScale = 1;
@@ -365,7 +375,7 @@ public class UIManager : MonoBehaviour
         //if (allowAds) { interstitial = RequestInterstitial(); }
         if (shI != null)
         {
-            shI.text = "Look, there's an amazing game called Flying Adventures! You can play it too!\n https://goo.gl/1yrz7b";
+            shI.text = "Look, there's an amazing game called Flying Adventures! You can play it too!\n https://play.google.com/store/apps/details?id=" + Application.bundleIdentifier;
         }
         switch (level)
         {
@@ -379,7 +389,7 @@ public class UIManager : MonoBehaviour
                     {
                         if (shI != null)
                         {
-                            shI.text = "Look, I've completed the whole game! You should try too\n https://goo.gl/1yrz7b";
+                            shI.text = "Look, I've completed the whole game! You should try too\n https://play.google.com/store/apps/details?id=" + Application.bundleIdentifier;
                         }
                         TurnLayoutOn(CongratulationsLayout);
                     }

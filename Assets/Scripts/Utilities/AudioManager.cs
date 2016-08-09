@@ -2,7 +2,8 @@
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class AudioManager : MonoBehaviour {
+public class AudioManager : MonoBehaviour
+{
 
     public AudioMixerSnapshot defaultSnapshot;
     public AudioMixerSnapshot musicOffSnapshot;
@@ -12,20 +13,38 @@ public class AudioManager : MonoBehaviour {
 
     private bool musicState = true;
 
-    void Start ()
+    void Start()
     {
         defaultSnapshot.TransitionTo(0f);
+
+        if (musicState)
+        {
+            defaultSnapshot.TransitionTo(0f);
+        }
+        else
+        {
+            musicOffSnapshot.TransitionTo(0f);
+        }
     }
 
     public void AudioUnpause()
     {
-        if (musicState) { defaultSnapshot.TransitionTo(transitionTime * Time.timeScale); }
-        else { musicOffSnapshot.TransitionTo(transitionTime * Time.timeScale); }
+        if (musicState)
+        {
+            defaultSnapshot.TransitionTo(transitionTime * Time.timeScale);
+        }
+        else
+        {
+            musicOffSnapshot.TransitionTo(transitionTime * Time.timeScale);
+        }
     }
 
     public void AudioPause()
     {
-        if (musicState) { pausedSnapshot.TransitionTo(transitionTime * Time.timeScale); }
+        if (musicState)
+        {
+            pausedSnapshot.TransitionTo(transitionTime * Time.timeScale);
+        }
     }
 
     public void TurnOffAudio()
@@ -42,15 +61,25 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
-    public void ChangeImageColor(GameObject obj)
+    public void ChangeImageColor(SoundButtonsHolder buttons)
     {
         if (!musicState) // if on, then turn off
         {
-            obj.GetComponent<Image>().color = new Color(200f / 255, 200f / 255, 200f / 255, 128f / 255);
+            foreach (GameObject b in buttons.soundButtons)
+            {
+                b.GetComponent<Image>().color = new Color(200f / 255, 200f / 255, 200f / 255, 128f / 255);
+            }
+//            obj.transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(200f / 255, 200f / 255, 200f / 255, 128f / 255);
+//            obj.transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(200f / 255, 200f / 255, 200f / 255, 128f / 255);
         }
         else // else turn on
         {
-            obj.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+            foreach (GameObject b in buttons.soundButtons)
+            {
+                b.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+            }
+//            obj.transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+//            obj.transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
         }
     }
 }

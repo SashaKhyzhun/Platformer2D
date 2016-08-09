@@ -45,7 +45,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         shI = GetComponent<ShareInfo>();
-        shI.text = "Look, there's an amazing game! You can play it too!\n https://play.google.com/store/apps/details?id=" + Application.bundleIdentifier;
+        shI.text = "Look, there's an amazing game! You can play it too!\n https://play.google.com/store/apps/details?id=com.azinecllc.flyingadventures";
         halfFadeTimeWFS = new WaitForSeconds(fadeTime / 2);
         fadeTimeWFS = new WaitForSeconds(fadeTime);
         wfeof = new WaitForEndOfFrame();
@@ -126,7 +126,7 @@ public class UIManager : MonoBehaviour
                 break;
         }
 
-        shI.text = string.Format("Look, I've finished level {0}.{1} in {2}m. with{3}!\nYou can try it too! {4}", currSeason + 1, currLevel + 1, timeString, deathsString, "https://play.google.com/store/apps/details?id=" + Application.bundleIdentifier);
+        shI.text = string.Format("Look, I've finished level {0}.{1} in {2}m. with{3}!\nYou can try it too! {4}", currSeason + 1, currLevel + 1, timeString, deathsString, "https://play.google.com/store/apps/details?id=com.azinecllc.flyingadventures");
     }
 
     public void Restart()
@@ -375,7 +375,7 @@ public class UIManager : MonoBehaviour
         //if (allowAds) { interstitial = RequestInterstitial(); }
         if (shI != null)
         {
-            shI.text = "Look, there's an amazing game called Flying Adventures! You can play it too!\n https://play.google.com/store/apps/details?id=" + Application.bundleIdentifier;
+            shI.text = "Look, there's an amazing game called Flying Adventures! You can play it too!\n https://play.google.com/store/apps/details?id=com.azinecllc.flyingadventures";
         }
         switch (level)
         {
@@ -389,7 +389,7 @@ public class UIManager : MonoBehaviour
                     {
                         if (shI != null)
                         {
-                            shI.text = "Look, I've completed the whole game! You should try too\n https://play.google.com/store/apps/details?id=" + Application.bundleIdentifier;
+                            shI.text = "Look, I've completed the whole game! You should try too\n https://play.google.com/store/apps/details?id=com.azinecllc.flyingadventures";
                         }
                         TurnLayoutOn(CongratulationsLayout);
                     }

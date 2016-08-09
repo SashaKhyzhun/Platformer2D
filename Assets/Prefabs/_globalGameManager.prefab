@@ -16,6 +16,9 @@ GameObject:
   - 114: {fileID: 11471124}
   - 114: {fileID: 11412554}
   - 114: {fileID: 11484104}
+  - 114: {fileID: 11411730}
+  - 114: {fileID: 11405002}
+  - 114: {fileID: 11401804}
   m_Layer: 0
   m_Name: _globalGameManager
   m_TagString: globalGM
@@ -35,6 +38,44 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11401804
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d25866a938fba5e44b3d29808662173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11405002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb64022708019bf46af5160342a0b652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSnapshot: {fileID: 24569418, guid: 14f78d755989dda47898121b3c4fa536, type: 2}
+  musicOffSnapshot: {fileID: 24500003, guid: 14f78d755989dda47898121b3c4fa536, type: 2}
+  pausedSnapshot: {fileID: 24553122, guid: 14f78d755989dda47898121b3c4fa536, type: 2}
+  transitionTime: 0.5
+--- !u!114 &11411730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5de1ca2f6f91d34492b1496f7f546e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 
 --- !u!114 &11412274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60,7 +101,7 @@ MonoBehaviour:
   CongratulationsLayout: {fileID: 0}
   splashScreen: {fileID: 0}
   fadeTime: 1
-  splashTime: 1
+  splashTime: 1.5
   levelEndWaitTime: 1
   timeScaleOnPause: 0.001
 --- !u!114 &11412554
@@ -143,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5de1ca2f6f91d34492b1496f7f546e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: 
 --- !u!114 &11484104
 MonoBehaviour:
   m_ObjectHideFlags: 1

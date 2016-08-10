@@ -90,6 +90,10 @@ Animator:
   m_PrefabParentObject: {fileID: 9547670, guid: 0eac6361f5fe34740961c53bce943de2,
     type: 2}
   m_PrefabInternal: {fileID: 970527073}
+--- !u!1 &338971750 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 123364, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
+  m_PrefabInternal: {fileID: 970527073}
 --- !u!1 &433414832 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 172536, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
@@ -109,11 +113,6 @@ GameObject:
 --- !u!1 &638086417 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 126030, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
-  m_PrefabInternal: {fileID: 970527073}
---- !u!224 &638086418 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 22489400, guid: 0eac6361f5fe34740961c53bce943de2,
-    type: 2}
   m_PrefabInternal: {fileID: 970527073}
 --- !u!1 &747110764 stripped
 GameObject:
@@ -762,6 +761,38 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11411216, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1882812624}
+    - target: {fileID: 11411216, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TurnOffAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411216, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1882812624}
+    - target: {fileID: 11411216, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeImageColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411216, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1924234438}
+    - target: {fileID: 11497876, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
+      propertyPath: m_Color.r
+      value: 0.5921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497876, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
+      propertyPath: m_Color.g
+      value: 0.5921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497876, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
+      propertyPath: m_Color.b
+      value: 0.5921569
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
   m_IsPrefabParent: 0
@@ -1032,10 +1063,15 @@ Prefab:
       propertyPath: splashScreen
       value: 
       objectReference: {fileID: 272761997}
-    m_RemovedComponents:
-    - {fileID: 11471124, guid: 174b95b084c3d3445b1d6b894f0ca3b2, type: 2}
-    - {fileID: 11412554, guid: 174b95b084c3d3445b1d6b894f0ca3b2, type: 2}
-    - {fileID: 11484104, guid: 174b95b084c3d3445b1d6b894f0ca3b2, type: 2}
+    - target: {fileID: 11486106, guid: 174b95b084c3d3445b1d6b894f0ca3b2, type: 2}
+      propertyPath: soundButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 2045924926}
+    - target: {fileID: 11486106, guid: 174b95b084c3d3445b1d6b894f0ca3b2, type: 2}
+      propertyPath: soundButtons.Array.data[1]
+      value: 
+      objectReference: {fileID: 338971750}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 174b95b084c3d3445b1d6b894f0ca3b2, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1324013959 stripped
@@ -1130,141 +1166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b0acc2987266dd4f9b65848ff5d6bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1548353215
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 145652, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1548353216}
-  - 222: {fileID: 1548353219}
-  - 114: {fileID: 1548353218}
-  - 114: {fileID: 1548353217}
-  m_Layer: 5
-  m_Name: Sound (Paused)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!224 &1548353216
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22460216, guid: 0eac6361f5fe34740961c53bce943de2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1548353215}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 638086418}
-  m_RootOrder: 3
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -20, y: 20}
-  m_SizeDelta: {x: 90, y: 90}
-  m_Pivot: {x: 1.0000004, y: 0}
---- !u!114 &1548353217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11422894, guid: 0eac6361f5fe34740961c53bce943de2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1548353215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1548353218}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1882812624}
-        m_MethodName: TurnOffAudio
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1882812624}
-        m_MethodName: ChangeImageColor
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1924234438}
-          m_ObjectArgumentAssemblyTypeName: SoundButtonsHolder, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &1548353218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11497876, guid: 0eac6361f5fe34740961c53bce943de2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1548353215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ab03c93190cce4640a3b577a17f54efd, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &1548353219
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22281160, guid: 0eac6361f5fe34740961c53bce943de2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1548353215}
 --- !u!114 &1882812624 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11405002, guid: 174b95b084c3d3445b1d6b894f0ca3b2,
@@ -1277,30 +1178,18 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1324013958}
   m_Script: {fileID: 11500000, guid: d25866a938fba5e44b3d29808662173f, type: 3}
---- !u!1 &1924234436 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 162656, guid: 174b95b084c3d3445b1d6b894f0ca3b2, type: 2}
-  m_PrefabInternal: {fileID: 1324013958}
 --- !u!114 &1924234437 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11411730, guid: 174b95b084c3d3445b1d6b894f0ca3b2,
     type: 2}
   m_PrefabInternal: {fileID: 1324013958}
   m_Script: {fileID: 11500000, guid: b5de1ca2f6f91d34492b1496f7f546e8, type: 3}
---- !u!114 &1924234438
+--- !u!114 &1924234438 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1924234436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 11486106, guid: 174b95b084c3d3445b1d6b894f0ca3b2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1324013958}
   m_Script: {fileID: 11500000, guid: c3efca0eb6e34c146b566304bf6a42ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundButtons:
-  - {fileID: 2045924926}
-  - {fileID: 1548353215}
 --- !u!1 &2045924926 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 145652, guid: 0eac6361f5fe34740961c53bce943de2, type: 2}

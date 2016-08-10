@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
+    public Sprite soundOnGfx;
+    public Sprite soundOffGfx;
 
     public AudioMixerSnapshot defaultSnapshot;
     public AudioMixerSnapshot musicOffSnapshot;
@@ -67,7 +69,7 @@ public class AudioManager : MonoBehaviour
         {
             foreach (GameObject b in buttons.soundButtons)
             {
-                b.GetComponent<Image>().color = new Color(200f / 255, 200f / 255, 200f / 255, 128f / 255);
+                b.GetComponent<Image>().sprite = soundOffGfx;
             }
 //            obj.transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(200f / 255, 200f / 255, 200f / 255, 128f / 255);
 //            obj.transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(200f / 255, 200f / 255, 200f / 255, 128f / 255);
@@ -76,7 +78,7 @@ public class AudioManager : MonoBehaviour
         {
             foreach (GameObject b in buttons.soundButtons)
             {
-                b.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+                b.GetComponent<Image>().sprite = soundOnGfx;
             }
 //            obj.transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
 //            obj.transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);

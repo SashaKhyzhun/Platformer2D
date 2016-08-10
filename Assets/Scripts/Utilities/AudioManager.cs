@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     public float transitionTime = 0.1f;
 
     private bool musicState = true;
+    private bool paused = false;
 
     void Start()
     {
@@ -39,6 +40,7 @@ public class AudioManager : MonoBehaviour
         {
             musicOffSnapshot.TransitionTo(transitionTime * Time.timeScale);
         }
+        paused = false;
     }
 
     public void AudioPause()
@@ -47,18 +49,26 @@ public class AudioManager : MonoBehaviour
         {
             pausedSnapshot.TransitionTo(transitionTime * Time.timeScale);
         }
+        paused = true;
     }
 
     public void TurnOffAudio()
     {
         if (musicState)
         {
-            musicOffSnapshot.TransitionTo(transitionTime);
+            musicOffSnapshot.TransitionTo(transitionTime * Time.timeScale);
             musicState = false;
         }
         else
         {
-            defaultSnapshot.TransitionTo(transitionTime);
+            if (paused)
+            {
+                pausedSnapshot.TransitionTo(transitionTime * Time.timeScale);
+            }
+            else
+            {
+                defaultSnapshot.TransitionTo(transitionTime * Time.timeScale);
+            }
             musicState = true;
         }
     }
